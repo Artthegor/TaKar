@@ -8,8 +8,9 @@ Rentabiliser la location de véhicule tout en fournissant un service de qualité
 Ce projet a été réaliser dans le cadre du module de programmation d'architecture multi-tiers à l'université de franche-comté à Besançon en deuxiène année de master informatique.
 L'équipe de Takar est composé de six membres, et nous avons entièrement pensé l'application et ses composantes.
 
-## Langages utilisés : 
+## Technologies utilisés : 
 + HTML5
 + CSS3
 + Java
 + Spring
++ Maven
