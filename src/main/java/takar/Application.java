@@ -1,11 +1,11 @@
-package pam;
+package takar;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@SpringBootApplication(scanBasePackages= {"pam"})
+@SpringBootApplication(scanBasePackages= {"takar"})
 @EnableTransactionManagement
 @ImportResource(value = "classpath:spring/application-config.xml")
 public class Application {
