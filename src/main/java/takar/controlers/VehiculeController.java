@@ -22,8 +22,8 @@ public class VehiculeController {
         }
 
         //(String brand, String model, Integer placeNumber, String description, double price, String infoForClient, int note)
-        Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
-        modell.addAttribute("vehicle", allVehicle);
+        //Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
+        //modell.addAttribute("vehicle", allVehicle);
         return "addVehicule";
     }
 
