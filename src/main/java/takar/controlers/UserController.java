@@ -9,20 +9,20 @@ import takar.dataManagementServices.IUserManagment;
 import takar.model.User;
 
 @Controller
-@RequestMapping("users")
+@RequestMapping("authentication")
 public class UserController {
 	@Autowired
 	private IUserManagment userManager;
 
-	@RequestMapping("adduser")
+	@RequestMapping("registration")
 	public String addUser(@RequestParam(value="firstname", required=false) String firstname, @RequestParam(value="lastname", required=false) String lastname,@RequestParam(value="choosenAddress", required=false) Integer idAddress, Model model)
 	{
 		if(firstname != null && lastname != null)
 		{
 			userManager.addUser(firstname, lastname);
 		}
-		Iterable<User> allUser =userManager.getAllUsers();
-		model.addAttribute("users",allUser);
+		//Iterable<User> allUser =userManager.getAllUsers();
+		//model.addAttribute("users",allUser);
 		return "userView";
 	}
 
