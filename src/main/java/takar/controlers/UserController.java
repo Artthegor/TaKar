@@ -15,11 +15,11 @@ public class UserController {
 	private IUserManagment userManager;
 
 	@RequestMapping("adduser")
-	public String addUser(@RequestParam(value="firstname", required=false) String firstname, @RequestParam(value="lastname", required=false) String lastname,@RequestParam(value="choosenAddress", required=false) Integer idAddress, Model model)
+	public String addUser(@RequestParam(value="username", required=false) String username, @RequestParam(value="password", required=false) String password, Model model)
 	{
-		if(firstname != null && lastname != null)
+		if(username != null && password != null)
 		{
-			userManager.addUser(firstname, lastname);
+			userManager.addUser(username, password);
 		}
 		Iterable<User> allUser =userManager.getAllUsers();
 		model.addAttribute("users",allUser);
