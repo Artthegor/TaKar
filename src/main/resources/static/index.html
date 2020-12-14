@@ -9,28 +9,19 @@
 
 <div class="jumbotron text-center" style="margin-bottom:0">
     <h1>Takar</h1>
-    <p>Louer vos véhicules en un clique !</p>
+    <!--    <p>Louer vos véhicules en un clique !</p>-->
+    <p>Cliquez, louez, roulez !</p>
 </div>
 
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
 
-    <div class="container">
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+    <div>
         <button type="button" class="btn btn-dark">Rechercher</button>
         <button type="button" class="btn btn-dark">Louer</button>
-        <button type="button" class="btn btn-dark">Contact</button>
+        <button type="button" class="btn btn-dark">Contacter</button>
 
+        <button type="button" class="btn btn-dark"></button>
 
-    <div class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Contact
-    </a>
-    <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">FAQ</a>
-        <a class="dropdown-item" href="#">Contact</a>
-    </div>
-    </div>
-
-    <div >
         <a href="authentication/connexion" class="btn btn-dark">Connexion</a>
         <a href="authentication/registration" class="btn btn-dark">Inscription</a>
     </div>
@@ -38,9 +29,45 @@
 
 <div class="container" style="margin-top:30px">
     <div class="row">
-        <div class="col-sm-4">
+
+        <div class="col-sm-3">
+            <h2>Nos locations</h2>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a href="search/type?=voiture" class="nav-link">Voiture</a>
+                </li>
+                <li class="nav-item">
+                    <a href="search/type?=camion" class="nav-link">Camion</a>
+                </li>
+                <li class="nav-item">
+                    <a href="search/type?=motocycle" class="nav-link">Motocycle</a>
+                </li>
+                <li class="nav-item">
+                    <a href="search/type?=remorque" class="nav-link">Remorque</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-sm-6">
+            <!--            requete bdd pour mettre en avant dispo à la loc -->
+            <h2>Peugeot 308</h2>
+            <h5>Title description, Dec 7, 2017</h5>
+            <div class="fakeimg">Fake Image</div>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <br>
+            <h2>Renault Twingo</h2>
+            <h5>Title description, Sep 2, 2017</h5>
+            <div class="fakeimg">Fake Image</div>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        </div>
+
+        <div class="col-sm-3">
             <h2>A propos de nous</h2>
-            <div class="fakeimg">Logo Takar</div>
+            <div class="fakeimg">
+                <img  src="./takarLogo.png" alt="takarLogo" width="300" height="150">
+            </div>
             <p>Nous sommes une jeune équipe de six développeurs composés en 2020 qui vise à rentabiliser les véhicules non utilisés. Nos utilisateurs peuvent mettre en location leurs véhicules.</p>
             <h3>Abonne toi</h3>
             <p>Nous retrouver sur les réseaux !</p>
@@ -57,20 +84,7 @@
             </ul>
             <hr class="d-sm-none">
         </div>
-        <div class="col-sm-8">
-<!--            requete bdd pour mettre en avant dispo à la loc -->
-            <h2>Peugeot 308</h2>
-            <h5>Title description, Dec 7, 2017</h5>
-            <div class="fakeimg">Fake Image</div>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-            <br>
-            <h2>Renault Twingo</h2>
-            <h5>Title description, Sep 2, 2017</h5>
-            <div class="fakeimg">Fake Image</div>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </div>
+
     </div>
 </div>
 
