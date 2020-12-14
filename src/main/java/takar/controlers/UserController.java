@@ -16,7 +16,7 @@ public class UserController {
 
 
 	@RequestMapping("registration")
-	public String addUser(@RequestParam(value="firstname", required=false) String firstname, @RequestParam(value="lastname", required=false) String lastname,@RequestParam(value="choosenAddress", required=false) Integer idAddress, Model model)
+	public String addUser(@RequestParam(value="username", required=false) String username, @RequestParam(value="password", required=false) String password,@RequestParam(value="choosenAddress", required=false) Integer idAddress, Model model)
 	{
 		if(username != null && password != null)
 		{

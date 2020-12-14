@@ -11,19 +11,19 @@ import takar.model.Vehicle;
 @Controller
 @RequestMapping("locate")
 public class VehiculeController {
-    @Autowired
+//    @Autowired
     private IVehicleManagement vehicleManager;
 
     @RequestMapping("vehicle")
-    public String addvehicle(@RequestParam(value="brand", required=false) String brand, @RequestParam(value="model", required=false) String model, @RequestParam(value="placeNumber", required=false) Integer placeNumber, Model modell)
+    public String addvehicle(@RequestParam(value="brand", required=false) String brand, @RequestParam(value="model", required=false) String model, @RequestParam(value="placeNumber", required=false) Integer placeNumber, @RequestParam(value="description", required=false) String description, @RequestParam(value="price", required=false) Double price, @RequestParam(value="infoForClient", required=false) String infoForClient, @RequestParam(value="note", required=false) Integer note, Model modell)
     {
-        if(brand != null && model != null && placeNumber > 0) {
-            vehicleManager.addVehicle(brand, model, placeNumber, description);
+        if(brand != null && model != null && placeNumber > 0 && description != null && price > 0 && infoForClient != null) {
+            vehicleManager.addVehicle(brand, model, placeNumber, description, price, infoForClient, note);
         }
 
         //(String brand, String model, Integer placeNumber, String description, double price, String infoForClient, int note)
         Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
-        modell.addAttribute("vehicle",allVehicle);
+        modell.addAttribute("vehicle", allVehicle);
         return "addVehicule";
     }
 
