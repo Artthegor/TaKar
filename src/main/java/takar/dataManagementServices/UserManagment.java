@@ -14,9 +14,9 @@ public class UserManagment implements IUserManagment {
 	public UserManagment()
 	{	}
 
-	public User addUser(String firstname, String name )
+	public User addUser(String username, String password )
 	{
-		User usr = addUser(firstname,  name);
+		User usr = addUser(username,  password);
 		return userRepo.save(usr);
 	}
 	

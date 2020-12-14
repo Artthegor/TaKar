@@ -14,12 +14,13 @@ public class UserController {
 	@Autowired
 	private IUserManagment userManager;
 
+
 	@RequestMapping("registration")
 	public String addUser(@RequestParam(value="firstname", required=false) String firstname, @RequestParam(value="lastname", required=false) String lastname,@RequestParam(value="choosenAddress", required=false) Integer idAddress, Model model)
 	{
-		if(firstname != null && lastname != null)
+		if(username != null && password != null)
 		{
-			userManager.addUser(firstname, lastname);
+			userManager.addUser(username, password);
 		}
 		//Iterable<User> allUser =userManager.getAllUsers();
 		//model.addAttribute("users",allUser);

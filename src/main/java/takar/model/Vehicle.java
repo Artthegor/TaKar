@@ -1,97 +1,100 @@
 package takar.model;
 
+
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Vehicle {
 
+@Entity
+public class Vehicle {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    long vehicleID;
-
-    String brand;
-    String model;
-    int placeNumber;
-    String description;
+    private long IdVehicle;
+    int note, placeNumber;
+    String brand, model, description, infoForClient;
     double price;
-    String infoForClient;
-    int note;
 
-    public Vehicle() {
-    }
+    public Vehicle(){}
 
-    public Vehicle(String brand, String model, int placeNumber, String description, double price, String infoForClient, int note) {
+    public Vehicle(String brand, String model, int placeNumber, double price, String infoForClient, String description, int note){
+        super();
         this.brand = brand;
-        this.model = model;
-        this.placeNumber = placeNumber;
         this.description = description;
-        this.price = price;
         this.infoForClient = infoForClient;
-        this.note = note;
-    }
-
-    public long getVehicleID() {
-        return vehicleID;
-    }
-
-    public void setVehicleID(long vehicleID) {
-        this.vehicleID = vehicleID;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
         this.model = model;
-    }
-
-    public int getPlaceNumber() {
-        return placeNumber;
-    }
-
-    public void setPlaceNumber(int placeNumber) {
+        this.note = note;
         this.placeNumber = placeNumber;
+        this.price = price;
+    }
+
+    public Vehicle(String brand, String model, int placeNumber, double price, String infoForClient){
+        this( brand,  model,  placeNumber,  price, infoForClient, "", -1);
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getInfoForClient() {
-        return infoForClient;
-    }
-
-    public void setInfoForClient(String infoForClient) {
-        this.infoForClient = infoForClient;
     }
 
     public int getNote() {
         return note;
     }
 
+    public int getPlaceNumber() {
+        return placeNumber;
+    }
+
+    public long getIdVehicle() {
+        return IdVehicle;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getInfoForClient() {
+        return infoForClient;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+	
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setIdVehicle(long idVehicle) {
+        IdVehicle = idVehicle;
+    }
+
+    public void setInfoForClient(String infoForClient) {
+        this.infoForClient = infoForClient;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setPlaceNumber(int placeNumber) {
+        this.placeNumber = placeNumber;
+    }
+
     public void setNote(int note) {
         this.note = note;
     }
+
 }

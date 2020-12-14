@@ -8,8 +8,8 @@
 
 	<form method="get" action="adduser">
 		<h1>Saisie d'un utilisateur</h1>
-		<label>Prénom :</label><input type="text" id="firstname" name="firstname"/><Br/>
-		<label>Nom :</label><input type="text" id="lastname" name="lastname"/><br/>
+		<label>Username :</label><input type="text" id="username" name="username"/><Br/>
+		<label>Password :</label><input type="text" id="password" name="password"/><br/>
 		<br/>
 		<input type='submit' name="envoyer"/>
 	</form>
@@ -19,15 +19,15 @@
 <table>
   <thead>
     <tr>
-      <th th:text="Prénom">Prénom</th>
-      <th th:text="Nom">Nom</th>
+      <th th:text="Username">Username</th>
+      <th th:text="Password">Password</th>
     </tr>
   </thead>
 
   <tbody>
     <tr th:each="prod: ${users}">
-      <td th:text="${prod.prenom}">prénom</td>
-      <td th:text="${prod.nom}">nom</td>
+      <td th:text="${prod.username}">username</td>
+      <td th:text="${prod.password}">password</td>
     </tr>
   </tbody>
 </table>
