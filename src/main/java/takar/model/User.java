@@ -8,29 +8,29 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	long userID;
 	
-	String nom;
-	String prenom;
+	String username;
+	String password;
 
 	
 	public User(){}
 	
-	public User(String nom, String prenom) {
+	public User(String username, String password) {
 		super();
-		this.nom = nom;
-		this.prenom = prenom;
+		this.username = username;
+		this.password = password;
 	}
 	
-	public String getNom() {
-		return nom;
+	public String getUsername() {
+		return username;
 	}
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getPrenom() {
-		return prenom;
+	public String getPassword() {
+		return password;
 	}
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 

@@ -6,5 +6,5 @@ import takar.model.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long>  {
-	public User findByNomAndPrenom(String nom, String prenom);
+	public User findByNomAndPrenom(String username, String password);
 }
