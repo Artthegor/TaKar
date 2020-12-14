@@ -11,6 +11,9 @@ public class User {
 	String username;
 	String password;
 
+	@OneToOne
+	Address address;
+
 	
 	public User(){}
 	
@@ -33,7 +36,13 @@ public class User {
 		this.password = password;
 	}
 
+	public Address getAddress() {
+		return address;
+	}
 
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
 	public long getUserID() {
 		return userID;

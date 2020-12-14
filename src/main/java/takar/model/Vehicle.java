@@ -1,10 +1,7 @@
 package takar.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -15,6 +12,9 @@ public class Vehicle {
     int note, placeNumber;
     String brand, model, description, infoForClient;
     double price;
+
+    @OneToOne
+    Address address;
 
     public Vehicle(){}
 
@@ -95,6 +95,14 @@ public class Vehicle {
 
     public void setNote(int note) {
         this.note = note;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
 }
