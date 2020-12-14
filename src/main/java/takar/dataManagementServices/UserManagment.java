@@ -6,7 +6,7 @@ import takar.model.User;
 import takar.repositories.UserRepository;
 
 @Service
-public class UserManagment implements takar.dataManagementServices.IUserManagment {
+public class UserManagment implements IUserManagment {
 	@Autowired
 	UserRepository userRepo;
 
