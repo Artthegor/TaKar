@@ -1,7 +1,9 @@
 package takar.model;
 
+import javax.persistence.Entity;
 import java.util.Date;
 
+@Entity
 public class Client extends User {
     String name, firstname, sex, description, mail, phoneNumber;
     Date birthday;
@@ -22,15 +24,7 @@ public class Client extends User {
     }
 
     public Client(String username, String password, String name, String firstname, String sex, String mail, String phoneNumber, Date birthday) {
-        super(username, password);
-        this.username = username;
-        this.password = password;
-        this.birthday = birthday;
-        this.name = name;
-        this.mail = mail;
-        this.phoneNumber = phoneNumber;
-        this.firstname = firstname;
-        this.sex = sex;
+        this(username, password, name, firstname, sex, "", mail, phoneNumber, birthday);
     }
 
     public Date getBirthday() {
