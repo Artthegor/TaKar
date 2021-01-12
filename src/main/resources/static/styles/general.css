@@ -3,8 +3,13 @@ body {
 }
 
 h2 {
-
     padding-top: 0.5em;
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+}
+h1{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     font-family: 'Fjalla One', sans-serif;
     text-transform: uppercase;
 }
@@ -44,3 +49,6 @@ h2 {
     cursor: default;
 }
 
+#banner:hover{
+    cursor: pointer;
+}

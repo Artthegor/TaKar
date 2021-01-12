@@ -14,7 +14,8 @@ public class ClientManagement implements IClientManagement {
     public ClientManagement() {
     }
 
-    public Client registerUser(String name,
+    public Client registerUser(String username,
+                               String firstname,
                                String lastname,
                                String password,
                                //Date anniversaire,
@@ -27,8 +28,11 @@ public class ClientManagement implements IClientManagement {
                                String cp,
                                String pays)
     {
-        Client cli = registerUser(name, lastname,  password, sexe,
+        /*Client cli = registerUser(name, lastname,  password, sexe,
                 mail, telephone, adresse, ville, departement, cp, pays);
+
+        */
+
         return clientRepo.save(cli);
     }
 }

@@ -34,7 +34,8 @@ public class UserController {
 
 	@RequestMapping("registration")
 	public String registerUser(
-			@RequestParam(value = "name", required = false) String name,
+			@RequestParam(value = "username", required = false) String username,
+			@RequestParam(value = "firstname", required = false) String firstname,
 			@RequestParam(value = "lastname", required = false) String lastname,
 			@RequestParam(value = "password", required = false) String password,
 			//@RequestParam(value = "anniversaire", required = false) Date anniversaire,
@@ -49,7 +50,8 @@ public class UserController {
 			Model model
 	) {
 		System.out.println("Controller client");
-		if(name != null &&
+		if(username != null &&
+				firstname != null &&
 				lastname != null &&
 				password != null &&
 				//anniversaire != null &&
@@ -63,8 +65,8 @@ public class UserController {
 				pays != null
 		)
 		{
-			clientManager.registerUser(name, lastname, password, sexe,
-					mail, telephone, adresse, ville, departement, cp, pays);
+			clientManager.registerUser(username, firstname, lastname, password, sexe,
+					mail, telephone, adresse, ville, departement, cp, pays); //anniversaire à ajouter
 		}
 		return "registrationView";
 	}

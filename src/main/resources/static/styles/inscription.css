@@ -1,31 +1,19 @@
-body {
-    font-family: 'Noto Sans', sans-serif;
+div#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 
-
-
-form#formUser {
-    margin-left: 1.5em;
-    text-align: center;
-    margin-top: 15px;
+table#tableFormRegister {
+    margin: auto;
 }
 
-input#password {
-    margin-left: 1.5em;
+h1 {
+    margin-bottom: 0.5em;
 }
-
-#titlePage{
-    padding-top: 0.5em;
-}
-
-
-input#username{
-
-    margin-left: 3.2em;
-}
-
-#formUser .btn {
+#registerForm .btn {
     background: black;
     color: white;
     -webkit-box-shadow: 4px 4px 2px -1px rgba(123,31,31,1), -4px -4px 2px -1px rgba(32,67,98,1);
@@ -33,7 +21,7 @@ input#username{
     box-shadow: 4px 4px 2px -1px rgba(123,31,31,1), -4px -4px 2px -1px rgba(32,67,98,1);
 }
 
-#formUser .btn:hover{
+#registerForm .btn:hover{
     background: white;
     color: black;
     -webkit-box-shadow: -4px -4px 2px -1px rgba(123,31,31,1), 4px 4px 2px -1px rgba(32,67,98,1);
@@ -44,17 +32,32 @@ input#username{
     border-color: black;
 }
 
-#footer{
-    margin-bottom: 0;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
 #invisibleButton1{
     opacity: 0 !important;
 }
 #invisibleButton1:hover{
     cursor: default;
+}
+
+table#tableFormRegister label {
+    text-align: left !important;
+}
+
+div#contentInsc {
+    align-content: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#buttonsFormInscr{
+    margin-top:1em;
+    text-align: center;
+}
+
+div#footer {
+    position: unset !important;
+    margin-top: 5em;
 }
