@@ -4,10 +4,11 @@ import takar.model.Client;
 import java.util.Date;
 
 public interface IClientManagement {
-    public Client registerUser(String name,
+    public Client registerUser(String username,
+                               String firstname,
                                String lastname,
                                String password,
-                              // Date anniversaire,
+                               //Date anniversaire,
                                String sexe,
                                String mail,
                                String telephone,

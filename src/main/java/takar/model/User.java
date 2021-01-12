@@ -1,19 +1,17 @@
 package takar.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class User {
+public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	long userID;
 	
 	String username;
 	String password;
-
-	@OneToOne
-	Address address;
 	
 	public User(){}
 
@@ -36,13 +34,6 @@ public class User {
 		this.password = password;
 	}
 
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
 
 	public long getUserID() {
 		return userID;
