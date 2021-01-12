@@ -6,14 +6,7 @@ div#footer {
 }
 
 
-table#tableFormRegister {
-    margin: auto;
-}
-
-h1 {
-    margin-bottom: 0.5em;
-}
-#registerForm .btn {
+#rentForm .btn {
     background: black;
     color: white;
     -webkit-box-shadow: 4px 4px 2px -1px rgba(123,31,31,1), -4px -4px 2px -1px rgba(32,67,98,1);
@@ -21,7 +14,7 @@ h1 {
     box-shadow: 4px 4px 2px -1px rgba(123,31,31,1), -4px -4px 2px -1px rgba(32,67,98,1);
 }
 
-#registerForm .btn:hover{
+#rentForm .btn:hover{
     background: white;
     color: black;
     -webkit-box-shadow: -4px -4px 2px -1px rgba(123,31,31,1), 4px 4px 2px -1px rgba(32,67,98,1);
@@ -39,11 +32,10 @@ h1 {
     cursor: default;
 }
 
-table#tableFormRegister label {
+table#tableFormRent label {
     text-align: left !important;
 }
-
-div#contentInsc {
+div#contentRent {
     align-content: center;
 }
 
@@ -52,9 +44,12 @@ h1 {
     margin-bottom: 1em;
 }
 
-#buttonsFormInscr{
+#buttonsFormRent{
     margin-top:1em;
     text-align: center;
+}
+table#tableFormRent {
+    margin: auto;
 }
 
 div#footer {

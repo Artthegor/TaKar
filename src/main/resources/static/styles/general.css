@@ -48,3 +48,7 @@ h1{
 #invisibleButton2:hover{
     cursor: default;
 }
+
+#banner:hover{
+    cursor: pointer;
+ }
