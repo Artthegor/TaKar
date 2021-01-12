@@ -1,0 +1,28 @@
+
+P.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em
+}
+
+#contentFAQ {
+    margin-left: 4em;
+    margin-top: 3em;
+}
+
+.soussection {
+    margin-left: 1em !important;
+}
+
+.reponse {
+    font-style: italic;
+    margin-top: -1em !important;
+}
+
+.question {
+    font-weight: bold;
+}
+
+ul {
+    margin-top: -1em !important;
+}

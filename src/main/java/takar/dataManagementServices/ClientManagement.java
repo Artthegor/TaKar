@@ -4,13 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import takar.model.Client;
 import takar.repositories.ClientRepository;
-import java.util.Date;
 
 @Service
 public class ClientManagement implements IClientManagement {
 
     @Autowired
-    ClientRepository cientRepo;
+    ClientRepository clientRepo;
 
     public ClientManagement() {
     }
@@ -30,6 +29,6 @@ public class ClientManagement implements IClientManagement {
     {
         Client cli = registerUser(name, lastname,  password, sexe,
                 mail, telephone, adresse, ville, departement, cp, pays);
-        return cientRepo.save(cli);
+        return clientRepo.save(cli);
     }
 }
