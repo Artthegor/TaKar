@@ -1,9 +1,11 @@
 package takar.dataManagementServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import takar.model.Vehicle;
 import takar.repositories.VehicleRepository;
 
+@Service
 public class VehicleManagement implements IVehicleManagement{
 
     @Autowired
