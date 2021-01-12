@@ -6,6 +6,8 @@
 
 form#formUser {
     margin-left: 1.5em;
+    text-align: center;
+    margin-top: 15px;
 }
 
 input#PwdLabel {
