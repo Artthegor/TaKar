@@ -2,7 +2,7 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 
-#invisibleButton1,#invisibleButton2{
+#invisibleButton1, #invisibleButton2 {
     opacity: 0 !important;
 }
 
@@ -10,23 +10,24 @@ body {
     padding: 0;
 }
 
-.navbar{
-    background-color: black!important;
+.navbar {
+    background-color: black !important;
 }
 
-.navbar button{
+.navbar button {
     background: black;
-    border:none
+    border: none
 }
 
-.navbar a{
+.navbar a {
     background: black;
-    border:none;
+    border: none;
 }
 
-#invisibleButton1:hover{
+#invisibleButton1:hover {
     cursor: default;
 }
-#invisibleButton2:hover{
+
+#invisibleButton2:hover {
     cursor: default;
 }

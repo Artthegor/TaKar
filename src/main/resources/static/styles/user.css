@@ -3,8 +3,6 @@ body {
 }
 
 
-
-
 form#formUser {
     margin-left: 1.5em;
     text-align: center;
@@ -15,12 +13,12 @@ input#password {
     margin-left: 1.5em;
 }
 
-#titlePage{
+#titlePage {
     padding-top: 0.5em;
 }
 
 
-input#username{
+input#username {
 
     margin-left: 3.2em;
 }
@@ -28,23 +26,23 @@ input#username{
 #formUser .btn {
     background: black;
     color: white;
-    -webkit-box-shadow: 4px 4px 2px -1px rgba(123,31,31,1), -4px -4px 2px -1px rgba(32,67,98,1);
-    -moz-box-shadow: 4px 4px 2px -1px rgba(123,31,31,1), -4px -4px 2px -1px rgba(32,67,98,1);
-    box-shadow: 4px 4px 2px -1px rgba(123,31,31,1), -4px -4px 2px -1px rgba(32,67,98,1);
+    -webkit-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
 }
 
-#formUser .btn:hover{
+#formUser .btn:hover {
     background: white;
     color: black;
-    -webkit-box-shadow: -4px -4px 2px -1px rgba(123,31,31,1), 4px 4px 2px -1px rgba(32,67,98,1);
-    -moz-box-shadow:-4px -4px 2px -1px rgba(123,31,31,1), 4px 4px 2px -1px rgba(32,67,98,1);
-    box-shadow: -4px -4px 2px -1px rgba(123,31,31,1), 4px 4px 2px -1px rgba(32,67,98,1);
+    -webkit-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
     border-style: solid;
     border-width: 1px;
     border-color: black;
 }
 
-#footer{
+#footer {
     margin-bottom: 0;
     position: fixed;
     left: 0;
@@ -52,9 +50,10 @@ input#username{
     right: 0;
 }
 
-#invisibleButton1{
+#invisibleButton1 {
     opacity: 0 !important;
 }
-#invisibleButton1:hover{
+
+#invisibleButton1:hover {
     cursor: default;
 }
