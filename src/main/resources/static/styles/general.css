@@ -1,13 +1,3 @@
-body {
-    font-family: 'Noto Sans', sans-serif;
-}
-
-h2 {
-
-    padding-top: 0.5em;
-    font-family: 'Fjalla One', sans-serif;
-    text-transform: uppercase;
-}
 
 #invisibleButton1,#invisibleButton2{
     opacity: 0 !important;
