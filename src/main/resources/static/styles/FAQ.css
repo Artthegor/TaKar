@@ -1,3 +1,9 @@
+div#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
 P.blocktext {
     margin-left: auto;
@@ -25,4 +31,8 @@ P.blocktext {
 
 ul {
     margin-top: -1em !important;
+}
+div#footer {
+    position: unset !important;
+    margin-top: 5em;
 }
