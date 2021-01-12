@@ -1,5 +1,5 @@
 
-#invisibleButton{
+#invisibleButton1,#invisibleButton2{
     opacity: 0 !important;
 }
 
@@ -25,4 +25,11 @@
 .navbar a{
     background: black;
     border:none;
+}
+
+#invisibleButton1:hover{
+    cursor: default;
+}
+#invisibleButton2:hover{
+    cursor: default;
 }
