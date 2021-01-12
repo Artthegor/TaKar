@@ -16,7 +16,7 @@ form#formUser {
     margin-top: 15px;
 }
 
-input#PwdLabel {
+input#password {
     margin-left: 1.5em;
 }
 
@@ -25,7 +25,7 @@ input#PwdLabel {
 }
 
 
-#usrLabel{
+input#username{
 
     margin-left: 1.2em;
 }
