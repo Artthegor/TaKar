@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../static/styles/general.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
 
@@ -46,21 +45,6 @@
 <hr/>
     </div>
 
-<table>
-  <thead>
-    <tr>
-      <th th:text="Username">Username</th>
-      <th th:text="Password">Password</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr th:each="prod: ${users}">
-      <td th:text="${prod.username}">username</td>
-      <td th:text="${prod.password}">password</td>
-    </tr>
-  </tbody>
-</table>
 <hr/>
 <a href="/" >Retour à l'accueil</a><br/>
   </body>
