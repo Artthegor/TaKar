@@ -10,12 +10,13 @@ import java.util.Date;
 public class ClientManagement implements IClientManagement {
 
     @Autowired
-    ClientRepository cientRepo;
+    ClientRepository clientRepo;
 
     public ClientManagement() {
     }
 
-    public Client registerUser(String name,
+    public Client registerUser(String username,
+                               String firstname,
                                String lastname,
                                String password,
                                //Date anniversaire,
@@ -28,8 +29,12 @@ public class ClientManagement implements IClientManagement {
                                String cp,
                                String pays)
     {
-        Client cli = registerUser(name, lastname,  password, sexe,
+        //    public Client(String username, String password, String name, String firstname, String sex, String description, String mail, String phoneNumber) {
+        Client cli = new Client(username, firstname, lastname, password, sexe, mail, telephone, adresse, ville, departement, cp, pays);
+        /*Client cli = registerUser(name, lastname,  password, sexe,
                 mail, telephone, adresse, ville, departement, cp, pays);
-        return cientRepo.save(cli);
+        */
+
+        return clientRepo.save(cli);
     }
 }
