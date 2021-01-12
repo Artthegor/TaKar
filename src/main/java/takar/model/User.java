@@ -1,6 +1,7 @@
 package takar.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -13,16 +14,15 @@ public class User {
 
 	@OneToOne
 	Address address;
-
 	
 	public User(){}
-	
+
 	public User(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}

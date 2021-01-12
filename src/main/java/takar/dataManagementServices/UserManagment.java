@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import takar.model.User;
 import takar.repositories.UserRepository;
 
+
 @Service
 public class UserManagment implements IUserManagment {
 	@Autowired

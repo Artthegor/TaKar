@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Recherche de Vehicule</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+<body>
+(String brand, String model, Integer placeNumber, String description, double price, String infoForClient, int note)
+<table>
+    <thead>
+    <tr>
+        <th th:text="model">Modele</th>
+        <th th:text="brand">Brand</th>
+        <th th:text="description">Description</th>
+        <th th:text="note">note</th>
+        <th th:text="price">price</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="prod: ${vehicle}">
+        <td th:text="${prod.model}">username</td>
+        <td th:text="${prod.brand}">password</td>
+        <td th:text="${prod.description}">Description</td>
+        <td th:text="${prod.price}">price</td>
+    </tr>
+    </tbody>
+</table>
+<hr/>
+<a href="/" >Retour à l'accueil</a><br/>
+</body>
+</body>
+</html>
