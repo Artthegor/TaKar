@@ -2,12 +2,7 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 
-#titlePage{
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    font-family: 'Fjalla One', sans-serif;
-    text-transform: uppercase;
-}
+
 
 
 form#formUser {

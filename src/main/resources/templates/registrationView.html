@@ -2,35 +2,140 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Inscription</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../../styles/inscription.css"/>
     <link rel="stylesheet" href="../../styles/general.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
 </head>
 <body>
+<div id="header" class="jumbotron text-center" style="margin-bottom:0">
+    <img class="img-fluid" src="../../images/testBanner3.png" alt="takarLogo" width="1920"
+         height="200"/>
+</div>
 
-<form method="get" action="registration">
-    <h1>Ajout d'un nouvel utilisateur</h1>
-    <label>Nom :</label><input type="text" id="name" name="name"/><br/>
-    <label>Prénom :</label><input type="text" id="lastame" name="lastname"/><br/>
-    <label>Mot de passe :</label><input type="password" id="password" name="password"/><br/>
-<!--    <label>Anniversaire :</label><input type="date" id="anniversaire" name="anniversaire"/><br/>-->
-    <label>Sexe :</label><input type="text" id="sexe" name="sexe"/><br/>
 
-    <label>Mail :</label><input type="text" id="mail" name="mail"/><br/>
-    <label>Téléphone :</label><input type="text" id="telephone" name="telephone"/><br/>
-    <label>Adresse :</label><input type="text" id="adresse" name="adresse"/><br/>
-    <label>Ville :</label><input type="text" id="ville" name="ville"/><br/>
-    <label>Département :</label><input type="text" id="departement" name="departement"/><br/>
-    <label>Code postal :</label><input type="text" id="cp" name="cp"/><br/>
-    <label>Pays :</label><input type="text" id="pays" name="pays"/><br/>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+    <div>
+        <a href="../vehicle/search" class="btn btn-dark">Rechercher</a>
+        <a href="../vehicle/rent" class="btn btn-dark">Louer</a>
+        <a href="../contact" class="btn btn-dark">Contacter</a>
 
-    <br/>
-    <input type='submit' name="envoyer"/>
-</form>
+        <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
+        <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
 
-<hr/>
-<a href="/" >Retour à l'accueil</a><br/>
+        <a href="" class="btn btn-dark">Connexion</a>
+        <a href="./registration" class="btn btn-dark">Inscription</a>
+    </div>
+</nav>
+
+<div id="contentInsc">
+    <form method="get" action="registration" id="registerForm">
+        <h1>Ajout d'un nouvel utilisateur</h1>
+        <table id="tableFormRegister">
+            <tr>
+                <td>
+                    <label>Nom :</label>
+                </td>
+                <td>
+                    <input type="text" id="name" name="name"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Prénom :</label>
+                </td>
+                <td>
+                    <input type="text" id="lastame" name="lastname"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Mot de passe :</label>
+                </td>
+                <td>
+                    <input type="password" id="password" name="password"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--    <label>Anniversaire :</label><input type="date" id="anniversaire" name="anniversaire"/><br/>-->
+                    <label>Sexe :</label>
+                </td>
+                <td>
+                    <input type="text" id="sexe" name="sexe"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Mail :</label>
+                </td>
+                <td>
+                    <input type="text" id="mail" name="mail"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Téléphone :</label>
+                </td>
+                <td>
+                    <input type="text" id="telephone" name="telephone"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Adresse :</label>
+                </td>
+                <td>
+                    <input type="text" id="adresse" name="adresse"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Ville :</label>
+                </td>
+                <td>
+                    <input type="text" id="ville" name="ville"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Département :</label>
+                </td>
+                <td>
+                    <input type="text" id="departement" name="departement"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Code postal :</label>
+                </td>
+                <td>
+                    <input type="text" id="cp" name="cp"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Pays :</label>
+                </td>
+                <td>
+                    <input type="text" id="pays" name="pays"/><br/>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <div id="buttonsFormInscr">
+            <input type='submit' class="btn btn-lg btn-default" name="envoyer"/>
+            <button id="invisibleButton1" type='button' name="annuler" class="btn btn-lg btn-default">Annuler</button>
+            <button type='button' name="annuler" class="btn btn-lg btn-default" onclick="window.location.href = '/';">
+                Annuler
+            </button>
+        </div>
+
+    </form>
+</div>
+<div id="footer" class="jumbotron text-center" style="margin-bottom:0">
+    <p>Tous droits réservés - © Takar 2020/2021 </p>
+</div>
 </body>
 </html>

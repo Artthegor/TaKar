@@ -6,8 +6,6 @@ body {
     opacity: 0 !important;
 }
 
-
-
 #header {
     padding: 0;
 }
@@ -32,4 +30,3 @@ body {
 #invisibleButton2:hover{
     cursor: default;
 }
-

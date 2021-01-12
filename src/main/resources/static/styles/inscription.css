@@ -1,0 +1,57 @@
+div#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+table#tableFormRegister {
+    margin: auto;
+}
+
+h1 {
+    margin-bottom: 0.5em;
+}
+#registerForm .btn {
+    background: black;
+    color: white;
+    -webkit-box-shadow: 4px 4px 2px -1px rgba(123,31,31,1), -4px -4px 2px -1px rgba(32,67,98,1);
+    -moz-box-shadow: 4px 4px 2px -1px rgba(123,31,31,1), -4px -4px 2px -1px rgba(32,67,98,1);
+    box-shadow: 4px 4px 2px -1px rgba(123,31,31,1), -4px -4px 2px -1px rgba(32,67,98,1);
+}
+
+#registerForm .btn:hover{
+    background: white;
+    color: black;
+    -webkit-box-shadow: -4px -4px 2px -1px rgba(123,31,31,1), 4px 4px 2px -1px rgba(32,67,98,1);
+    -moz-box-shadow:-4px -4px 2px -1px rgba(123,31,31,1), 4px 4px 2px -1px rgba(32,67,98,1);
+    box-shadow: -4px -4px 2px -1px rgba(123,31,31,1), 4px 4px 2px -1px rgba(32,67,98,1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+#invisibleButton1{
+    opacity: 0 !important;
+}
+#invisibleButton1:hover{
+    cursor: default;
+}
+
+table#tableFormRegister label {
+    text-align: left !important;
+}
+
+div#contentInsc {
+    align-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#buttonsFormInscr{
+    margin-top:0.5em;
+    text-align: center;
+}
