@@ -28,9 +28,10 @@ public class ClientManagement implements IClientManagement {
                                String cp,
                                String pays)
     {
+        //    public Client(String username, String password, String name, String firstname, String sex, String description, String mail, String phoneNumber) {
+        Client cli = new Client(username, firstname, lastname, password, sexe, mail, telephone, adresse, ville, departement, cp, pays);
         /*Client cli = registerUser(name, lastname,  password, sexe,
                 mail, telephone, adresse, ville, departement, cp, pays);
-
         */
 
         return clientRepo.save(cli);
