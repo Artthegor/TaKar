@@ -3,18 +3,43 @@
 <head> 
     <title>Ajout d'un utilisateur</title> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/styles/user.html.css">
+    <link rel="stylesheet" href="../static/styles/general.css">
 </head>
-<body>
 
-	<form method="get" action="adduser">
-		<h1>Saisie d'un utilisateur</h1>
-		<label>Username :</label><input type="text" id="username" name="username"/><Br/>
-		<label>Password :</label><input type="text" id="password" name="password"/><br/>
+<div id="header" class="jumbotron text-center" style="margin-bottom:0">
+    <img class="img-fluid" alt="Responsive image" src="../static/images/testBanner3.png" alt="takarLogo" width="1920"
+         height="200">
+</div>
+
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+    <div>
+        <button type="button" class="btn btn-dark">Rechercher</button>
+        <button type="button" class="btn btn-dark">Louer</button>
+        <button type="button" class="btn btn-dark">Contacter</button>
+
+        <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
+        <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
+
+        <a href="authentication/connexion" class="btn btn-dark">Connexion</a>
+        <a href="authentication/registration" class="btn btn-dark">Inscription</a>
+    </div>
+</nav>
+
+<body>
+    <div id="contentUsr">
+	<form method="get" action="adduser" id="formUser">
+		<h1 id="titlePage">Connexion à votre compte TAKAR</h1>
+		<label>Username :</label><input id="usrLabel" type="text"  class="label label-default" id="username" name="username"/><Br/>
+		<label>Password :</label><input id="PwdLabel" type="text"  class="label label-default" id="password" name="password"/><br/>
 		<br/>
-		<input type='submit' name="envoyer"/>
+		<input type='submit' name="envoyer" class="btn btn-lg btn-default"/>
 	</form>
 
 <hr/>
+    </div>
 
 <table>
   <thead>

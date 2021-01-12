@@ -1,0 +1,35 @@
+
+#invisibleButton1,#invisibleButton2{
+    opacity: 0 !important;
+}
+
+#footer{
+    margin-bottom: 0;
+    background-color: black;
+    color:white;
+}
+
+#header {
+    padding: 0;
+}
+
+.navbar{
+    background-color: black!important;
+}
+
+.navbar button{
+    background: black;
+    border:none
+}
+
+.navbar a{
+    background: black;
+    border:none;
+}
+
+#invisibleButton1:hover{
+    cursor: default;
+}
+#invisibleButton2:hover{
+    cursor: default;
+}
