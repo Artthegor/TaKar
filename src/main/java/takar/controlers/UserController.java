@@ -50,6 +50,7 @@ public class UserController {
 			Model model
 	) {
 		System.out.println("Controller client");
+		System.out.println(username+ " " +firstname+ " " +lastname+ " " +password+ " " +sexe+ " " +mail+ " " +telephone+ " " +adresse+ " " +ville+ " " +departement+ " " +cp+ " " +pays);
 		if(username != null &&
 				firstname != null &&
 				lastname != null &&

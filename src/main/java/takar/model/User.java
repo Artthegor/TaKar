@@ -6,10 +6,11 @@ import java.util.Date;
 
 @Entity
 public class User implements Serializable {
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	long userID;
-	
+
 	String username;
 	String password;
 	
@@ -35,10 +36,10 @@ public class User implements Serializable {
 	}
 
 
-	public long getUserID() {
+	public long getUserID(){
 		return userID;
 	}
-	public void setUserID(long userID) {
+	public void setUserID(long userID){
 		this.userID = userID;
 	}
 	

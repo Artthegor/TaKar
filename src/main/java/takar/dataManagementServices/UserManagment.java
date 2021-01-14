@@ -8,15 +8,13 @@ import takar.repositories.UserRepository;
 
 @Service
 public class UserManagment implements IUserManagment {
-	@Autowired
-	UserRepository userRepo;
 
+	UserRepository userRepo;
 	
 	public UserManagment()
 	{	}
 
-	public User addUser(String username, String password )
-	{
+	public User addUser(String username, String password ) {
 		User usr = addUser(username,  password);
 		return userRepo.save(usr);
 	}
