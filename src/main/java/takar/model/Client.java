@@ -1,22 +1,21 @@
 package takar.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Client extends User {
+public class Client implements Serializable {
 
-    /*@Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    long clientID;*/
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    long userID;
 
-    String username;
+    @OneToOne
+    User user;
+
     String firstname;
     String lastname;
-    String password;
     String sexe;
     String mail;
     String telephone;
@@ -30,16 +29,15 @@ public class Client extends User {
 
     //Date anniversaire;
 
-    public Client(){}
+    public Client(){
+    }
 
 
-    public Client(String username, String firstname, String lastname, String password, String sexe, String mail, String telephone, String adresse, String ville, String departement, String cp, String pays, String description) {
+    public Client(String firstname, String lastname, String sexe, String mail, String telephone, String adresse, String ville, String departement, String cp, String pays, User user, String description) {
         //, Date birthday
-        super(username, password);
-        this.username = username;
+        this.user = user;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.password = password;
         this.sexe = sexe;
         this.mail = mail;
         this.telephone = telephone;
@@ -54,19 +52,16 @@ public class Client extends User {
         //this.anniversaire = anniversaire;
     }
 
-    public Client(String username, String firstname, String lastname, String password, String sexe, String mail, String telephone, String adresse, String ville, String departement, String cp, String pays) {
+    public Client(String firstname, String lastname,String sexe, String mail, String telephone, String adresse, String ville, String departement, String cp, String pays, User user) {
         //this(username, password, name, firstname, sex, "", mail, phoneNumber, birthday);
-        this(username, firstname, lastname, password, sexe, mail, telephone, adresse, ville, departement, cp, pays, "");
+        this(firstname, lastname, sexe, mail, telephone, adresse, ville, departement, cp, pays, user, "");
     }
 
     /*public Date getBirthday() {
         return birthday;
     }*/
 
-    @Override
-    public String getUsername() {
-        return username;
-    }
+
 
     public String getFirstname() {
         return firstname;
@@ -74,11 +69,6 @@ public class Client extends User {
 
     public String getLastname() {
         return lastname;
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
     }
 
     public String getSexe() {
@@ -117,22 +107,12 @@ public class Client extends User {
         return description;
     }
 
-    @Override
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
-    }
-
-    @Override
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public void setSexe(String sexe) {

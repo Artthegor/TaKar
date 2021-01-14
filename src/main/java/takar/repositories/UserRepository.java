@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import takar.model.User;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Long>  {
-	public User findByUsername(String username);
+public interface UserRepository extends CrudRepository<User, Long> {
+    public User findByUsername(String username);
 }
