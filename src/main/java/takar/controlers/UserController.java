@@ -21,13 +21,12 @@ public class UserController {
 
 
 	@RequestMapping("connexion")
-	public String connexionUser(@RequestParam(value="username", required=false) String username, @RequestParam(value="password", required=false) String password, Model model)
-	{
-		if(username != null && password != null)
-		{
-			userManager.addUser(username, password);
+	public String connexionUser(@RequestParam(value="username", required=false) String username, @RequestParam(value="password", required=false) String password, Model model) {
+
+		if(username != null && password != null) {
+			userManager.logUser(username, password);
 		}
-		//Iterable<User> allUser =userManager.getAllUsers();
+		//Iterable<User> allUser = userManager.getAllUsers();
 		//model.addAttribute("users",allUser);
 		return "userView";
 	}
