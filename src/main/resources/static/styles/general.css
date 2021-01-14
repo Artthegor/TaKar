@@ -54,3 +54,7 @@ h1 {
 #banner:hover {
     cursor: pointer;
 }
+
+.Justifier {
+    text-align: justify;
+}
