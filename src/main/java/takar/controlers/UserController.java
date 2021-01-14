@@ -21,7 +21,7 @@ public class UserController {
 
 
 	@RequestMapping("connexion")
-	public String addUser(@RequestParam(value="username", required=false) String username, @RequestParam(value="password", required=false) String password,@RequestParam(value="choosenAddress", required=false) Integer idAddress, Model model)
+	public String connexionUser(@RequestParam(value="username", required=false) String username, @RequestParam(value="password", required=false) String password, Model model)
 	{
 		if(username != null && password != null)
 		{
