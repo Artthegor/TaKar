@@ -10,20 +10,21 @@
 <table>
     <thead>
     <tr>
-        <th th:text="model">Modele</th>
-        <th th:text="brand">Brand</th>
-        <th th:text="description">Description</th>
-        <th th:text="note">note</th>
-        <th th:text="price">price</th>
+        <th th:text="Modèle">Modele</th>
+        <th th:text="Marque">Brand</th>
+        <th th:text="Description">Description</th>
+        <th th:text="Note">note</th>
+        <th th:text="Prix">price</th>
     </tr>
     </thead>
 
     <tbody>
     <tr th:each="prod: ${vehicle}">
-        <td th:text="${prod.model}">username</td>
-        <td th:text="${prod.brand}">password</td>
-        <td th:text="${prod.description}">Description</td>
-        <td th:text="${prod.price}">price</td>
+        <td th:text="${prod.model}"></td>
+        <td th:text="${prod.brand}"></td>
+        <td th:text="${prod.description}"></td>
+        <td th:text="$prod.note}"></td>
+        <td th:text="${prod.price}"></td>
     </tr>
     </tbody>
 </table>
