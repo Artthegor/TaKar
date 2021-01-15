@@ -31,3 +31,7 @@ body {
 #invisibleButton2:hover {
     cursor: default;
 }
+
+div#footer {
+    position: inherit !important;
+}
