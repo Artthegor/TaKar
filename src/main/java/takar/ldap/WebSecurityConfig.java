@@ -19,7 +19,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/", "/authentication/registration").permitAll();
         http.authorizeRequests().antMatchers("/vehicle/rent", "vehicle/search").authenticated();
         http.formLogin().loginPage("/authentication/connexion").permitAll().and().logout().logoutSuccessUrl("/");
-
     }
 
     @Override
@@ -30,8 +29,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .groupSearchBase("ou=groups")
                 .contextSource(contextSource())
                 .passwordCompare()
-                .passwordEncoder(new LdapShaPasswordEncoder())
-                .passwordAttribute("userPassword");
+                //.passwordEncoder(new LdapShaPasswordEncoder())
+                .passwordAttribute("password");
     }
 
     @Bean

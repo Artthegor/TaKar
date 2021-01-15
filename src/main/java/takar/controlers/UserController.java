@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import takar.dataManagementServices.IClientManagement;
 import takar.dataManagementServices.IUserManagment;
+import takar.model.User;
 
 import java.util.Date;
 
@@ -24,7 +25,13 @@ public class UserController {
 	public String connexionUser(@RequestParam(value="username", required=false) String username, @RequestParam(value="password", required=false) String password, Model model) {
 
 		if(username != null && password != null) {
-			userManager.logUser(username, password);
+			User user = userManager.logUser(username, password);
+			if(user == null || !password.equals(user.getPassword())){
+				System.out.println("Identifiant ou mot de passe incorrect.");
+			}
+			else{
+			}
+
 		}
 		//Iterable<User> allUser = userManager.getAllUsers();
 		//model.addAttribute("users",allUser);

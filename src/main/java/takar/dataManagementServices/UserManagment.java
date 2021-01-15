@@ -20,10 +20,10 @@ public class UserManagment implements IUserManagment {
 	public User logUser(String username, String password ) {
 		System.out.println(username + "   " + password);
 		System.out.println("LOGIN");
-		//System.out.println(userRepo.count());
+		System.out.println(userRepo.count());
 
 		User user = userRepo.findByUsername(username);
-		System.out.println(user.getUsername() + "  " + user.getPassword());
+		//System.out.println(user.getUsername() + "  " + user.getPassword());
 		return user;
 	}
 	
