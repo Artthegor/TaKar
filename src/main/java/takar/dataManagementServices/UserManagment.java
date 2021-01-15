@@ -19,13 +19,12 @@ public class UserManagment implements IUserManagment {
 
 	public User logUser(String username, String password ) {
 		System.out.println(username + "   " + password);
-		System.out.println("LOGIN");
-		System.out.println(userRepo.count());
+		System.out.println(userRepo.findByUsername(username).getUsername());
 
 		User user = userRepo.findByUsername(username);
 		return user;
 	}
-	
+
 	public Iterable<User> getAllUsers()
 	{
 		return userRepo.findAll();

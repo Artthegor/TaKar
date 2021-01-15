@@ -1,5 +1,6 @@
 package takar.controlers;
 
+import com.unboundid.ldap.sdk.LDAPConnection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import takar.dataManagementServices.IClientManagement;
 import takar.dataManagementServices.IUserManagment;
 import takar.model.User;
+
+import takar.repositories.UserRepository;
+
 
 import java.util.Date;
 
@@ -20,23 +24,29 @@ public class UserController {
 	@Autowired
 	private IClientManagement clientManager;
 
+	@Autowired
+	private UserRepository userRepo;
+
 
 	@RequestMapping("connexion")
 	public String connexionUser(@RequestParam(value="username", required=false) String username, @RequestParam(value="password", required=false) String password, Model model) {
 
 		if(username != null && password != null) {
 			User user = userManager.logUser(username, password);
+
 			if(user == null || !password.equals(user.getPassword())){
 				System.out.println("Identifiant ou mot de passe incorrect.");
+				model.addAttribute("isConnected", false);
+				return "userView";
 			}
 			else{
-				
+				model.addAttribute("user", user.getUsername());
+				model.addAttribute("isConnected", true);
+				return "connexionValid";
 			}
-
 		}
-		//Iterable<User> allUser = userManager.getAllUsers();
-		//model.addAttribute("users",allUser);
 		return "userView";
+
 	}
 
 	@RequestMapping("registration")

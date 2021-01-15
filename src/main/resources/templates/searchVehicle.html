@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     <link rel="shortcut icon" type="image/png" href="../../images/t.png"/>
 </head>
+
+<script>
+    if(sessionStorage.getItem("isConnect") != "true") {
+        document.location.href="/authentication/connexion";
+    }
+
+</script>
 <body>
 <table>
     <thead>
