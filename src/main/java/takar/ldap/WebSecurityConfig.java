@@ -19,6 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/", "/authentication/registration").permitAll();
         http.authorizeRequests().antMatchers("/vehicle/rent", "vehicle/search").authenticated();
         http.formLogin().loginPage("/authentication/connexion").permitAll().and().logout().logoutSuccessUrl("/");
+
     }
 
     @Override

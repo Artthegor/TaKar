@@ -15,7 +15,7 @@ h1 {
     text-transform: uppercase;
 }
 
-#invisibleButton1, #invisibleButton2 {
+#invisibleButton1, #invisibleButton2, #invisibleButton3 {
     opacity: 0 !important;
 }
 
