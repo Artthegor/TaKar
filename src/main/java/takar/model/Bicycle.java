@@ -1,12 +1,15 @@
 package takar.model;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Bicycle extends Vehicle{
     String type, size;
     Boolean isElectrical;
 
+    @OneToOne
+    Vehicle vehicle;
 
     public Bicycle() {}
 

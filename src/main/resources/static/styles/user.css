@@ -9,18 +9,8 @@ form#formUser {
     margin-top: 15px;
 }
 
-input#password {
-    margin-left: 1.5em;
-}
-
 #titlePage {
     padding-top: 0.5em;
-}
-
-
-input#username {
-
-    margin-left: 3.2em;
 }
 
 #formUser .btn {
@@ -56,4 +46,14 @@ input#username {
 
 #invisibleButton1:hover {
     cursor: default;
+}
+table#tableFormConnexion {
+    margin: auto;
+}
+
+table#tableFormConnexion label {
+    text-align: left !important;
+}
+table#tableFormConnexion {
+    margin-bottom: 1.5em;
 }

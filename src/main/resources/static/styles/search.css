@@ -1,0 +1,10 @@
+table#tableSearch {
+    margin: auto;
+    margin-top: 2em;
+}
+
+#tableSearch th {
+    padding: 1.5em;
+    text-transform: capitalize;
+    border-style: solid;
+}

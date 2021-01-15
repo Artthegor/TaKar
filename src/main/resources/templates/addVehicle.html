@@ -35,8 +35,8 @@
 </nav>
 
 <div id="contentRent">
-    <form method="get" action="addVehicle" id="rentForm">
-        <h1>Formulaire de mise en location d'un véhicule</h1>
+    <form method="get" action="rent" id="rentForm">
+        <h1>Formulaire de mise en location d'une voiture</h1>
         <table id="tableFormRent">
             <tr>
                 <td>
@@ -92,6 +92,38 @@
                 </td>
                 <td>
                     <input type="text" id="trunkVolume" name="trunkVolume"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Prix :</label>
+                </td>
+                <td>
+                    <input type="text" id="price" name="price"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Plaque d'immatriculation :</label>
+                </td>
+                <td>
+                    <input type="text" id="licensePlate" name="licensePlate"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Description</label>
+                </td>
+                <td>
+                    <input type="text" id="description" name="description"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Info Pour le client :</label>
+                </td>
+                <td>
+                    <input type="text" id="infoForClient" name="infoForClient"/><br/>
                 </td>
             </tr>
         </table>

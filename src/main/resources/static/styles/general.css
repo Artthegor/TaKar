@@ -1,3 +1,29 @@
+@font-face {
+    font-family: 'Noto Sans';
+    src: URL('../fonts/NotoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans Bold';
+    src: URL('../fonts/NotoSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans Italic';
+    src: URL('../fonts/NotoSans-Italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Noto Sans BoldItalic';
+    src: URL('../fonts/NotoSans-BoldItalic.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Fjalla One';
+    src: URL('../fonts/FjallaOne-Regular.ttf') format('truetype');
+}
+
+
 body {
     font-family: 'Noto Sans', sans-serif;
 }
@@ -57,4 +83,16 @@ h1 {
 
 .Justifier {
     text-align: justify;
+}
+
+div#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+div#header {
+    background-color: #282828;
 }

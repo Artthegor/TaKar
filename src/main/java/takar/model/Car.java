@@ -1,25 +1,30 @@
 package takar.model;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Car extends Vehicle {
     String year, motorization, power, licensePlate;
-    double trunkVolume;
+    Double trunkVolume;
+
+    @OneToOne
+    Vehicle vehicle;
 
     public Car(){}
 
-    public Car(String brand, String model, int placeNumber, double price, String infoForClient, String description, int note, String year, String motorization, String power, String licensePlate, double trunkVolume){
+    public Car(String brand, String model, Integer placeNumber, Double price, String infoForClient, String description, Integer note, String year, String motorization, String power, String licensePlate, Double trunkVolume,Vehicle vehicle){
         super(brand, model, placeNumber, price, infoForClient, description, note);
         this.licensePlate = licensePlate;
         this.motorization = motorization;
         this.power = power;
         this.trunkVolume = trunkVolume;
         this.year = year;
+        this.vehicle = vehicle;
     }
 
-    public Car(String brand, String model, int placeNumber, double price, String infoForClient, String year, String motorization, String power, String licensePlate, double trunkVolume){
-        this(brand, model, placeNumber, price, infoForClient, "", -1, year, motorization,power, licensePlate, trunkVolume);
+    public Car(String brand, String model, Integer placeNumber, Double price, String infoForClient, String year, String motorization, String power, String licensePlate, Double trunkVolume, Vehicle vehicle){
+        this(brand, model, placeNumber, price, infoForClient, "", -1, year, motorization,power, licensePlate, trunkVolume, vehicle);
     }
 
     public double getTrunkVolume() {

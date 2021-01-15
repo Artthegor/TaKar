@@ -1,11 +1,15 @@
 package takar.model;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Trailer extends Vehicle {
     double capacity, weight, length;
     String licensePlate;
+
+    @OneToOne
+    Vehicle vehicle;
 
     public Trailer(){}
 
