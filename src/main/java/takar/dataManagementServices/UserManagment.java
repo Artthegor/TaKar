@@ -23,7 +23,6 @@ public class UserManagment implements IUserManagment {
 		System.out.println(userRepo.count());
 
 		User user = userRepo.findByUsername(username);
-		//System.out.println(user.getUsername() + "  " + user.getPassword());
 		return user;
 	}
 	

@@ -28,12 +28,8 @@ public class VehicleController {
     }
 
     @RequestMapping("search")
-    public String look4vehicle(@RequestParam(value="brand", required=false) String brand, @RequestParam(value="model", required=false) String model, @RequestParam(value="placeNumber", required=false) Integer placeNumber, @RequestParam(value="description", required=false) String description, @RequestParam(value="price", required=false) Double price, @RequestParam(value="infoForClient", required=false) String infoForClient, @RequestParam(value="note", required=false) Integer note, Model modell)
+    public String look4vehicle(Model modell)
     {
-        if(brand != null && model != null && placeNumber > 0 && description != null && price > 0 && infoForClient != null) {
-            vehicleManager.addVehicle(brand, model, placeNumber, description, price, infoForClient, note);
-        }
-
         //(String brand, String model, Integer placeNumber, String description, double price, String infoForClient, int note)
         Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
         modell.addAttribute("vehicle", allVehicle);
