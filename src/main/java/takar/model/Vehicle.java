@@ -16,6 +16,9 @@ public class Vehicle {
     @OneToOne
     Address address;
 
+    //@OneToMany C'est peut être celui là
+    @ManyToOne
+    User user;
     public Vehicle(){}
 
     public Vehicle(String brand, String model, int placeNumber, double price, String infoForClient, String description, int note){
