@@ -3,9 +3,8 @@ table#tableSearch {
     margin-top: 2em;
 }
 
-#tableSeach th {
+#tableSearch th {
     padding: 1.5em;
     text-transform: capitalize;
     border-style: solid;
 }
-
