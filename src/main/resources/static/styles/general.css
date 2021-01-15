@@ -26,6 +26,9 @@
 
 body {
     font-family: 'Noto Sans', sans-serif;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 h2 {
@@ -42,6 +45,10 @@ h1 {
 }
 
 #invisibleButton1, #invisibleButton2, #invisibleButton3 {
+    opacity: 0 !important;
+}
+
+.invisibleButton{
     opacity: 0 !important;
 }
 

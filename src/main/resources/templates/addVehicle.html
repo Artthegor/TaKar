@@ -9,11 +9,27 @@
     <link rel="shortcut icon" type="image/png" href="../../images/t.png"/>
 </head>
 <script>
-    if(sessionStorage.getItem("isConnect") != "true") {
-        document.location.href="/authentication/connexion";
-    }
+if(sessionStorage.getItem("isConnect") != "true") {
+    document.location.href="/authentication/connexion";
+}
+    function formBicycle(checkbox){
+        document.getElementById('rentFormBicycle').style.display = "block";
+        document.getElementById('rentFormCar').style.display = "none";
+        document.getElementById('rentFormTrailer').style.display = "none";
 
+    }
+    function formCar(checkbox){
+        document.getElementById('rentFormBicycle').style.display = "none";
+        document.getElementById('rentFormCar').style.display = "block";
+        document.getElementById('rentFormTrailer').style.display = "none";
+    }
+    function formTrailer(checkbox){
+        document.getElementById('rentFormBicycle').style.display = "none";
+        document.getElementById('rentFormCar').style.display = "none";
+        document.getElementById('rentFormTrailer').style.display = "block";
+    }
 </script>
+
 <body>
 <div id="header" class="jumbotron text-center" style="margin-bottom:0">
     <a href="/"> <img id="banner" class="img-fluid" src="../../images/testBanner3.png" alt="takarLogo" width="1920"
@@ -26,18 +42,106 @@
         <a href="" class="btn btn-dark">Louer</a>
         <a href="../contact.html" class="btn btn-dark">Contacter</a>
 
-        <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
-        <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
+        <button type="button" class="invisibleButton btn btn-dark"></button>
+        <button type="button" class="invisibleButton btn btn-dark"></button>
 
         <a href="../authentication/connexion" class="btn btn-dark">Connexion</a>
         <a href="../authentication/registration" class="btn btn-dark">Inscription</a>
     </div>
 </nav>
-
+<div>
+    <tr>
+        <input type="radio" checked = "true"  onclick="formBicycle()" name = "rentFormCheck"/> MOTO
+        <input type="radio" onclick="formCar()" name = "rentFormCheck"/> VOITURE
+        <input type="radio" onclick="formTrailer()" name = "rentFormCheck"/> REMORQUE
+    </tr>
+</div>
+<!--
+FORMULAIRE MOTO
+/!-->
 <div id="contentRent">
-    <form method="get" action="rent" id="rentForm">
+    <form id ="rentFormBicycle" method="get" action="rent" class="rentForm" style="display: block">
+        <h1>Formulaire de mise en location d'une moto</h1>
+        <table class="tableFormRent">
+            <tr>
+                <td>
+                    <label>Marque :</label>
+                </td>
+                <td>
+                    <input type="text" id="brandBicycle" name="brand"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Modèle :</label>
+                </td>
+                <td>
+                    <input type="text" id="modelBicycle" name="model"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Type :</label>
+                </td>
+                <td>
+                    <input type="text" id="typeBicycle" name="type"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Taille :</label>
+                </td>
+                <td>
+                    <input type="text" id="sizeBicycle" name="size"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Nombre de place :</label>
+                </td>
+                <td>
+                    <input type="number" min="0" id="placeNumberBicycle" name="placeNumber"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Prix :</label>
+                </td>
+                <td>
+                    <input type="number" min="0" id="priceBicycle" name="price"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Description</label>
+                </td>
+                <td>
+                    <input type="text" id="descriptionBicycle" name="description"/><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Info Pour le client :</label>
+                </td>
+                <td>
+                    <input type="text" id="infoForClientBicycle" name="infoForClient"/><br/>
+                </td>
+            </tr>
+        </table>
+        <div class="buttonsFormRent">
+            <input type='submit' class="btn btn-lg btn-default" name="envoyer"/>
+            <button type='button' name="annuler" class="invisibleButton btn btn-lg btn-default">Annuler</button>
+            <button type='button' name="annuler" class="btn btn-lg btn-default" onclick="window.location.href = '/';">
+                Annuler
+            </button>
+        </div>
+    </form>
+<!--
+FORMULAIRE VOITURE
+/!-->
+    <form id ="rentFormCar" method="get" action="rent" class="rentForm" style="display: none">
         <h1>Formulaire de mise en location d'une voiture</h1>
-        <table id="tableFormRent">
+        <table class="tableFormRent">
             <tr>
                 <td>
                     <label>Marque :</label>
@@ -127,16 +231,32 @@
                 </td>
             </tr>
         </table>
-        <div id="buttonsFormRent">
+
+        <div class="buttonsFormRent">
             <input type='submit' class="btn btn-lg btn-default" name="envoyer"/>
-            <button id="invisibleButton3" type='button' name="annuler" class="btn btn-lg btn-default">Annuler</button>
+            <button type='button' name="annuler" class="invisibleButton btn btn-lg btn-default">Annuler</button>
+            <button type='button' name="annuler" class="btn btn-lg btn-default" onclick="window.location.href = '/';">
+                Annuler
+            </button>
+        </div>
+    </form>
+<!-- FORMULAIRE REMORQUE
+!-->
+    <form id ="rentFormTrailer" method="get" action="rent" class="rentForm" style="display: none">
+        <h1>Formulaire de mise en location d'une remorque</h1>
+        <table class="tableFormRent">
+
+        </table>
+        <div class="buttonsFormRent">
+            <input type='submit' class="btn btn-lg btn-default" name="envoyer"/>
+            <button type='button' name="annuler" class="invisibleButton btn btn-lg btn-default">Annuler</button>
             <button type='button' name="annuler" class="btn btn-lg btn-default" onclick="window.location.href = '/';">
                 Annuler
             </button>
         </div>
     </form>
 </div>
-<div id="footer" class="jumbotron text-center" style="margin-bottom:0">
+<div id="footer" class="text-center" style="margin-bottom:0">
     <p>Tous droits réservés - © Takar 2020/2021 </p>
 </div>
 

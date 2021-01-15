@@ -1,12 +1,5 @@
-div#footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
 
-
-#rentForm .btn {
+.rentForm .btn {
     background: black;
     color: white;
     -webkit-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
@@ -14,7 +7,7 @@ div#footer {
     box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
 }
 
-#rentForm .btn:hover {
+.rentForm .btn:hover {
     background: white;
     color: black;
     -webkit-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
@@ -33,11 +26,11 @@ div#footer {
     cursor: default;
 }
 
-table#tableFormRent label {
+table.tableFormRent label {
     text-align: left !important;
 }
 
-div#contentRent {
+div.contentRent {
     align-content: center;
 }
 
@@ -46,16 +39,12 @@ h1 {
     margin-bottom: 1em;
 }
 
-#buttonsFormRent {
+.buttonsFormRent {
     margin-top: 1em;
     text-align: center;
 }
 
-table#tableFormRent {
+table.tableFormRent {
     margin: auto;
 }
 
-div#footer {
-    position: unset !important;
-    margin-top: 5em;
-}
