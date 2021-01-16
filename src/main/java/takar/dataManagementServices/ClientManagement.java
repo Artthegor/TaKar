@@ -1,10 +1,13 @@
 package takar.dataManagementServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import takar.model.Client;
+import takar.model.Role;
 import takar.model.User;
 import takar.repositories.ClientRepository;
+import takar.repositories.RoleRepository;
 import takar.repositories.UserRepository;
 
 @Service
@@ -15,6 +18,12 @@ public class ClientManagement implements IClientManagement {
 
     @Autowired
     UserRepository userRepo;
+
+    @Autowired
+    RoleRepository roleRepo;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     public ClientManagement() {
     }
@@ -33,7 +42,12 @@ public class ClientManagement implements IClientManagement {
                                String cp,
                                String pays)
     {
-        User user = new User(username, password);
+
+        Role role = new Role("ROLE_USER");
+        role = roleRepo.save(role);
+
+
+        User user = new User(username, passwordEncoder.encode(password), role);
 
         user = userRepo.save(user);
         //    public Client(String username, String password, String name, String firstname, String sex, String description, String mail, String phoneNumber) {

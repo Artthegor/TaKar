@@ -7,6 +7,6 @@ import takar.model.Client;
 import takar.model.User;
 
 @Repository
-public interface ClientRepository extends JpaRepository<Client, Long> {
+public interface ClientRepository extends CrudRepository<Client, Long> {
     public Client findByUser(User user);
 }

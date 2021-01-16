@@ -9,9 +9,6 @@
     <link rel="shortcut icon" type="image/png" href="../../images/t.png"/>
 </head>
 <script>
-if(sessionStorage.getItem("isConnect") != "true") {
-    document.location.href="/authentication/connexion";
-}
     function formBicycle(checkbox){
         document.getElementById('rentFormBicycle').style.display = "block";
         document.getElementById('rentFormCar').style.display = "none";

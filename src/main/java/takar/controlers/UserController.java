@@ -27,7 +27,7 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepo;
 
-
+	/*
 	@RequestMapping("connexion")
 	public String connexionUser(@RequestParam(value="username", required=false) String username, @RequestParam(value="password", required=false) String password, Model model) {
 
@@ -47,7 +47,7 @@ public class UserController {
 		}
 		return "userView";
 
-	}
+	}*/
 
 	@RequestMapping("registration")
 	public String registerUser(

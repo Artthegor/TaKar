@@ -34,26 +34,12 @@
     </div>
 </nav>
 
-<div id="connectOK">
-    <h1 th:text="'Vous êtes connecté '+${user}"></h1>
-</div>
+<h1 style="width: 50%; margin: auto">WELCOME TO SPRING LABS 2017</h1>
+<br/>
+<a th:href="@{/logout}">
+    <button type="button">LOGOUT</button>
+</a>
 
-
-<p id="nameUser" th:text="''+${user}"  style="display:none;"/>
-<p id="isConnect" th:text="''+${isConnected}" style="display:none;"/>
-
-<div id="footer" class="text-center" style="margin-bottom:0">
-    <p>Tous droits réservés - © Takar 2020/2021 </p>
-</div>
 </body>
-
-
-<script>
-
-    sessionStorage.setItem("isConnect", eval(document.getElementById("isConnect").innerHTML));
-    sessionStorage.setItem("username", document.getElementById("nameUser").innerHTML);
-
-
-</script>
 
 </html>

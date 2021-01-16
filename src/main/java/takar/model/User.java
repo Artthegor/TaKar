@@ -1,5 +1,7 @@
 package takar.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -11,15 +13,20 @@ public class User implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	long userID;
 
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "role_id")
+	private Role role;
+
 	String username;
 	String password;
 	
 	public User(){}
 
-	public User(String username, String password) {
+	public User(String username, String password, Role role) {
 		super();
 		this.username = username;
 		this.password = password;
+		this.role = role;
 	}
 
 	public String getUsername() {
@@ -35,6 +42,9 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
+	public Role getRole() {
+		return role;
+	}
 
 	public long getUserID(){
 		return userID;
