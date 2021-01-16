@@ -13,8 +13,6 @@ import takar.model.User;
 import takar.repositories.UserRepository;
 
 
-import java.util.Date;
-
 @Controller
 @RequestMapping("authentication")
 public class UserController {
@@ -55,7 +53,6 @@ public class UserController {
 			@RequestParam(value = "firstname", required = false) String firstname,
 			@RequestParam(value = "lastname", required = false) String lastname,
 			@RequestParam(value = "password", required = false) String password,
-			//@RequestParam(value = "anniversaire", required = false) Date anniversaire,
 			@RequestParam(value = "sexe", required = false) String sexe,
 			@RequestParam(value = "mail", required = false) String mail,
 			@RequestParam(value = "telephone", required = false) String telephone,
@@ -72,7 +69,6 @@ public class UserController {
 				firstname != null &&
 				lastname != null &&
 				password != null &&
-				//anniversaire != null &&
 				sexe != null &&
 				mail != null &&
 				telephone != null &&
@@ -81,10 +77,22 @@ public class UserController {
 				departement != null &&
 				cp != null &&
 				pays != null
+				&& !username.equals("") &&
+				!firstname.equals("") &&
+				!lastname.equals("") &&
+				!password.equals("") &&
+				!sexe.equals("") &&
+				!mail.equals("") &&
+				!telephone.equals("") &&
+				!adresse.equals("") &&
+				!ville.equals("") &&
+				!departement.equals("") &&
+				!cp.equals("") &&
+				!pays.equals("")
 		)
 		{
 			clientManager.registerUser(username, firstname, lastname, password, sexe,
-					mail, telephone, adresse, ville, departement, cp, pays); //anniversaire à ajouter
+					mail, telephone, adresse, ville, departement, cp, pays);
 		}
 		return "registrationView";
 	}

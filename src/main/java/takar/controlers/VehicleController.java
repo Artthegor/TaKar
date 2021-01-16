@@ -51,16 +51,16 @@ public class VehicleController {
                              Model modell)
     {
         /*TODO : Choisir si c'est une voiture une remorque ou une moto Donc ajouter les classes correspondantes et une case dans le html*/
-            if (brand != null && model != null && description != null && price != null && infoForClient != null) {
-                if (year != null) {
+            if (brand != null && model != null && description != null && price != null && infoForClient != null && !brand.equals("") && !model.equals("") && !description.equals("") && !price.equals("") && !infoForClient.equals("")) {
+                if (year != null && placeNumber != null && motorization != null && power != null && licensePlate != null && trunkVolume != null && !year.equals("") && !placeNumber.equals("") && !motorization.equals("") && !power.equals("") && !licensePlate.equals("") && !trunkVolume.equals("")) {
                     carManager.addCar(brand, model, Integer.parseInt(placeNumber), Double.parseDouble(price), infoForClient, description, year, motorization, power, licensePlate, Double.parseDouble(trunkVolume));
                 } else {
-                    if (capacity != null) {
-                        trailerManager.addTrailer(brand, model, Double.parseDouble(price), infoForClient, description, Double.parseDouble(capacity), Double.parseDouble(weight), Double.parseDouble(length), licensePlate);
+                    if (capacity != null && type != null && size != null && isElectrical != null && !capacity.equals("") && !type.equals("") && !size.equals("")) {
+                        bicycleManager.addBicycle(brand, model, Double.parseDouble(price), infoForClient, description, type, size, isElectrical);
                     } else {
-                        if (type != null) {
-                            bicycleManager.addBicycle(brand, model, Double.parseDouble(price), infoForClient, description, type, size, isElectrical);
-                        } else {
+                        if (capacity != null && weight != null && length != null && licensePlate != null && !capacity.equals("") && !weight.equals("") && !length.equals("") && !licensePlate.equals("")) {
+                            trailerManager.addTrailer(brand, model, Double.parseDouble(price), infoForClient, description, Double.parseDouble(capacity), Double.parseDouble(weight), Double.parseDouble(length), licensePlate);
+                         } else {
                             System.out.println("Selection non valide");
                         }
                     }

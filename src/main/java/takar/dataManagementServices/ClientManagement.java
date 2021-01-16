@@ -32,7 +32,6 @@ public class ClientManagement implements IClientManagement {
                                String firstname,
                                String lastname,
                                String password,
-                               //Date anniversaire,
                                String sexe,
                                String mail,
                                String telephone,
@@ -42,7 +41,10 @@ public class ClientManagement implements IClientManagement {
                                String cp,
                                String pays)
     {
-
+        if(userRepo.findByUsername(username) != null){
+            //username déjà utilisé
+            return null;
+        }
         Role role = new Role("ROLE_USER");
         role = roleRepo.save(role);
 
@@ -50,11 +52,7 @@ public class ClientManagement implements IClientManagement {
         User user = new User(username, passwordEncoder.encode(password), role);
 
         user = userRepo.save(user);
-        //    public Client(String username, String password, String name, String firstname, String sex, String description, String mail, String phoneNumber) {
         Client cli = new Client(firstname, lastname,sexe, mail, telephone, adresse, ville, departement, cp, pays, user);
-        /*Client cli = registerUser(name, lastname,  password, sexe,
-                mail, telephone, adresse, ville, departement, cp, pays);
-        */
 
         return clientRepo.save(cli);
     }

@@ -1,10 +1,12 @@
 package takar.model;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Trailer extends Vehicle {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    long IdVehicle;
     double capacity, weight, length;
     String licensePlate;
 

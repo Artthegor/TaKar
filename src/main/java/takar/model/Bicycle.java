@@ -1,12 +1,16 @@
 package takar.model;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Bicycle extends Vehicle{
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    long IdVehicle;
     String type, size;
     Boolean isElectrical;
+
+
 
     @OneToOne
     Vehicle vehicle;

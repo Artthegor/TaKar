@@ -2,7 +2,6 @@ package takar.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 public class Client implements Serializable {
@@ -27,14 +26,11 @@ public class Client implements Serializable {
 
     String description;
 
-    //Date anniversaire;
-
     public Client(){
     }
 
 
     public Client(String firstname, String lastname, String sexe, String mail, String telephone, String adresse, String ville, String departement, String cp, String pays, User user, String description) {
-        //, Date birthday
         this.user = user;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -48,18 +44,12 @@ public class Client implements Serializable {
         this.pays = pays;
 
         this.description = description;
-
-        //this.anniversaire = anniversaire;
     }
 
     public Client(String firstname, String lastname,String sexe, String mail, String telephone, String adresse, String ville, String departement, String cp, String pays, User user) {
-        //this(username, password, name, firstname, sex, "", mail, phoneNumber, birthday);
         this(firstname, lastname, sexe, mail, telephone, adresse, ville, departement, cp, pays, user, "");
     }
 
-    /*public Date getBirthday() {
-        return birthday;
-    }*/
 
 
 
