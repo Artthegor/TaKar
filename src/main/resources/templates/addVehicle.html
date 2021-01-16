@@ -51,7 +51,7 @@
     </nav>
     <div>
         <tr>
-            <input type="radio" name="rentFormCheck" id="velo" value="velo" checked="checked" onclick="formBicycle()"/>
+            <input type="radio" name="rentFormCheck" id="velo" value="velo"  onclick="formBicycle()"/>
             MOTO
             <input type="radio" name="rentFormCheck" id="voiture" value="voiture" onclick="formCar()"/> VOITURE
             <input type="radio" name="rentFormCheck" id="remorque" value="remorque" onclick="formTrailer()"/> REMORQUE
@@ -61,7 +61,7 @@
     FORMULAIRE MOTO
     /!-->
     <div id="contentRent">
-        <form id="rentFormBicycle" method="get" action="rent" class="rentForm" style="display: block">
+        <form id="rentFormBicycle" method="get" action="rent" class="rentForm" style="display: none">
             <h1>Formulaire de mise en location d'une moto</h1>
             <table class="tableFormRent">
                 <tr>
