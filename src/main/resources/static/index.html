@@ -13,91 +13,97 @@
 </head>
 
 <body>
-
-<div id="header" class="text-center" style="margin-bottom:0">
-    <a href="/"><img id="banner" class="img-fluid" alt="Responsive image" src="./images/testBanner3.png" alt="takarLogo"
-                     width="1920"
-                     height="200"></a>
-</div>
-
-
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
-    <div>
-        <a href="/vehicle/search" class="btn btn-dark">Rechercher</a>
-        <a href="/vehicle/rent" class="btn btn-dark">Louer</a>
-        <a href="contact.html" class="btn btn-dark">Contacter</a>
-
-        <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
-        <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
-
-        <a href="authentication/connexion" class="btn btn-dark">Connexion</a>
-        <a href="authentication/registration" class="btn btn-dark">Inscription</a>
+<div id="main">
+    <div id="header" class="text-center" style="margin-bottom:0">
+        <a href="/"><img id="banner" class="img-fluid" alt="Responsive image" src="./images/testBanner3.png"
+                         alt="takarLogo"
+                         width="1920"
+                         height="200"></a>
     </div>
-</nav>
 
-<div class="container" style="margin-top:30px">
-    <div class="row">
 
-        <div class="col-sm-3">
-            <h2>Nos locations</h2>
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a href="search/type?=voiture" class="nav-link">Voiture</a>
-                </li>
-                <li class="nav-item">
-                    <a href="search/type?=camion" class="nav-link">Camion</a>
-                </li>
-                <li class="nav-item">
-                    <a href="search/type?=motocycle" class="nav-link">Motocycle</a>
-                </li>
-                <li class="nav-item">
-                    <a href="search/type?=remorque" class="nav-link">Remorque</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+        <div>
+            <a href="/vehicle/search" class="btn btn-dark">Rechercher</a>
+            <a href="/vehicle/rent" class="btn btn-dark">Louer</a>
+            <a href="contact.html" class="btn btn-dark">Contacter</a>
+
+            <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
+            <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
+
+            <a href="authentication/connexion" class="btn btn-dark">Connexion</a>
+            <a href="authentication/registration" class="btn btn-dark">Inscription</a>
         </div>
+    </nav>
 
-        <div class="col-sm-6">
-            <!--            requete bdd pour mettre en avant dispo à la loc -->
-            <h2>Peugeot 308</h2>
-            <h5>Title description, Dec 7, 2017</h5>
-            <div class="fakeimg">Fake Image</div>
-            <p>Some text..</p>
-            <p class="Justifier">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco.</p>
-            <br>
-            <h2>Renault Twingo</h2>
-            <h5>Title description, Sep 2, 2017</h5>
-            <div class="fakeimg">Fake Image</div>
-            <p>Some text..</p>
-            <p class="Justifier">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco.</p>
+    <div class="container" style="margin-top:30px">
+        <div class="row">
+
+            <div class="col-sm-3">
+                <h2>Nos locations</h2>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a href="search/type?=voiture" class="nav-link">Voiture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="search/type?=camion" class="nav-link">Camion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="search/type?=motocycle" class="nav-link">Motocycle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="search/type?=remorque" class="nav-link">Remorque</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-6">
+                <!--            requete bdd pour mettre en avant dispo à la loc -->
+                <h2>Peugeot 308</h2>
+                <h5>Title description, Dec 7, 2017</h5>
+                <div class="fakeimg">Fake Image</div>
+                <p>Some text..</p>
+                <p class="Justifier">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+                    adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation
+                    ullamco.</p>
+                <br>
+                <h2>Renault Twingo</h2>
+                <h5>Title description, Sep 2, 2017</h5>
+                <div class="fakeimg">Fake Image</div>
+                <p>Some text..</p>
+                <p class="Justifier">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+                    adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation
+                    ullamco.</p>
+            </div>
+
+            <div class="col-sm-3">
+                <h2>A propos de nous</h2>
+                <p class="Justifier">Nous sommes une jeune équipe de six développeurs composée en 2020 qui vise à
+                    rentabiliser les véhicules
+                    non utilisés. Nos utilisateurs peuvent mettre en location leurs véhicules.</p>
+                <h2>Abonne toi</h2>
+                <p>Nous retrouver sur les réseaux !</p>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.facebook.com">Facebook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.twitter.com">Twitter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.instagram.com">Instagram</a>
+                    </li>
+                </ul>
+                <hr class="d-sm-none">
+            </div>
+
         </div>
-
-        <div class="col-sm-3">
-            <h2>A propos de nous</h2>
-            <p class="Justifier">Nous sommes une jeune équipe de six développeurs composée en 2020 qui vise à rentabiliser les véhicules
-                non utilisés. Nos utilisateurs peuvent mettre en location leurs véhicules.</p>
-            <h2>Abonne toi</h2>
-            <p>Nous retrouver sur les réseaux !</p>
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" href="http://www.facebook.com">Facebook</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://www.twitter.com">Twitter</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://www.instagram.com">Instagram</a>
-                </li>
-            </ul>
-            <hr class="d-sm-none">
-        </div>
-
     </div>
 </div>
-
 <div id="footer" class="text-center" style="margin-bottom:0">
     <p>Tous droits réservés - © Takar 2020/2021 </p>
 </div>

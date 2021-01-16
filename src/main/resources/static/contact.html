@@ -12,150 +12,162 @@
 </head>
 
 <body>
+<div id="main">
+    <div id="header" class="jumbotron text-center" style="margin-bottom:0">
+        <a href="/"><img id="banner" class="img-fluid" alt="Responsive image" src="./images/testBanner3.png"
+                         alt="takarLogo"
+                         width="1920" height="200"></a>
+    </div>
 
-<div id="header" class="jumbotron text-center" style="margin-bottom:0">
-    <a href="/"><img id="banner" class="img-fluid" alt="Responsive image" src="./images/testBanner3.png" alt="takarLogo"
-                     width="1920" height="200"></a>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+        <div>
+            <a href="../vehicle/search" class="btn btn-dark">Rechercher</a>
+            <a href="../vehicle/rent" class="btn btn-dark">Louer</a>
+            <a href="" class="btn btn-dark">Contacter</a>
+
+            <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
+            <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
+
+            <a href="../authentication/connexion" class="btn btn-dark">Connexion</a>
+            <a href="../authentication/registration" class="btn btn-dark">Inscription</a>
+        </div>
+    </nav>
+
+
+    <div class="blocktext" id="contentFAQ">
+
+
+        <h3>A. Concernant la réservation :</h3>
+        <div class="soussection">
+            <p class="question">Comment louer un véhicule ?</p>
+            <p class="reponse">Aller sur l'onglet <a href="../vehicle/search">Rechercher</a>, chercher le véhicule qu'il
+                vous plait et laissez-vous quitter par le site.</p>
+
+            <p class="question">Puis-je louer plusieur véhicule ?</p>
+            <p class="reponse">Rien ne vous interdit de louer plusieurs véhicules, donc oui.</p>
+
+            <p class="question">Quel modèles de véhicule puis-je louer ?</p>
+            <p class="reponse">Tous les véhicules présent sur le site.</p>
+
+            <p class="question">Quels sont les moyens de paiement ?</p>
+            <p class="reponse">Il est possible de payer avec les cartes : Visa, MasterCard et Paypal.</p>
+
+            <p class="question">Comment puis-je savoir si ma réservation est confirmée ?</p>
+            <p class="reponse">Vous recevrez par mail une confirmation de réservation, avec un détail sur la
+                location.</p>
+        </div>
+
+
+        <h3>B. Les conditions de location :</h3>
+        <div class="soussection">
+            <p class="question">Quelles sont les conditions requises pour louer un véhicule ?</p>
+            <p class="reponse">Il faut être majeur et posssèder le permis de conduire. Votre compte Takar doit aussi
+                être
+                confirmé</p>
+
+            <p class="question">Peut-on louer une voiture sans carte de crédit ?</p>
+            <p class="reponse">Non, il est obligatoire d'utiliser une carte de crédit ou PayPal.</p>
+        </div>
+
+
+        <h3>C. Retrait du véhicule :</h3>
+        <div class="soussection">
+            <p class="question">Est-ce que lorsque je loue un véhicule, nous sommes protégés par un contrat de location
+                ?</p>
+            <p class="reponse">Oui, vous devez faire un contrat de location avec un état du véhicule, lors de la remise
+                des
+                clefs.</p>
+
+            <p class="question">Quels sont les documents necessaires à la location d'un véhicule ?</p>
+            <div class="reponse">
+                <p>Pour pouvoir louer un véhicule le locataire doit présenter les documents suivants : </p>
+                <ul>
+                    <li>Une pièce d'identité valide</li>
+                    <li>L'original de son permis</li>
+                    <li>Une adresse mail valide</li>
+                    <li>Un justificatif de domicile</li>
+                </ul>
+                <p> S'il y a d'autres conducteurs, ils doivent présenter les mêmes documents.</p>
+            </div>
+
+            <p class="question">Que faut-il remplir dans l'état du véhicule ?</p>
+            <p class="reponse">Le loueur se doit de regarder avec le locataire, l'état général du véhicule (les impacts
+                dans
+                la carroserie par exemple), ainsi que les pièces d'usures (comme les pneux, le niveau d'essence, ...).
+                Il
+                faut aussi relever le nombre de kilomètres du véhicule.</p>
+        </div>
+
+
+        <h3>D. Durant la location :</h3>
+        <div class="soussection">
+            <p class="question">Pouvons-nous aller à l'étranger avec le véhicule louer ?</p>
+            <p class="reponse">Oui, il est possible de circuler dans toute l'Europe avec le véhicule louer.</p>
+
+            <p class="question">Combien de temps pouvons-nous louer un véhicule ?</p>
+            <p class="reponse">En théorie, il est possible de louer un véhiculer à l'infini. Le contrat va stipuler de
+                la
+                durée de location défini entre le loueur et le locataire. Il sera ensuite possible de prolonger ce
+                contrat
+                et de redéfinir une durée de location.</p>
+
+            <p class="question">Quelle distance puis-je parcourir avec le véhicule loué ?</p>
+            <p class="reponse">La distance possible de parcours est à définir avec le loueur et le locataire.</p>
+
+            <p class="question">Qui doit payer les frais de carburants ?</p>
+            <p class="reponse">Les frais de carburants sont à la charge du locataire.</p>
+
+            <p class="question">Que dois-je faire en cas de panne, accident ou vol du véhicule ?</p>
+            <div class="reponse">
+                <ul>
+                    <li>En cas de panne, une expertisation doit être faite pour déterminer si la panne provient du
+                        locataire
+                        actuel ou d'un précédent. Si c'est le locataire actuelle qui a eu une panne, il se doit de payer
+                        les
+                        réparations.
+                    </li>
+                    <li>En cas d'accident, le locataire doit fournir un constat amiable et réparer.</li>
+                    <li>En cas de vol, le locataire doit porter plainte et fournir le dépôt de plainte au loueur.</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <h3>E. Le retour du véhicule :</h3>
+        <div class="soussection">
+            <p class="question">Que devons nous faire au retour d'un véhicule?</p>
+            <p class="reponse">Le locataire et le loueur doivent réaliser un état du véhicule de sortie avec un
+                exemplaire
+                signé pour les deux.</p>
+        </div>
+
+        <h3>F. Concernant les assurances :</h3>
+        <div class="soussection">
+            <p class="question">Quelles assurances dois-je avoir pour louer un véhicule ?</p>
+            <p class="reponse">En louant un véhicule, les occupants du véhicule bénéficient de l'assurance
+                responsabilité
+                civile aux tiers.</p>
+            <hr/>
+        </div>
+
+
+        <h3>G. Takar et vous:</h3>
+        <div class="soussection">
+            <p class="question">Comment nous contacter ?</p>
+            <div class="reponse">
+                <p>Contactez l'équipe Takar :</p>
+                <ul>
+                    <li><a href="mailto:contact@takar.com">contact@takar.com</a></li>
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.twiiter.com">Twitter</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
 </div>
-
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
-    <div>
-        <a href="../vehicle/search" class="btn btn-dark">Rechercher</a>
-        <a href="../vehicle/rent" class="btn btn-dark">Louer</a>
-        <a href="" class="btn btn-dark">Contacter</a>
-
-        <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
-        <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
-
-        <a href="../authentication/connexion" class="btn btn-dark">Connexion</a>
-        <a href="../authentication/registration" class="btn btn-dark">Inscription</a>
-    </div>
-</nav>
-
-
-<div class="blocktext" id="contentFAQ">
-
-
-    <h3>A. Concernant la réservation :</h3>
-    <div class="soussection">
-        <p class="question">Comment louer un véhicule ?</p>
-        <p class="reponse">Aller sur l'onglet <a href="../vehicle/search">Rechercher</a>, chercher le véhicule qu'il
-            vous plait et laissez-vous quitter par le site.</p>
-
-        <p class="question">Puis-je louer plusieur véhicule ?</p>
-        <p class="reponse">Rien ne vous interdit de louer plusieurs véhicules, donc oui.</p>
-
-        <p class="question">Quel modèles de véhicule puis-je louer ?</p>
-        <p class="reponse">Tous les véhicules présent sur le site.</p>
-
-        <p class="question">Quels sont les moyens de paiement ?</p>
-        <p class="reponse">Il est possible de payer avec les cartes : Visa, MasterCard et Paypal.</p>
-
-        <p class="question">Comment puis-je savoir si ma réservation est confirmée ?</p>
-        <p class="reponse">Vous recevrez par mail une confirmation de réservation, avec un détail sur la location.</p>
-    </div>
-
-
-    <h3>B. Les conditions de location :</h3>
-    <div class="soussection">
-        <p class="question">Quelles sont les conditions requises pour louer un véhicule ?</p>
-        <p class="reponse">Il faut être majeur et posssèder le permis de conduire. Votre compte Takar doit aussi être
-            confirmé</p>
-
-        <p class="question">Peut-on louer une voiture sans carte de crédit ?</p>
-        <p class="reponse">Non, il est obligatoire d'utiliser une carte de crédit ou PayPal.</p>
-    </div>
-
-
-    <h3>C. Retrait du véhicule :</h3>
-    <div class="soussection">
-        <p class="question">Est-ce que lorsque je loue un véhicule, nous sommes protégés par un contrat de location
-            ?</p>
-        <p class="reponse">Oui, vous devez faire un contrat de location avec un état du véhicule, lors de la remise des
-            clefs.</p>
-
-        <p class="question">Quels sont les documents necessaires à la location d'un véhicule ?</p>
-        <div class="reponse">
-            <p>Pour pouvoir louer un véhicule le locataire doit présenter les documents suivants : </p>
-            <ul>
-                <li>Une pièce d'identité valide</li>
-                <li>L'original de son permis</li>
-                <li>Une adresse mail valide</li>
-                <li>Un justificatif de domicile</li>
-            </ul>
-            <p> S'il y a d'autres conducteurs, ils doivent présenter les mêmes documents.</p>
-        </div>
-
-        <p class="question">Que faut-il remplir dans l'état du véhicule ?</p>
-        <p class="reponse">Le loueur se doit de regarder avec le locataire, l'état général du véhicule (les impacts dans
-            la carroserie par exemple), ainsi que les pièces d'usures (comme les pneux, le niveau d'essence, ...). Il
-            faut aussi relever le nombre de kilomètres du véhicule.</p>
-    </div>
-
-
-    <h3>D. Durant la location :</h3>
-    <div class="soussection">
-        <p class="question">Pouvons-nous aller à l'étranger avec le véhicule louer ?</p>
-        <p class="reponse">Oui, il est possible de circuler dans toute l'Europe avec le véhicule louer.</p>
-
-        <p class="question">Combien de temps pouvons-nous louer un véhicule ?</p>
-        <p class="reponse">En théorie, il est possible de louer un véhiculer à l'infini. Le contrat va stipuler de la
-            durée de location défini entre le loueur et le locataire. Il sera ensuite possible de prolonger ce contrat
-            et de redéfinir une durée de location.</p>
-
-        <p class="question">Quelle distance puis-je parcourir avec le véhicule loué ?</p>
-        <p class="reponse">La distance possible de parcours est à définir avec le loueur et le locataire.</p>
-
-        <p class="question">Qui doit payer les frais de carburants ?</p>
-        <p class="reponse">Les frais de carburants sont à la charge du locataire.</p>
-
-        <p class="question">Que dois-je faire en cas de panne, accident ou vol du véhicule ?</p>
-        <div class="reponse">
-            <ul>
-                <li>En cas de panne, une expertisation doit être faite pour déterminer si la panne provient du locataire
-                    actuel ou d'un précédent. Si c'est le locataire actuelle qui a eu une panne, il se doit de payer les
-                    réparations.
-                </li>
-                <li>En cas d'accident, le locataire doit fournir un constat amiable et réparer.</li>
-                <li>En cas de vol, le locataire doit porter plainte et fournir le dépôt de plainte au loueur.</li>
-            </ul>
-        </div>
-    </div>
-
-
-    <h3>E. Le retour du véhicule :</h3>
-    <div class="soussection">
-        <p class="question">Que devons nous faire au retour d'un véhicule?</p>
-        <p class="reponse">Le locataire et le loueur doivent réaliser un état du véhicule de sortie avec un exemplaire
-            signé pour les deux.</p>
-    </div>
-
-    <h3>F. Concernant les assurances :</h3>
-    <div class="soussection">
-        <p class="question">Quelles assurances dois-je avoir pour louer un véhicule ?</p>
-        <p class="reponse">En louant un véhicule, les occupants du véhicule bénéficient de l'assurance responsabilité
-            civile aux tiers.</p>
-        <hr/>
-    </div>
-
-
-    <h3>G. Takar et vous:</h3>
-    <div class="soussection">
-        <p class="question">Comment nous contacter ?</p>
-        <div class="reponse">
-            <p>Contactez l'équipe Takar :</p>
-            <ul>
-                <li><a href="mailto:contact@takar.com">contact@takar.com</a></li>
-                <li><a href="https://www.facebook.com">Facebook</a></li>
-                <li><a href="https://www.twiiter.com">Twitter</a></li>
-                <li><a href="https://www.instagram.com">Instagram</a></li>
-            </ul>
-        </div>
-    </div>
-
-</div>
-
-
 <div id="footer" class="text-center" style="margin-bottom:0">
     <p>Tous droits réservés - © Takar 2020/2021 </p>
 </div>
