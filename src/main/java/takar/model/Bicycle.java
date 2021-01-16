@@ -13,15 +13,16 @@ public class Bicycle extends Vehicle{
 
     public Bicycle() {}
 
-    public Bicycle(String brand, String model, int placeNumber, double price, String infoForClient, String description, int note, String type, String size, Boolean isElectrical){
+    public Bicycle(String brand, String model, int placeNumber, double price, String infoForClient, String description, int note, String type, String size, Boolean isElectrical, Vehicle vehicle){
         super(brand, model, placeNumber, price, infoForClient, description, note);
         this.type = type;
         this.size = size;
         this.isElectrical = isElectrical;
+        this.vehicle = vehicle;
     }
 
-    public Bicycle(String brand, String model, int placeNumber, double price, String infoForClient, String type, String size, Boolean isElectrical){
-        this(brand, model, placeNumber, price, infoForClient, "", -1, type, size, isElectrical);
+    public Bicycle(String brand, String model, int placeNumber, double price, String infoForClient, String type, String size, Boolean isElectrical, Vehicle vehicle){
+        this(brand, model, placeNumber, price, infoForClient, "", -1, type, size, isElectrical, vehicle);
     }
 
     public Boolean getElectrical() {
