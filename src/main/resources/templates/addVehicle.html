@@ -48,9 +48,9 @@
 </nav>
 <div>
     <tr>
-        <input type="radio" class="moto" checked = "true"  onclick="formBicycle()" name = "rentFormCheck"/> MOTO
-        <input type="radio" class="voiture" onclick="formCar()" name = "rentFormCheck"/> VOITURE
-        <input type="radio" class="remorque" onclick="formTrailer()" name = "rentFormCheck"/> REMORQUE
+        <input type="radio" id="moto" checked = "true"  onclick="formBicycle()" name = "rentFormCheck"/> MOTO
+        <input type="radio" id="voiture" onclick="formCar()" name = "rentFormCheck"/> VOITURE
+        <input type="radio" id="remorque" onclick="formTrailer()" name = "rentFormCheck"/> REMORQUE
     </tr>
 </div>
 <!--
@@ -65,7 +65,7 @@ FORMULAIRE MOTO
                     <label>Marque :</label>
                 </td>
                 <td>
-                    <input type="text" id="brandBicycle" name="brand"/><br/>
+                    <input type="text" id="brand" name="brand"/><br/>
                 </td>
             </tr>
             <tr>
@@ -73,7 +73,7 @@ FORMULAIRE MOTO
                     <label>Modèle :</label>
                 </td>
                 <td>
-                    <input type="text" id="modelBicycle" name="model"/><br/>
+                    <input type="text" id="model" name="model"/><br/>
                 </td>
             </tr>
             <tr>
@@ -81,7 +81,7 @@ FORMULAIRE MOTO
                     <label>Type :</label>
                 </td>
                 <td>
-                    <input type="text" id="typeBicycle" name="type"/><br/>
+                    <input type="text" id="type" name="type"/><br/>
                 </td>
             </tr>
             <tr>
@@ -89,7 +89,7 @@ FORMULAIRE MOTO
                     <label>Taille :</label>
                 </td>
                 <td>
-                    <input type="text" id="sizeBicycle" name="size"/><br/>
+                    <input type="text" id="size" name="size"/><br/>
                 </td>
             </tr>
             <tr>
@@ -97,7 +97,7 @@ FORMULAIRE MOTO
                     <label>Prix :</label>
                 </td>
                 <td>
-                    <input type="number" min="0" id="priceBicycle" name="price"/><br/>
+                    <input type="number" min="0" id="price" name="price"/><br/>
                 </td>
             </tr>
             <tr>
@@ -105,7 +105,7 @@ FORMULAIRE MOTO
                     <label>Description</label>
                 </td>
                 <td>
-                    <input type="text" id="descriptionBicycle" name="description"/><br/>
+                    <input type="text" id="description" name="description"/><br/>
                 </td>
             </tr>
             <tr>
@@ -113,7 +113,7 @@ FORMULAIRE MOTO
                     <label>Info Pour le client :</label>
                 </td>
                 <td>
-                    <input type="text" id="infoForClientBicycle" name="infoForClient"/><br/>
+                    <input type="text" id="infoForClient" name="infoForClient"/><br/>
                 </td>
             </tr>
             <tr>
@@ -200,7 +200,7 @@ FORMULAIRE VOITURE
                     <label>Prix :</label>
                 </td>
                 <td>
-                    <input type="text" id="price" name="price"/><br/>
+                    <input type="text" class="price" name="price"/><br/>
                 </td>
             </tr>
             <tr>
@@ -208,7 +208,7 @@ FORMULAIRE VOITURE
                     <label>Plaque d'immatriculation :</label>
                 </td>
                 <td>
-                    <input type="text" id="licensePlateCar" name="licensePlate"/><br/>
+                    <input type="text" id="licensePlate" name="licensePlate"/><br/>
                 </td>
             </tr>
             <tr>
@@ -247,7 +247,7 @@ FORMULAIRE VOITURE
                     <label>Marque :</label>
                 </td>
                 <td>
-                    <input type="text" id="brandTrailer" name="brand"/><br/>
+                    <input type="text" id="brand" name="brand"/><br/>
                 </td>
             </tr>
             <tr>
@@ -255,7 +255,7 @@ FORMULAIRE VOITURE
                     <label>Modèle :</label>
                 </td>
                 <td>
-                    <input type="text" id="modelTrailer" name="model"/><br/>
+                    <input type="text" id="model" name="model"/><br/>
                 </td>
             </tr>
             <tr>
@@ -287,7 +287,7 @@ FORMULAIRE VOITURE
                     <label>Prix :</label>
                 </td>
                 <td>
-                    <input type="number" min="0" id="priceTrailer" name="price"/><br/>
+                    <input type="number" min="0" id="price" name="price"/><br/>
                 </td>
             </tr>
             <tr>
@@ -295,7 +295,7 @@ FORMULAIRE VOITURE
                     <label>Description</label>
                 </td>
                 <td>
-                    <input type="text" id="descriptionTrailer" name="description"/><br/>
+                    <input type="text" id="description" name="description"/><br/>
                 </td>
             </tr>
             <tr>
@@ -303,7 +303,7 @@ FORMULAIRE VOITURE
                     <label>Info Pour le client :</label>
                 </td>
                 <td>
-                    <input type="text" id="infoForClientTrailer" name="infoForClient"/><br/>
+                    <input type="text" id="infoForClient" name="infoForClient"/><br/>
                 </td>
             </tr>
         </table>
@@ -315,6 +315,7 @@ FORMULAIRE VOITURE
             </button>
         </div>
     </form>
+</div>
 <div id="footer" class="text-center" style="margin-bottom:0">
     <p>Tous droits réservés - © Takar 2020/2021 </p>
 </div>

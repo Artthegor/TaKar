@@ -24,26 +24,26 @@ public class VehicleController {
     private IVehicleManagement vehicleManager;
 
     @RequestMapping("rent")
-    public String addvehicle(@RequestParam(value="brand", required=true) String brand,
-                             @RequestParam(value="model", required=true) String model,
-                             @RequestParam(value="placeNumber", required=true) String placeNumber,
-                             @RequestParam(value="description", required=true) String description,
-                             @RequestParam(value="price", required=true) String price,
-                             @RequestParam(value="infoForClient", required=true) String infoForClient,
+    public String addvehicle(@RequestParam(value="brand", required=false) String brand,
+                             @RequestParam(value="model", required=false) String model,
+                             @RequestParam(value="placeNumber", required=false) String placeNumber,
+                             @RequestParam(value="description", required=false) String description,
+                             @RequestParam(value="price", required=false) String price,
+                             @RequestParam(value="infoForClient", required=false) String infoForClient,
 
-                             @RequestParam(value="voiture") Boolean voiture,
+                             @RequestParam(value="voiture", required=false) Boolean voiture,
                              @RequestParam(value="year", required=false) String year,
                              @RequestParam(value="motorization", required=false) String motorization,
                              @RequestParam(value="power", required=false) String power,
                              @RequestParam(value="licensePlate", required=false) String licensePlate,
                              @RequestParam(value="trunkVolume", required=false) String trunkVolume,
 
-                             @RequestParam(value="moto") Boolean moto,
+                             @RequestParam(value="moto", required=false) Boolean moto,
                              @RequestParam(value="type", required=false) String type,
                              @RequestParam(value="size", required=false) String size,
                              @RequestParam(value="isElectrical", required=false) Boolean isElectrical,
 
-                             @RequestParam(value="remorque") Boolean remorque,
+                             @RequestParam(value="remorque", required=false) Boolean remorque,
                              @RequestParam(value="capacity", required=false) String capacity,
                              @RequestParam(value="weight", required=false) String weight,
                              @RequestParam(value="length", required=false) String length,
