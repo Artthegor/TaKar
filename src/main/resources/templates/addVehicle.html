@@ -48,9 +48,9 @@
 </nav>
 <div>
     <tr>
-        <input type="radio" id="moto" checked = "true"  onclick="formBicycle()" name = "rentFormCheck"/> MOTO
-        <input type="radio" id="voiture" onclick="formCar()" name = "rentFormCheck"/> VOITURE
-        <input type="radio" id="remorque" onclick="formTrailer()" name = "rentFormCheck"/> REMORQUE
+        <input type="radio" name = "rentFormCheck" id="velo" value="velo" checked = "checked"  onclick="formBicycle()" /> MOTO
+        <input type="radio" name = "rentFormCheck" id="voiture" value="voiture" onclick="formCar()" /> VOITURE
+        <input type="radio" name = "rentFormCheck" id="remorque" value="remorque" onclick="formTrailer()" /> REMORQUE
     </tr>
 </div>
 <!--
@@ -121,7 +121,7 @@ FORMULAIRE MOTO
                     <label>Est une moto Electrique :</label>
                 </td>
                 <td>
-                    <input type="text" id="isElectrical" name="isElectrical"/><br/>
+                    <input type="checkbox" id="isElectrical" name="isElectrical"/><br/>
                 </td>
             </tr>
         </table>

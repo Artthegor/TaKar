@@ -9,7 +9,7 @@ public class Vehicle {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long IdVehicle;
-    int note, placeNumber;
+    int note;
     String brand, model, description, infoForClient;
     double price;
 
@@ -21,19 +21,18 @@ public class Vehicle {
     User user;
     public Vehicle(){}
 
-    public Vehicle(String brand, String model, int placeNumber, double price, String infoForClient, String description, int note){
+    public Vehicle(String brand, String model, double price, String infoForClient, String description, int note){
         super();
         this.brand = brand;
         this.description = description;
         this.infoForClient = infoForClient;
         this.model = model;
         this.note = note;
-        this.placeNumber = placeNumber;
         this.price = price;
     }
 
-    public Vehicle(String brand, String model, int placeNumber, double price, String infoForClient){
-        this( brand,  model,  placeNumber,  price, infoForClient, "", -1);
+    public Vehicle(String brand, String model, double price, String infoForClient){
+        this( brand,  model,  price, infoForClient, "", -1);
     }
 
     public String getDescription() {
@@ -46,10 +45,6 @@ public class Vehicle {
 
     public int getNote() {
         return note;
-    }
-
-    public int getPlaceNumber() {
-        return placeNumber;
     }
 
     public long getIdVehicle() {
@@ -92,9 +87,6 @@ public class Vehicle {
         this.model = model;
     }
 
-    public void setPlaceNumber(int placeNumber) {
-        this.placeNumber = placeNumber;
-    }
 
     public void setNote(int note) {
         this.note = note;

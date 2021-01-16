@@ -6,6 +6,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Car extends Vehicle {
     String year, motorization, power, licensePlate;
+    int placeNumber;
     Double trunkVolume;
 
     @OneToOne
@@ -14,7 +15,8 @@ public class Car extends Vehicle {
     public Car(){}
 
     public Car(String brand, String model, Integer placeNumber, Double price, String infoForClient, String description, Integer note, String year, String motorization, String power, String licensePlate, Double trunkVolume,Vehicle vehicle){
-        super(brand, model, placeNumber, price, infoForClient, description, note);
+        super(brand, model, price, infoForClient, description, note);
+        this.placeNumber =placeNumber;
         this.licensePlate = licensePlate;
         this.motorization = motorization;
         this.power = power;

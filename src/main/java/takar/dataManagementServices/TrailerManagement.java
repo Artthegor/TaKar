@@ -17,14 +17,11 @@ public class TrailerManagement implements ITrailerManagement {
     public TrailerManagement() {
     }
 
-    public Trailer addTrailer(String brand, String model, Integer placeNumber, Double price, String infoForClient, String description, Double capacity, Double weight, Double length, String licensePlate) {
-        Vehicle vehicle = new Vehicle(brand, model, placeNumber, price, infoForClient, description, -1);
+    public Trailer addTrailer(String brand, String model, Double price, String infoForClient, String description, Double capacity, Double weight, Double length, String licensePlate) {
+        Vehicle vehicle = new Vehicle(brand, model, price, infoForClient, description, -1);
 
         vehicle = vehicleRepo.save(vehicle);
-        //    public Client(String username, String password, String name, String firstname, String sex, String description, String mail, String phoneNumber) {
-        Trailer trailer = new Trailer( brand,  model,  placeNumber,  price,  infoForClient, description, -1, capacity, weight, length, licensePlate, vehicle);
-        /*Client cli = registerUser(name, lastname,  password, sexe,
-                mail, telephone, adresse, ville, departement, cp, pays);*/
+        Trailer trailer = new Trailer( brand,  model,  price,  infoForClient, description, -1, capacity, weight, length, licensePlate, vehicle);
 
         return traiRepo.save(trailer);
     }

@@ -13,8 +13,8 @@ public class Trailer extends Vehicle {
 
     public Trailer(){}
 
-    public Trailer(String brand, String model, int placeNumber, double price, String infoForClient, String description, int note, double capacity, double weight, double length, String licensePlate, Vehicle vehicle){
-        super(brand, model, placeNumber, price, infoForClient, description, note);
+    public Trailer(String brand, String model, double price, String infoForClient, String description, int note, double capacity, double weight, double length, String licensePlate, Vehicle vehicle){
+        super(brand, model, price, infoForClient, description, note);
         this.capacity = capacity;
         this.length = length;
         this.weight = weight;
@@ -22,8 +22,8 @@ public class Trailer extends Vehicle {
         this.vehicle = vehicle;
     }
 
-    public Trailer(String brand, String model, int placeNumber, double price, String infoForClient, double capacity, double weight, double length, String licensePlate, Vehicle vehicle){
-        this(brand, model, placeNumber, price, infoForClient, "", -1,capacity, length, weight, licensePlate, vehicle);
+    public Trailer(String brand, String model, double price, String infoForClient, double capacity, double weight, double length, String licensePlate, Vehicle vehicle){
+        this(brand, model, price, infoForClient, "", -1,capacity, length, weight, licensePlate, vehicle);
     }
 
     public String getLicensePlate() {

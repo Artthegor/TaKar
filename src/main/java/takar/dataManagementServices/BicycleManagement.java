@@ -17,11 +17,11 @@ public class BicycleManagement implements IBicycleManagement {
     public BicycleManagement() {
     }
 
-    public Bicycle addBicycle(String brand, String model, int placeNumber, double price, String infoForClient, String description, String type, String size, Boolean isElectrical) {
-        Vehicle vehicle = new Vehicle(brand, model, placeNumber, price, infoForClient, description, -1);
+    public Bicycle addBicycle(String brand, String model, double price, String infoForClient, String description, String type, String size, Boolean isElectrical) {
+        Vehicle vehicle = new Vehicle(brand, model, price, infoForClient, description, -1);
 
         vehicle = vehicleRepo.save(vehicle);
-        Bicycle bicycle = new Bicycle(brand, model, placeNumber, price, infoForClient, description, -1, type, size, isElectrical, vehicle);
+        Bicycle bicycle = new Bicycle(brand, model, price, infoForClient, description, -1, type, size, isElectrical, vehicle);
 
         return bicRepo.save(bicycle);
     }

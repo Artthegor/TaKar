@@ -26,24 +26,24 @@ public class VehicleController {
     @RequestMapping("rent")
     public String addvehicle(@RequestParam(value="brand", required=false) String brand,
                              @RequestParam(value="model", required=false) String model,
-                             @RequestParam(value="placeNumber", required=false) String placeNumber,
                              @RequestParam(value="description", required=false) String description,
                              @RequestParam(value="price", required=false) String price,
                              @RequestParam(value="infoForClient", required=false) String infoForClient,
 
-                             @RequestParam(value="voiture", required=false) Boolean voiture,
+                             //voiture
                              @RequestParam(value="year", required=false) String year,
                              @RequestParam(value="motorization", required=false) String motorization,
                              @RequestParam(value="power", required=false) String power,
                              @RequestParam(value="licensePlate", required=false) String licensePlate,
                              @RequestParam(value="trunkVolume", required=false) String trunkVolume,
+                             @RequestParam(value="placeNumber", required=false) String placeNumber,
 
-                             @RequestParam(value="moto", required=false) Boolean moto,
+                             //velo
                              @RequestParam(value="type", required=false) String type,
                              @RequestParam(value="size", required=false) String size,
                              @RequestParam(value="isElectrical", required=false) Boolean isElectrical,
 
-                             @RequestParam(value="remorque", required=false) Boolean remorque,
+                             //remorque
                              @RequestParam(value="capacity", required=false) String capacity,
                              @RequestParam(value="weight", required=false) String weight,
                              @RequestParam(value="length", required=false) String length,
@@ -51,26 +51,27 @@ public class VehicleController {
                              Model modell)
     {
         /*TODO : Choisir si c'est une voiture une remorque ou une moto Donc ajouter les classes correspondantes et une case dans le html*/
-
-        if(brand != null && model != null && placeNumber != null && description != null && price != null && infoForClient != null) {
-            if(voiture)
-                carManager.addCar(brand, model,Integer.parseInt(placeNumber), Double.parseDouble(price), infoForClient,description, year,motorization,power,licensePlate,Double.parseDouble(trunkVolume));
-            if(remorque)
-                trailerManager.addTrailer(brand, model,Integer.parseInt(placeNumber), Double.parseDouble(price), infoForClient,description, Double.parseDouble(capacity), Double.parseDouble(weight), Double.parseDouble(length),licensePlate);
-            if(moto)
-                bicycleManager.addBicycle(brand, model,Integer.parseInt(placeNumber), Double.parseDouble(price), infoForClient,description, type, size, isElectrical);
-        }
-
-        //(String brand, String model, Integer placeNumber, String description, double price, String infoForClient, int note)
-        //Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
-        //modell.addAttribute("vehicle", allVehicle);
+            if (brand != null && model != null && description != null && price != null && infoForClient != null) {
+                if (year != null) {
+                    carManager.addCar(brand, model, Integer.parseInt(placeNumber), Double.parseDouble(price), infoForClient, description, year, motorization, power, licensePlate, Double.parseDouble(trunkVolume));
+                } else {
+                    if (capacity != null) {
+                        trailerManager.addTrailer(brand, model, Double.parseDouble(price), infoForClient, description, Double.parseDouble(capacity), Double.parseDouble(weight), Double.parseDouble(length), licensePlate);
+                    } else {
+                        if (type != null) {
+                            bicycleManager.addBicycle(brand, model, Double.parseDouble(price), infoForClient, description, type, size, isElectrical);
+                        } else {
+                            System.out.println("Selection non valide");
+                        }
+                    }
+                }
+            }
         return "addVehicle";
     }
 
     @RequestMapping("search")
     public String look4vehicle(Model modell)
     {
-        //(String brand, String model, Integer placeNumber, String description, double price, String infoForClient, int note)
         Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
         modell.addAttribute("vehicle", allVehicle);
         return "searchVehicle";
