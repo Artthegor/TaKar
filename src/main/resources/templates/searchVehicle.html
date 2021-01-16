@@ -8,47 +8,48 @@
     <link rel="stylesheet" href="../../styles/general.css"/>
     <link rel="shortcut icon" type="image/png" href="../../images/t.png"/>
 </head>
-
-<body>
-<div id="header" class="jumbotron text-center" style="margin-bottom:0">
-    <a href="/"> <img id="banner" class="img-fluid" src="../../images/testBanner3.png" alt="takarLogo" width="1920"
-                      height="200"/></a>
-</div>
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
-    <div>
-        <a href="../vehicle/search" class="btn btn-dark">Rechercher</a>
-        <a href="../vehicle/rent" class="btn btn-dark">Louer</a>
-        <a href="../contact.html" class="btn btn-dark">Contacter</a>
-
-        <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
-        <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
-
-        <a href="../authentication/connexion" class="btn btn-dark">Connexion</a>
-        <a href="../authentication/registration" class="btn btn-dark">Inscription</a>
+<div id="main">
+    <body>
+    <div id="header" class="jumbotron text-center" style="margin-bottom:0">
+        <a href="/"> <img id="banner" class="img-fluid" src="../../images/testBanner3.png" alt="takarLogo" width="1920"
+                          height="200"/></a>
     </div>
-</nav>
-<div id="contentSearch">
-    <table id="tableSearch">
-        <thead>
-        <tr>
-            <th th:text="Modèle">Modele</th>
-            <th th:text="Marque">Brand</th>
-            <th th:text="Description">Description</th>
-            <th th:text="Note">note</th>
-            <th th:text="Prix">price</th>
-        </tr>
-        </thead>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+        <div>
+            <a href="../vehicle/search" class="btn btn-dark">Rechercher</a>
+            <a href="../vehicle/rent" class="btn btn-dark">Louer</a>
+            <a href="../contact.html" class="btn btn-dark">Contacter</a>
 
-        <tbody>
-        <tr th:each="prod: ${vehicle}">
-            <td th:text="${prod.model}"></td>
-            <td th:text="${prod.brand}"></td>
-            <td th:text="${prod.description}"></td>
-            <td th:text="${prod.note}"></td>
-            <td th:text="${prod.price}"></td>
-        </tr>
-        </tbody>
-    </table>
+            <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
+            <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
+
+            <a href="../authentication/connexion" class="btn btn-dark">Connexion</a>
+            <a href="../authentication/registration" class="btn btn-dark">Inscription</a>
+        </div>
+    </nav>
+    <div id="contentSearch">
+        <table id="tableSearch">
+            <thead>
+            <tr>
+                <th th:text="Modèle">Modele</th>
+                <th th:text="Marque">Brand</th>
+                <th th:text="Description">Description</th>
+                <th th:text="Note">note</th>
+                <th th:text="Prix">price</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="prod: ${vehicle}">
+                <td th:text="${prod.model}"></td>
+                <td th:text="${prod.brand}"></td>
+                <td th:text="${prod.description}"></td>
+                <td th:text="${prod.note}"></td>
+                <td th:text="${prod.price}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <div id="footer" class="text-center" style="margin-bottom:0">
     <p>Tous droits réservés - © Takar 2020/2021 </p>

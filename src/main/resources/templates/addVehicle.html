@@ -9,18 +9,20 @@
     <link rel="shortcut icon" type="image/png" href="../../images/t.png"/>
 </head>
 <script>
-    function formBicycle(checkbox){
+    function formBicycle(checkbox) {
         document.getElementById('rentFormBicycle').style.display = "block";
         document.getElementById('rentFormCar').style.display = "none";
         document.getElementById('rentFormTrailer').style.display = "none";
 
     }
-    function formCar(checkbox){
+
+    function formCar(checkbox) {
         document.getElementById('rentFormBicycle').style.display = "none";
         document.getElementById('rentFormCar').style.display = "block";
         document.getElementById('rentFormTrailer').style.display = "none";
     }
-    function formTrailer(checkbox){
+
+    function formTrailer(checkbox) {
         document.getElementById('rentFormBicycle').style.display = "none";
         document.getElementById('rentFormCar').style.display = "none";
         document.getElementById('rentFormTrailer').style.display = "block";
@@ -28,297 +30,303 @@
 </script>
 
 <body>
-<div id="header" class="jumbotron text-center" style="margin-bottom:0">
-    <a href="/"> <img id="banner" class="img-fluid" src="../../images/testBanner3.png" alt="takarLogo" width="1920"
-                      height="200"/></a>
-</div>
-
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
-    <div>
-        <a href="../vehicle/search" class="btn btn-dark">Rechercher</a>
-        <a href="" class="btn btn-dark">Louer</a>
-        <a href="../contact.html" class="btn btn-dark">Contacter</a>
-
-        <button type="button" class="invisibleButton btn btn-dark"></button>
-        <button type="button" class="invisibleButton btn btn-dark"></button>
-
-        <a href="../authentication/connexion" class="btn btn-dark">Connexion</a>
-        <a href="../authentication/registration" class="btn btn-dark">Inscription</a>
+<div id="main">
+    <div id="header" class="jumbotron text-center" style="margin-bottom:0">
+        <a href="/"> <img id="banner" class="img-fluid" src="../../images/testBanner3.png" alt="takarLogo" width="1920"
+                          height="200"/></a>
     </div>
-</nav>
-<div>
-    <tr>
-        <input type="radio" name = "rentFormCheck" id="velo" value="velo" checked = "checked"  onclick="formBicycle()" /> MOTO
-        <input type="radio" name = "rentFormCheck" id="voiture" value="voiture" onclick="formCar()" /> VOITURE
-        <input type="radio" name = "rentFormCheck" id="remorque" value="remorque" onclick="formTrailer()" /> REMORQUE
-    </tr>
-</div>
-<!--
-FORMULAIRE MOTO
-/!-->
-<div id="contentRent">
-    <form id ="rentFormBicycle" method="get" action="rent" class="rentForm" style="display: block">
-        <h1>Formulaire de mise en location d'une moto</h1>
-        <table class="tableFormRent">
-            <tr>
-                <td>
-                    <label>Marque :</label>
-                </td>
-                <td>
-                    <input type="text" id="brand" name="brand"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Modèle :</label>
-                </td>
-                <td>
-                    <input type="text" id="model" name="model"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Type :</label>
-                </td>
-                <td>
-                    <input type="text" id="type" name="type"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Taille :</label>
-                </td>
-                <td>
-                    <input type="text" id="size" name="size"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Prix :</label>
-                </td>
-                <td>
-                    <input type="number" min="0" id="price" name="price"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Description</label>
-                </td>
-                <td>
-                    <input type="text" id="description" name="description"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Info Pour le client :</label>
-                </td>
-                <td>
-                    <input type="text" id="infoForClient" name="infoForClient"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Est une moto Electrique :</label>
-                </td>
-                <td>
-                    <input type="checkbox" id="isElectrical" name="isElectrical"/><br/>
-                </td>
-            </tr>
-        </table>
-        <div class="buttonsFormRent">
-            <input type='submit' class="btn btn-lg btn-default" name="envoyer"/>
-            <button type='button' name="annuler" class="invisibleButton btn btn-lg btn-default">Annuler</button>
-            <button type='button' name="annuler" class="btn btn-lg btn-default" onclick="window.location.href = '/';">
-                Annuler
-            </button>
-        </div>
-    </form>
-<!--
-FORMULAIRE VOITURE
-/!-->
-    <form id ="rentFormCar" method="get" action="rent" class="rentForm" style="display: none">
-        <h1>Formulaire de mise en location d'une voiture</h1>
-        <table class="tableFormRent">
-            <tr>
-                <td>
-                    <label>Marque :</label>
-                </td>
-                <td>
-                    <input type="text" id="brand" name="brand"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Modèle :</label>
-                </td>
-                <td>
-                    <input type="text" id="model" name="model"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Motorisation :</label>
-                </td>
-                <td>
-                    <input type="text" id="motorization" name="motorization"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Année :</label>
-                </td>
-                <td>
-                    <input type="text" id="year" name="year"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Puissance :</label>
-                </td>
-                <td>
-                    <input type="text" id="power" name="power"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Nombre de place :</label>
-                </td>
-                <td>
-                    <input type="text" id="placeNumber" name="placeNumber"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Volume du coffre :</label>
-                </td>
-                <td>
-                    <input type="text" id="trunkVolume" name="trunkVolume"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Prix :</label>
-                </td>
-                <td>
-                    <input type="text" class="price" name="price"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Plaque d'immatriculation :</label>
-                </td>
-                <td>
-                    <input type="text" id="licensePlate" name="licensePlate"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Description</label>
-                </td>
-                <td>
-                    <input type="text" id="description" name="description"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Info Pour le client :</label>
-                </td>
-                <td>
-                    <input type="text" id="infoForClient" name="infoForClient"/><br/>
-                </td>
-            </tr>
-        </table>
 
-        <div class="buttonsFormRent">
-            <input type='submit' class="btn btn-lg btn-default" name="envoyer"/>
-            <button type='button' name="annuler" class="invisibleButton btn btn-lg btn-default">Annuler</button>
-            <button type='button' name="annuler" class="btn btn-lg btn-default" onclick="window.location.href = '/';">
-                Annuler
-            </button>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+        <div>
+            <a href="../vehicle/search" class="btn btn-dark">Rechercher</a>
+            <a href="" class="btn btn-dark">Louer</a>
+            <a href="../contact.html" class="btn btn-dark">Contacter</a>
+
+            <button type="button" class="invisibleButton btn btn-dark"></button>
+            <button type="button" class="invisibleButton btn btn-dark"></button>
+
+            <a href="../authentication/connexion" class="btn btn-dark">Connexion</a>
+            <a href="../authentication/registration" class="btn btn-dark">Inscription</a>
         </div>
-    </form>
-<!-- FORMULAIRE REMORQUE
-!-->
-    <form id ="rentFormTrailer" method="get" action="rent" class="rentForm" style="display: block">
-        <h1>Formulaire de mise en location d'une moto</h1>
-        <table class="tableFormRent">
-            <tr>
-                <td>
-                    <label>Marque :</label>
-                </td>
-                <td>
-                    <input type="text" id="brand" name="brand"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Modèle :</label>
-                </td>
-                <td>
-                    <input type="text" id="model" name="model"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Type :</label>
-                </td>
-                <td>
-                    <input type="text" id="capacity" name="capacity"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Poids :</label>
-                </td>
-                <td>
-                    <input type="text" id="weight" name="waight"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Longueur :</label>
-                </td>
-                <td>
-                    <input type="number" min="0" id="length" name="length"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Prix :</label>
-                </td>
-                <td>
-                    <input type="number" min="0" id="price" name="price"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Description</label>
-                </td>
-                <td>
-                    <input type="text" id="description" name="description"/><br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Info Pour le client :</label>
-                </td>
-                <td>
-                    <input type="text" id="infoForClient" name="infoForClient"/><br/>
-                </td>
-            </tr>
-        </table>
-        <div class="buttonsFormRent">
-            <input type='submit' class="btn btn-lg btn-default" name="envoyer"/>
-            <button type='button' name="annuler" class="invisibleButton btn btn-lg btn-default">Annuler</button>
-            <button type='button' name="annuler" class="btn btn-lg btn-default" onclick="window.location.href = '/';">
-                Annuler
-            </button>
-        </div>
-    </form>
+    </nav>
+    <div>
+        <tr>
+            <input type="radio" name="rentFormCheck" id="velo" value="velo" checked="checked" onclick="formBicycle()"/>
+            MOTO
+            <input type="radio" name="rentFormCheck" id="voiture" value="voiture" onclick="formCar()"/> VOITURE
+            <input type="radio" name="rentFormCheck" id="remorque" value="remorque" onclick="formTrailer()"/> REMORQUE
+        </tr>
+    </div>
+    <!--
+    FORMULAIRE MOTO
+    /!-->
+    <div id="contentRent">
+        <form id="rentFormBicycle" method="get" action="rent" class="rentForm" style="display: block">
+            <h1>Formulaire de mise en location d'une moto</h1>
+            <table class="tableFormRent">
+                <tr>
+                    <td>
+                        <label>Marque :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="brand" name="brand"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Modèle :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="model" name="model"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Type :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="type" name="type"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Taille :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="size" name="size"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Prix :</label>
+                    </td>
+                    <td>
+                        <input type="number" min="0" id="price" name="price"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Description</label>
+                    </td>
+                    <td>
+                        <input type="text" id="description" name="description"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Info Pour le client :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="infoForClient" name="infoForClient"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Est une moto Electrique :</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="isElectrical" name="isElectrical"/><br/>
+                    </td>
+                </tr>
+            </table>
+            <div class="buttonsFormRent">
+                <input type='submit' class="btn btn-lg btn-default" name="envoyer"/>
+                <button type='button' name="annuler" class="invisibleButton btn btn-lg btn-default">Annuler</button>
+                <button type='button' name="annuler" class="btn btn-lg btn-default"
+                        onclick="window.location.href = '/';">
+                    Annuler
+                </button>
+            </div>
+        </form>
+        <!--
+        FORMULAIRE VOITURE
+        /!-->
+        <form id="rentFormCar" method="get" action="rent" class="rentForm" style="display: none">
+            <h1>Formulaire de mise en location d'une voiture</h1>
+            <table class="tableFormRent">
+                <tr>
+                    <td>
+                        <label>Marque :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="brand" name="brand"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Modèle :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="model" name="model"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Motorisation :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="motorization" name="motorization"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Année :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="year" name="year"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Puissance :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="power" name="power"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Nombre de place :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="placeNumber" name="placeNumber"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Volume du coffre :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="trunkVolume" name="trunkVolume"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Prix :</label>
+                    </td>
+                    <td>
+                        <input type="text" class="price" name="price"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Plaque d'immatriculation :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="licensePlate" name="licensePlate"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Description</label>
+                    </td>
+                    <td>
+                        <input type="text" id="description" name="description"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Info Pour le client :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="infoForClient" name="infoForClient"/><br/>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="buttonsFormRent">
+                <input type='submit' class="btn btn-lg btn-default" name="envoyer"/>
+                <button type='button' name="annuler" class="invisibleButton btn btn-lg btn-default">Annuler</button>
+                <button type='button' name="annuler" class="btn btn-lg btn-default"
+                        onclick="window.location.href = '/';">
+                    Annuler
+                </button>
+            </div>
+        </form>
+        <!-- FORMULAIRE REMORQUE
+        !-->
+        <form id="rentFormTrailer" method="get" action="rent" class="rentForm" style="display: none">
+            <h1>Formulaire de mise en location d'une remorque</h1>
+            <table class="tableFormRent">
+                <tr>
+                    <td>
+                        <label>Marque :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="brand" name="brand"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Modèle :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="model" name="model"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Type :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="capacity" name="capacity"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Poids :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="weight" name="waight"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Longueur :</label>
+                    </td>
+                    <td>
+                        <input type="number" min="0" id="length" name="length"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Prix :</label>
+                    </td>
+                    <td>
+                        <input type="number" min="0" id="price" name="price"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Description</label>
+                    </td>
+                    <td>
+                        <input type="text" id="description" name="description"/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Info Pour le client :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="infoForClient" name="infoForClient"/><br/>
+                    </td>
+                </tr>
+            </table>
+            <div class="buttonsFormRent">
+                <input type='submit' class="btn btn-lg btn-default" name="envoyer"/>
+                <button type='button' name="annuler" class="invisibleButton btn btn-lg btn-default">Annuler</button>
+                <button type='button' name="annuler" class="btn btn-lg btn-default"
+                        onclick="window.location.href = '/';">
+                    Annuler
+                </button>
+            </div>
+        </form>
+    </div>
+
 </div>
-<div id="footer" class="text-center" style="margin-bottom:0">
+<div id="footer" class="text-center">
     <p>Tous droits réservés - © Takar 2020/2021 </p>
 </div>
-
 </body>
 </html>
