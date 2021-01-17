@@ -123,13 +123,19 @@ public class VehicleController {
     }
 
     @RequestMapping("filtre")
-    public String filtre(@RequestParam(value = "type", required = false) String type, Model modell){
+    public String filtre(@RequestParam(value = "type", required = false) String type,@RequestParam(value = "prix", required = false) Double prix, Model modell){
         System.out.println(type);
+        System.out.println(prix);
+        Double prixMax = 100000.0;
+        boolean isFiltrePrix = (prix ==null);
+        if(!isFiltrePrix){
+            prixMax = prix;
+        }
         switch (type) {
             case "car": {
 
                 Iterable<Long> allIdsCar = carManager.getAllIds();
-                Iterable<Vehicle> allCar = vehicleManager.getVehicleByIds(allIdsCar);
+                Iterable<Vehicle> allCar = vehicleManager.getVehicleFilter(allIdsCar,prixMax);
                 modell.addAttribute("vehicle", allCar);
 
             }
@@ -137,7 +143,7 @@ public class VehicleController {
             case "trailer": {
 
                 Iterable<Long> allIdsTrailer = trailerManager.getAllIds();
-                Iterable<Vehicle> allTrailer = vehicleManager.getVehicleByIds(allIdsTrailer);
+                Iterable<Vehicle> allTrailer = vehicleManager.getVehicleFilter(allIdsTrailer,prixMax);
                 modell.addAttribute("vehicle", allTrailer);
 
             }
@@ -145,13 +151,14 @@ public class VehicleController {
             case "bicycle": {
 
                 Iterable<Long> allIdsBicycle = bicycleManager.getAllIds();
-                Iterable<Vehicle> allBicycle = vehicleManager.getVehicleByIds(allIdsBicycle);
+                Iterable<Vehicle> allBicycle = vehicleManager.getVehicleFilter(allIdsBicycle,prixMax);
                 modell.addAttribute("vehicle", allBicycle);
 
             }
             break;
             case "all":{
-                Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
+                Iterable<Vehicle> allVehicle;
+                allVehicle = vehicleManager.getVehicleFilter(vehicleManager.getAllIds(),prixMax);
                 modell.addAttribute("vehicle", allVehicle);
             }
         }
