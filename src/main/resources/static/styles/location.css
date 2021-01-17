@@ -49,3 +49,38 @@ table.tableFormRent {
     margin: auto;
 }
 
+div#vehicleCheckChoiceDiv {
+    margin: 2em auto;
+    font-family: 'Fjalla One' !important;
+    width: fit-content;
+    height: fit-content;
+}
+
+.inputFiltreDiv {
+    display: inline;
+    padding: 0.5em;
+}
+
+
+element.style {
+}
+div#vehicleCheckChoiceDiv input {
+    margin: auto;
+    vertical-align: text-top;
+    transform: scale(1.5);
+    padding: 0.5em;
+    margin-right: 0.25em;
+}
+
+span.inputLabel {
+    font-size: 1.5em;
+}
+
+hr#sepaFormChoiceVehicule {
+    width: 50%;
+    height: 5px !important;
+    border-width: 3px;
+    size: 30px !important;
+    font-size: 5em !important;
+    border-radius: 25px;
+}
