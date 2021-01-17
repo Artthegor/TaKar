@@ -35,14 +35,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().formLogin()
                 .loginPage("/authentication/connexion").defaultSuccessUrl("/").failureUrl("/authentication/connexion?error=true").usernameParameter("username")
                 .passwordParameter("password").permitAll().successHandler(authenticationSuccessHandler)
-                .and().logout().deleteCookies("JSESSIONID").logoutUrl("/logout").logoutSuccessUrl("/authentication/login");
+                .and().logout().logoutUrl("/logout").addLogoutHandler(new LogoutCleanCookies("USERCONNECT", "JSESSIONID")).logoutSuccessUrl("/authentication/connexion").invalidateHttpSession(true);
 
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder authManagerBuilder) throws Exception {
         authManagerBuilder.userDetailsService(customUserDetailsService).passwordEncoder(bCryptPasswordEncoder());
-        System.out.println("LAAAAAAAAAAAAAAAAAAAAAAA" + authManagerBuilder.userDetailsService(customUserDetailsService).toString());
     }
 
     @Bean

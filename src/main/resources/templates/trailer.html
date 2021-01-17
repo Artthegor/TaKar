@@ -23,9 +23,7 @@
             <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
             <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
 
-            <a href="../authentication/connexion" class="btn btn-dark">Connexion</a>
-            <a href="../authentication/registration" class="btn btn-dark">Inscription</a>
-            <a href="../logout" class="btn btn-dark">Déconnexion</a>
+            <div id="zoneConnect"></div>
         </div>
     </nav>
     <div id="contentSearch">
@@ -62,4 +60,19 @@
     <p>Tous droits réservés - © Takar 2020/2021 </p>
 </div>
 </body>
+
+<script>
+
+console.log(document.cookie.indexOf("USERCONNECT"));
+
+if(document.cookie.indexOf("USERCONNECT") == -1){
+    //pas connecté
+    document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
+
+}else{
+    //connecté
+    document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
+}
+</script>
+
 </html>

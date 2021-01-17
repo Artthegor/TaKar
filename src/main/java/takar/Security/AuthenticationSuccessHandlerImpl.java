@@ -15,6 +15,7 @@ import takar.model.User;
 import takar.repositories.UserRepository;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -32,9 +33,10 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         logger.debug(userRepo.getAllUsers().toString());
-        /*System.out.println("LAAAAAAAAAAAAAAAAAAAAAA" + authentication.getPrincipal());
-        UserDetails user = (UserDetails) authentication.getPrincipal();
-        System.out.println(user.getUsername());*/
+        Cookie cookieConnected = new Cookie("USERCONNECT", "USERCONNECT");
+        cookieConnected.setPath("/");
+        response.addCookie(cookieConnected);
+
         //System.out.println(request.getCookies().toString());
         //System.out.println(request.getSession().toString());
         response.setStatus(HttpServletResponse.SC_OK);
