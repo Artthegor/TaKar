@@ -2,6 +2,7 @@ package takar.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Iterator;
 
 @Entity
 public class Car implements Serializable {
@@ -72,6 +73,7 @@ public class Car implements Serializable {
 
     public void setYear(String year) {
         this.year = year;
+
     }
 
     public Vehicle getVehicle() {

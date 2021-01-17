@@ -30,4 +30,7 @@ public class TrailerManagement implements ITrailerManagement {
     {
         return traiRepo.findAll();
     }
+    public Iterable<Long> getAllIds(){
+        return traiRepo.getAllId();
+    }
 }

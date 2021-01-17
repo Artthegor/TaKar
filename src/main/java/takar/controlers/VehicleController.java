@@ -15,6 +15,8 @@ import takar.dataManagementServices.IVehicleManagement;
 import takar.model.*;
 import takar.repositories.UserRepository;
 
+import java.util.Iterator;
+
 @Controller
 @RequestMapping("vehicle")
 public class VehicleController {
@@ -124,6 +126,49 @@ public class VehicleController {
     {
         Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
         modell.addAttribute("vehicle", allVehicle);
+        return "searchVehicle";
+    }
+
+    @RequestMapping("test")
+    public String lookForCar(@RequestParam(value = "type", required = false) String type, Model modell){
+        System.out.println(type);
+        switch (type) {
+            case "car": {
+
+                Iterable<Long> allIdsCar = carManager.getAllIds();
+                for (Long id : allIdsCar
+                ) {
+                    System.out.println(id);
+                }
+                Iterable<Vehicle> allCar = vehicleManager.getVehicleByIds(allIdsCar);
+                modell.addAttribute("vehicle", allCar);
+
+            }
+            break;
+            case "trailer": {
+
+                Iterable<Long> allIdsTrailer = trailerManager.getAllIds();
+                for (Long id : allIdsTrailer
+                ) {
+                    System.out.println(id);
+                }
+                Iterable<Vehicle> allTrailer = vehicleManager.getVehicleByIds(allIdsTrailer);
+                modell.addAttribute("vehicle", allTrailer);
+
+            }
+            break;
+            case "bicycle": {
+
+                Iterable<Long> allIdsBicycle = bicycleManager.getAllIds();
+                for (Long id : allIdsBicycle
+                ) {
+                    System.out.println(id);
+                }
+                Iterable<Vehicle> allBicycle = vehicleManager.getVehicleByIds(allIdsBicycle);
+                modell.addAttribute("vehicle", allBicycle);
+
+            }
+        }
         return "searchVehicle";
     }
 

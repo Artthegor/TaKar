@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import takar.model.Vehicle;
 import takar.repositories.VehicleRepository;
 
+import java.util.Iterator;
+
 @Service
 public class VehicleManagement implements IVehicleManagement{
 
@@ -22,6 +24,12 @@ public class VehicleManagement implements IVehicleManagement{
     {
         return vehicleRepo.findAll();
     }
+
+    public Iterable<Vehicle> getVehicleByIds(Iterable<Long> ids){
+        return vehicleRepo.findAllByIdVehicleIn(ids);
+    }
+
+
 
 
 }

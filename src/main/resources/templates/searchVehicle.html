@@ -29,15 +29,41 @@
             <a href="../logout" class="btn btn-dark">Déconnexion</a>
         </div>
     </nav>
+    <div id="filter">
+        <form method="get" action="test" id="vehicleForm">
+            <table id="tableFilter">
+                <tr>
+                    <th>
+                        Outil de filtre
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="type" id="typeVehicle" form="vehicleForm">
+                            <option value="car">Voiture</option>
+                            <option value="bicycle">Vélo</option>
+                            <option value="trailer">Remorque</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='submit' class="btn btn-lg btn-default" name="filtrer" value="Filtrer"/>
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+    </div>
     <div id="contentSearch">
         <table id="tableSearch">
             <thead>
             <tr>
-                <th th:text="Modèle">Modele</th>
-                <th th:text="Marque">Brand</th>
-                <th th:text="Description">Description</th>
-                <th th:text="Note">note</th>
-                <th th:text="Prix">price</th>
+                <th th:text="Modèle"></th>
+                <th th:text="Marque"></th>
+                <th th:text="Description"></th>
+                <th th:text="Note"></th>
+                <th th:text="Prix"></th>
             </tr>
             </thead>
 
