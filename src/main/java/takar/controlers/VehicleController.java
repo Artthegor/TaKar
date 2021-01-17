@@ -125,8 +125,8 @@ public class VehicleController {
         return "searchVehicle";
     }
 
-    @RequestMapping("filtre")
-    public String filtre(@RequestParam(value = "type", required = false) String type,@RequestParam(value = "prix", required = false) Double prix,@RequestParam(value = "note", required = false) int note, Model modell){
+    @RequestMapping(value = "filtre", method = RequestMethod.GET)
+    public String filtre(@RequestParam(value = "type", required = false) String type,@RequestParam(value = "prix", required = false) Double prix,@RequestParam(value = "note", required = false) Integer note, Model modell){
         Double prixMax = Double.MAX_VALUE;
         int minNote = note;
         boolean isFiltrePrix = (prix ==null);
