@@ -126,9 +126,7 @@ public class VehicleController {
 
     @RequestMapping("filtre")
     public String filtre(@RequestParam(value = "type", required = false) String type,@RequestParam(value = "prix", required = false) Double prix, Model modell){
-        System.out.println(type);
-        System.out.println(prix);
-        Double prixMax = 100000.0;
+        Double prixMax = Double.MAX_VALUE;
         boolean isFiltrePrix = (prix ==null);
         if(!isFiltrePrix){
             prixMax = prix;

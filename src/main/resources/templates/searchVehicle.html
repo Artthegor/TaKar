@@ -34,7 +34,7 @@
             <table id="tableFilter">
                 <tr>
                     <th id="FilterTool">
-                       Filtrage des résultats :
+                        Filtrage des résultats :
                     </th>
                 </tr>
                 <tr id="toolsSelection">
@@ -47,13 +47,14 @@
                         </select>
                     </td>
                     <td id="priceSelection" class="toolResearch">
-                        Prix Max: <input type = "number" min="0" max="5000" name = "prix" value="Prix"/>
+                        Prix Max: <input type="number" min="0" max="5000" name="prix" value="Prix"/>
                     </td>
                 </tr>
                 <tr>
                     <td>
 
-                        <input type='submit' class="btn btn-lg btn-default" name="filtrer" value="Filtrer" id="btnFiltre"/>
+                        <input type='submit' class="btn btn-lg btn-default" name="filtrer" value="Filtrer"
+                               id="btnFiltre"/>
 
 
                     </td>
@@ -75,13 +76,13 @@
             </thead>
 
             <tbody>
-            <tr th:each="prod: ${vehicle}" class="resultatSearchline">
-                <td th:text="${prod.model}" class="modelField"></td>
-                <td th:text="${prod.brand}" class="marqueField"></td>
-                <td th:text="${prod.description}" class="descriptionFiled"></td>
-                <td th:text="${prod.note}"></td>
-                <td th:text="${prod.price}"></td>
-            </tr>
+                <tr th:each="prod: ${vehicle}" class="resultatSearchline" onclick="window.location='details'">
+                    <td th:text="${prod.model}" class="modelField"></td>
+                    <td th:text="${prod.brand}" class="marqueField"></td>
+                    <td th:text="${prod.description}" class="descriptionFiled"></td>
+                    <td th:text="${prod.note}"></td>
+                    <td th:text="${prod.price}"></td>
+                </tr>
             </tbody>
         </table>
     </div>

@@ -14,7 +14,10 @@ table#tableSearch, #tableFilter{
     text-transform: capitalize;
     border-style: solid;
 }
-
+#tableSearch tbody tr:hover{
+    cursor: pointer;
+    background: aqua;
+}
 #vehicleForm .btn {
     background: black;
     color: white;
