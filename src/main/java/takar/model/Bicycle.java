@@ -48,4 +48,8 @@ public class Bicycle implements Serializable {
     public void setType(String type) {
         this.type = type;
     }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
 }

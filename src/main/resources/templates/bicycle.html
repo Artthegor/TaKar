@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../../styles/general.css"/>
     <link rel="shortcut icon" type="image/png" href="../../images/t.png"/>
 </head>
-
 <body>
 <div id="main">
     <div id="header" class="jumbotron text-center" style="margin-bottom:0">
@@ -38,16 +37,22 @@
                 <th th:text="Description">Description</th>
                 <th th:text="Note">note</th>
                 <th th:text="Prix">price</th>
+                <th th:text="Type">type</th>
+                <th th:text="Taille">size</th>
+                <th th:text="Electrique"></th>
             </tr>
             </thead>
 
             <tbody>
-            <tr th:each="prod: ${vehicle}">
-                <td th:text="${prod.model}"></td>
-                <td th:text="${prod.brand}"></td>
-                <td th:text="${prod.description}"></td>
-                <td th:text="${prod.note}"></td>
-                <td th:text="${prod.price}"></td>
+            <tr>
+                <td th:text="${vehicle.model}"></td>
+                <td th:text="${vehicle.brand}"></td>
+                <td th:text="${vehicle.description}"></td>
+                <td th:text="${vehicle.note}"></td>
+                <td th:text="${vehicle.price}"></td>
+                <td th:text="${bicycle.type}"></td>
+                <td th:text="${bicycle.size}"></td>
+                <td th:text="${bicycle.getElectrical()}"></td>
             </tr>
             </tbody>
         </table>
