@@ -2,6 +2,7 @@ package takar.dataManagementServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import takar.model.User;
 import takar.model.Vehicle;
 import takar.repositories.VehicleRepository;
 
@@ -33,8 +34,13 @@ public class VehicleManagement implements IVehicleManagement{
         return vehicleRepo.findAllByIdVehicleInAndPriceLessThanEqualAndNoteGreaterThanEqual(ids,price,note);
     }
 
+
     public Iterable<Long> getAllIds(){
         return vehicleRepo.findAllId();
+    }
+
+    public Iterable<Vehicle> getMyLocation(User user){
+        return vehicleRepo.findAllByUser(user);
     }
 
 
