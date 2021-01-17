@@ -64,4 +64,8 @@ public class ClientManagement implements IClientManagement {
     public Boolean isUsernameExist(String username){
         return userRepo.findByUsername(username) != null;
     }
+
+    public Client findByid(long userID) {
+        return clientRepo.findByid(userID);
+    }
 }
