@@ -21,7 +21,7 @@ public class BicycleManagement implements IBicycleManagement {
         Vehicle vehicle = new Vehicle(brand, model, price, infoForClient, description, -1);
 
         vehicle = vehicleRepo.save(vehicle);
-        Bicycle bicycle = new Bicycle(brand, model, price, infoForClient, description, -1, type, size, isElectrical, vehicle);
+        Bicycle bicycle = new Bicycle(type, size, isElectrical, vehicle);
 
         return bicRepo.save(bicycle);
     }

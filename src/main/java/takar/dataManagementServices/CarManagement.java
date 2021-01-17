@@ -25,7 +25,7 @@ public class CarManagement implements ICarManagement {
 
         vehicle = vehicleRepo.save(vehicle);
         //    public Client(String username, String password, String name, String firstname, String sex, String description, String mail, String phoneNumber) {
-        Car car = new Car(brand, model,placeNumber, price, infoForClient,description,0, year,motorization,power,licensePlate,trunkVolume, vehicle);
+        Car car = new Car(placeNumber, year,motorization,power,licensePlate,trunkVolume, vehicle);
         /*Client cli = registerUser(name, lastname,  password, sexe,
                 mail, telephone, adresse, ville, departement, cp, pays);*/
 

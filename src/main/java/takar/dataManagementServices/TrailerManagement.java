@@ -21,7 +21,7 @@ public class TrailerManagement implements ITrailerManagement {
         Vehicle vehicle = new Vehicle(brand, model, price, infoForClient, description, -1);
 
         vehicle = vehicleRepo.save(vehicle);
-        Trailer trailer = new Trailer( brand,  model,  price,  infoForClient, description, -1, capacity, weight, length, licensePlate, vehicle);
+        Trailer trailer = new Trailer(capacity, weight, length, licensePlate, vehicle);
 
         return traiRepo.save(trailer);
     }

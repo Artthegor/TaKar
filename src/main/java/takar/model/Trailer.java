@@ -1,12 +1,13 @@
 package takar.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Trailer extends Vehicle {
+public class Trailer implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    long IdVehicle;
+    long IdTrailer;
     double capacity, weight, length;
     String licensePlate;
 
@@ -15,17 +16,12 @@ public class Trailer extends Vehicle {
 
     public Trailer(){}
 
-    public Trailer(String brand, String model, double price, String infoForClient, String description, int note, double capacity, double weight, double length, String licensePlate, Vehicle vehicle){
-        super(brand, model, price, infoForClient, description, note);
+    public Trailer( double capacity, double weight, double length, String licensePlate, Vehicle vehicle){
         this.capacity = capacity;
         this.length = length;
         this.weight = weight;
         this.licensePlate = licensePlate;
         this.vehicle = vehicle;
-    }
-
-    public Trailer(String brand, String model, double price, String infoForClient, double capacity, double weight, double length, String licensePlate, Vehicle vehicle){
-        this(brand, model, price, infoForClient, "", -1,capacity, length, weight, licensePlate, vehicle);
     }
 
     public String getLicensePlate() {

@@ -1,12 +1,13 @@
 package takar.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Car extends Vehicle {
+public class Car implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    long IdVehicle;
+    long IdCar;
 
 
     String year, motorization, power, licensePlate;
@@ -18,8 +19,7 @@ public class Car extends Vehicle {
 
     public Car(){}
 
-    public Car(String brand, String model, Integer placeNumber, Double price, String infoForClient, String description, Integer note, String year, String motorization, String power, String licensePlate, Double trunkVolume,Vehicle vehicle){
-        super(brand, model, price, infoForClient, description, note);
+    public Car(Integer placeNumber, String year, String motorization, String power, String licensePlate, Double trunkVolume,Vehicle vehicle){
         this.placeNumber =placeNumber;
         this.licensePlate = licensePlate;
         this.motorization = motorization;
@@ -27,10 +27,6 @@ public class Car extends Vehicle {
         this.trunkVolume = trunkVolume;
         this.year = year;
         this.vehicle = vehicle;
-    }
-
-    public Car(String brand, String model, Integer placeNumber, Double price, String infoForClient, String year, String motorization, String power, String licensePlate, Double trunkVolume, Vehicle vehicle){
-        this(brand, model, placeNumber, price, infoForClient, "", -1, year, motorization,power, licensePlate, trunkVolume, vehicle);
     }
 
     public double getTrunkVolume() {
