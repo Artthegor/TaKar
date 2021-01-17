@@ -12,6 +12,7 @@
     font-family: 'Noto Sans Italic';
     src: URL('../fonts/NotoSans-Italic.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'Noto Sans BoldItalic';
     src: URL('../fonts/NotoSans-BoldItalic.ttf') format('truetype');
@@ -23,15 +24,16 @@
     src: URL('../fonts/FjallaOne-Regular.ttf') format('truetype');
 }
 
-html{
+html {
     height: 100%;
 }
+
 body {
     font-family: 'Noto Sans', sans-serif;
     height: 100%;
 }
 
-#main{
+#main {
     max-width: 1920px;
     min-height: 100%;
     margin: 0 auto;
@@ -55,7 +57,7 @@ h1 {
     opacity: 0 !important;
 }
 
-.invisibleButton{
+.invisibleButton {
     opacity: 0 !important;
 }
 

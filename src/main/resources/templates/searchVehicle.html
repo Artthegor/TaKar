@@ -48,7 +48,9 @@
                         Prix Max: <input type="number" min="0" max="5000" name="prix" value="Prix"/>
                     </td>
                     <td id="noteSelection" class="toolResearch">
-                        Note Min: <input type="range" min="0" max="5" step="1" oninput="this.nextElementSibling.value = this.value" name="note" value="0"/><output>0</output>
+                        Note Min: <input type="range" min="0" max="5" step="1"
+                                         oninput="this.nextElementSibling.value = this.value" name="note" value="0"/>
+                        <output>0</output>
                     </td>
                 </tr>
                 <tr>
@@ -82,7 +84,8 @@
                     <td th:text="${prod.description}" class="descriptionFiled"></td>
                     <td th:text="${prod.note}" class = "noteField"></td>
                     <td th:text="${prod.price}"></td>
-                    <td class="linkSearch"><a th:href="'details?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a> </td>
+                    <td class="linkSearch"><a th:href="'details?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a>
+                    </td>
                 </tr>
             </a>
             </tbody>
@@ -96,11 +99,11 @@
 
 <script>
 
-console.log(document.cookie.indexOf("USERCONNECT"));
+    console.log(document.cookie.indexOf("USERCONNECT"));
 
-if(document.cookie.indexOf("USERCONNECT") == -1){
-    //pas connecté
-    document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
+    if (document.cookie.indexOf("USERCONNECT") == -1) {
+        //pas connecté
+        document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
 
 }else{
     //connecté

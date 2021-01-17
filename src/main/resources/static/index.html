@@ -108,16 +108,16 @@
 </body>
 <script>
 
-console.log(document.cookie.indexOf("USERCONNECT"));
+    console.log(document.cookie.indexOf("USERCONNECT"));
 
-if(document.cookie.indexOf("USERCONNECT") == -1){
-    //pas connecté
-    document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
+    if (document.cookie.indexOf("USERCONNECT") == -1) {
+        //pas connecté
+        document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
 
-}else{
-    //connecté
-    document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
-}
+    } else {
+        //connecté
+        document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
+    }
 </script>
 
 </html>

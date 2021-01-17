@@ -47,6 +47,7 @@ form#formUser {
 #invisibleButton1:hover {
     cursor: default;
 }
+
 table#tableFormConnexion {
     margin: auto;
 }
@@ -54,6 +55,7 @@ table#tableFormConnexion {
 table#tableFormConnexion label {
     text-align: left !important;
 }
+
 table#tableFormConnexion {
     margin-bottom: 1.5em;
 }
