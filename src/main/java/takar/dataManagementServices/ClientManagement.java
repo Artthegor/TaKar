@@ -46,10 +46,6 @@ public class ClientManagement implements IClientManagement {
                                String cp,
                                String pays)
     {
-        if(userRepo.findByUsername(username) != null){
-            //username déjà utilisé
-            return null;
-        }
         Role role = new Role("ROLE_USER");
         role = roleRepo.save(role);
 
@@ -63,5 +59,9 @@ public class ClientManagement implements IClientManagement {
         Client cli = new Client(firstname, lastname,sexe, mail, telephone, address, user);
 
         return clientRepo.save(cli);
+    }
+
+    public Boolean isUsernameExist(String username){
+        return userRepo.findByUsername(username) != null;
     }
 }

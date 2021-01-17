@@ -27,6 +27,8 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepo;
 
+	String erreur = "";
+
 
 	@RequestMapping("registration")
 	public String registerUser(
@@ -46,6 +48,7 @@ public class UserController {
 	) {
 		System.out.println("Controller client");
 		System.out.println(username+ " " +firstname+ " " +lastname+ " " +password+ " " +sexe+ " " +mail+ " " +telephone+ " " +adresse+ " " +ville+ " " +departement+ " " +cp+ " " +pays);
+
 		if(username != null &&
 				firstname != null &&
 				lastname != null &&
@@ -73,10 +76,38 @@ public class UserController {
 				!pays.trim().isEmpty()
 		)
 		{
-			clientManager.registerUser(username, firstname, lastname, password, sexe,
-					mail, telephone, adresse, ville, departement, cp, pays);
+			if(!clientManager.isUsernameExist(username)){
+				clientManager.registerUser(username, firstname, lastname, password, sexe,
+						mail, telephone, adresse, ville, departement, cp, pays);
+
+				return "formConnexion";
+			}else{
+				model.addAttribute("erreur", "Username déjà utilisé");
+				return "registrationView";
+			}
+
+
+
+
+		}else{
+			if(username != null ||
+					firstname != null ||
+					lastname != null ||
+					password != null ||
+					sexe != null ||
+					mail != null ||
+					telephone != null ||
+					adresse != null ||
+					ville != null ||
+					departement != null ||
+					cp != null ||
+					pays != null){
+				model.addAttribute("erreur", "Erreur dans un des champs saisis");
+			}
+			return "registrationView";
 		}
-		return "registrationView";
+
+
 	}
 	public static boolean isValidEMail(String email)
 	{
