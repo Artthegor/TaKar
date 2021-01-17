@@ -29,6 +29,11 @@ public class Car implements Serializable {
         this.vehicle = vehicle;
     }
 
+    public int getPlaceNumber() {
+        return placeNumber;
+    }
+
+
     public double getTrunkVolume() {
         return trunkVolume;
     }
@@ -67,5 +72,9 @@ public class Car implements Serializable {
 
     public void setYear(String year) {
         this.year = year;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 }

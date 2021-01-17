@@ -12,8 +12,7 @@ import takar.dataManagementServices.IBicycleManagement;
 import takar.dataManagementServices.ICarManagement;
 import takar.dataManagementServices.ITrailerManagement;
 import takar.dataManagementServices.IVehicleManagement;
-import takar.model.User;
-import takar.model.Vehicle;
+import takar.model.*;
 import takar.repositories.UserRepository;
 
 @Controller
@@ -125,7 +124,29 @@ public class VehicleController {
     {
         Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
         modell.addAttribute("vehicle", allVehicle);
-        return "searchVehicle";
+        return "vehicle";
+    }
+
+    @RequestMapping("car")
+    public String PrintCar(Car car, Model modell)
+    {
+        modell.addAttribute("car", car);
+        modell.addAttribute("vehicle", car.getVehicle());
+        return "car";
+    }
+    @RequestMapping("bicycle")
+    public String PrintBicycle(Bicycle bicycle, Model modell)
+    {
+        modell.addAttribute("bicycle", bicycle);
+        modell.addAttribute("vehicle", bicycle.getVehicle());
+        return "bicycle";
+    }
+    @RequestMapping("trailer")
+    public String PrintTrailer(Trailer trailer, Model modell)
+    {
+        modell.addAttribute("trailer", trailer);
+        modell.addAttribute("vehicle", trailer.getVehicle());
+        return "trailer";
     }
 
 }

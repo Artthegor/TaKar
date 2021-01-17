@@ -55,4 +55,8 @@ public class Trailer implements Serializable {
     public void setWeight(double weight) {
         this.weight = weight;
     }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
 }

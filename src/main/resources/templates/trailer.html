@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Recherche de Vehicule</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../styles/search.css"/>
+    <link rel="stylesheet" href="../../styles/general.css"/>
+    <link rel="shortcut icon" type="image/png" href="../../images/t.png"/>
+</head>
+<body>
+<div id="main">
+    <div id="header" class="jumbotron text-center" style="margin-bottom:0">
+        <a href="/"> <img id="banner" class="img-fluid" src="../../images/testBanner3.png" alt="takarLogo" width="1920"
+                          height="200"/></a>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+        <div>
+            <a href="../vehicle/search" class="btn btn-dark">Rechercher</a>
+            <a href="../vehicle/rent" class="btn btn-dark">Louer</a>
+            <a href="../contact.html" class="btn btn-dark">Contacter</a>
+
+            <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
+            <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
+
+            <a href="../authentication/connexion" class="btn btn-dark">Connexion</a>
+            <a href="../authentication/registration" class="btn btn-dark">Inscription</a>
+            <a href="../logout" class="btn btn-dark">Déconnexion</a>
+        </div>
+    </nav>
+    <div id="contentSearch">
+        <table id="tableSearch">
+            <thead>
+            <tr>
+                <th th:text="Modèle">Modele</th>
+                <th th:text="Marque">Brand</th>
+                <th th:text="Description">Description</th>
+                <th th:text="Note">note</th>
+                <th th:text="Prix">price</th>
+                <th th:text="Capacité">capacity</th>
+                <th th:text="Longueur">length</th>
+                <th th:text="Poids">weight</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td th:text="${vehicle.model}"></td>
+                <td th:text="${vehicle.brand}"></td>
+                <td th:text="${vehicle.description}"></td>
+                <td th:text="${vehicle.note}"></td>
+                <td th:text="${vehicle.price}"></td>
+                <td th:text="${trailer.capacity}"></td>
+                <td th:text="${trailer.length}"></td>
+                <td th:text="${trailer.weight}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="footer" class="text-center" style="margin-bottom:0">
+    <p>Tous droits réservés - © Takar 2020/2021 </p>
+</div>
+</body>
+</html>
