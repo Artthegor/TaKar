@@ -92,6 +92,7 @@ public class Vehicle {
         this.model = model;
     }
 
+    public User getUser(){ return user;}
 
     public void setNote(int note) {
         this.note = note;
