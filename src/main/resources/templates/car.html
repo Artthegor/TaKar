@@ -27,38 +27,56 @@
             <div id="zoneConnect"></div>
         </div>
     </nav>
+    <div id="TitleDetails"><h1>Fiche Descriptive</h1></div>
     <div id="contentSearch">
         <table id="tableSearch">
-            <thead>
-            <tr>
-                <th th:text="Modèle" class="modelField">Modele>Modele</th>
-                <th th:text="Marque" class="marqueField">Brand</th>
-                <th th:text="Description" class="descriptionFiled">Description</th>
-                <th th:text="Note">note</th>
-                <th th:text="Prix">price</th>
-                <th th:text="Année">year</th>
-                <th >Type de Moteur</th>
-                <th th:text="Puissance">power</th>
-                <th >Nombre de places</th>
-                <th >Volume du coffre</th>
-                <th >Plaque d'immatriculation</th>
+            <tr id="model">
+                <td class="modelField carFieldLabel" >Modele : </td>
+                <td th:text="${vehicle.model}" class="modelField carFieldData"></td>
             </tr>
-            </thead>
+            <tr id="marque">
+                <td class="marqueField carFieldLabel" >Marque : </td>
+                <td th:text="${vehicle.brand}" class="marqueField carFieldData"></td>
+            </tr>
+            <tr id="description">
+                <td  class="descriptionFiled carFieldLabel" >Description : </td>
+                <td th:text="${vehicle.description}" class="descriptionFiled carFieldData"></td>
+            </tr>
+            <tr id="note">
+                <td  class="carFieldLabel">Note : </td>
+                <td class="carFieldData" th:text="${vehicle.note}"></td>
+            </tr>
+            <tr id="price">
+                <td   class="carFieldLabel">Prix : </td>
+                <td class="carFieldData" th:text="${vehicle.price}"></td>
+            </tr>
+            <tr id="year">
+                <td  class="carFieldLabel">Année : </td>
+                <td class="carFieldData" th:text="${car.year}"></td>
+            </tr>
+            <tr id="motor">
+                <td class="carFieldLabel">Type de Moteur : </td>
+                <td class="carFieldData" th:text="${car.motorization}"></td>
+            </tr>
+            <tr id="power">
+                <td  class="carFieldLabel">Puissance : </td>
+                <td class="carFieldData" th:text="${car.power}"></td>
+            </tr>
+            <tr id="places">
+                <td  class="carFieldLabel">Nombre de places : </td>
+                <td class="carFieldData" th:text="${car.getPlaceNumber()}"></td>
+            </tr>
+            <tr id="coffre">
+                <td  class="carFieldLabel">Volume du coffre : </td>
+                <td class="carFieldData" th:text="${car.trunkVolume}"></td>
+            </tr>
+            <tr id="immat">
+                <td class="carFieldLabel">Plaque d'immatriculation : </td>
+                <td class="carFieldData" th:text="${car.licensePlate}"></td>
+            </tr>
 
             <tbody>
             <tr class="resultatSearchline">
-                <td th:text="${vehicle.model}" class="modelField"></td>
-                <td th:text="${vehicle.brand}" class="marqueField"></td>
-                <td th:text="${vehicle.description}" class="descriptionFiled"></td>
-                <td th:text="${vehicle.note}"></td>
-                <td th:text="${vehicle.price}"></td>
-                <td th:text="${car.year}"></td>
-                <td th:text="${car.motorization}"></td>
-                <td th:text="${car.power}"></td>
-                <td th:text="${car.getPlaceNumber()}"></td>
-                <td th:text="${car.trunkVolume}"></td>
-                <td th:text="${car.licensePlate}"></td>
-
 
             </tr>
             </tbody>
@@ -72,16 +90,16 @@
 
 <script>
 
-console.log(document.cookie.indexOf("USERCONNECT"));
+    console.log(document.cookie.indexOf("USERCONNECT"));
 
-if(document.cookie.indexOf("USERCONNECT") == -1){
-    //pas connecté
-    document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
+    if (document.cookie.indexOf("USERCONNECT") == -1) {
+        //pas connecté
+        document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
 
-}else{
-    //connecté
-    document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
-}
+    } else {
+        //connecté
+        document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
+    }
 </script>
 
 </html>

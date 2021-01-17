@@ -1,24 +1,9 @@
-th.marqueField {
-    width: 200px;
+
+div#TitleDetails {
+    text-align: center;
 }
 
-th.modelField {
-    width: 200px;
-}
-
-tr.resultatSearchline td {
-    border-style: dotted;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-}
-
-th.descriptionFiled {
-    width: 500px;
-    max-width: 500px;
-    /* text-align: justify; */
-}
-
-td.descriptionFiled {
-    text-align: justify;
-    padding-left: 1em;
+div#contentSearch {
+    width: 60%;
+    margin: auto;
 }
