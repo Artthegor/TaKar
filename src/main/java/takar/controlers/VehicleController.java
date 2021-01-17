@@ -14,7 +14,6 @@ import takar.dataManagementServices.IVehicleManagement;
 import takar.model.*;
 import takar.repositories.UserRepository;
 
-import java.util.Iterator;
 
 @Controller
 @RequestMapping("vehicle")
@@ -61,8 +60,6 @@ public class VehicleController {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = userDetails.getUsername();
         User user = userRepo.findByUsername(username);
-        System.out.println("controleur vehicle username : " + username);
-        /*TODO : Choisir si c'est une voiture une remorque ou une moto Donc ajouter les classes correspondantes et une case dans le html*/
         try {
             if (brand != null &&
                     model != null &&
@@ -132,10 +129,6 @@ public class VehicleController {
             case "car": {
 
                 Iterable<Long> allIdsCar = carManager.getAllIds();
-                for (Long id : allIdsCar
-                ) {
-                    System.out.println(id);
-                }
                 Iterable<Vehicle> allCar = vehicleManager.getVehicleByIds(allIdsCar);
                 modell.addAttribute("vehicle", allCar);
 
@@ -144,10 +137,6 @@ public class VehicleController {
             case "trailer": {
 
                 Iterable<Long> allIdsTrailer = trailerManager.getAllIds();
-                for (Long id : allIdsTrailer
-                ) {
-                    System.out.println(id);
-                }
                 Iterable<Vehicle> allTrailer = vehicleManager.getVehicleByIds(allIdsTrailer);
                 modell.addAttribute("vehicle", allTrailer);
 
@@ -156,10 +145,6 @@ public class VehicleController {
             case "bicycle": {
 
                 Iterable<Long> allIdsBicycle = bicycleManager.getAllIds();
-                for (Long id : allIdsBicycle
-                ) {
-                    System.out.println(id);
-                }
                 Iterable<Vehicle> allBicycle = vehicleManager.getVehicleByIds(allIdsBicycle);
                 modell.addAttribute("vehicle", allBicycle);
 
