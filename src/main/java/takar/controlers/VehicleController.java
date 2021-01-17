@@ -1,6 +1,8 @@
 package takar.controlers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import takar.alert.AlertMail;
 import takar.dataManagementServices.IBicycleManagement;
 import takar.dataManagementServices.ICarManagement;
 import takar.dataManagementServices.ITrailerManagement;
@@ -111,6 +114,9 @@ public class VehicleController {
                         }
                     }
                 }
+                ApplicationContext context = new ClassPathXmlApplicationContext( "classpath:spring/application-config.xml");
+                AlertMail am = (AlertMail) context.getBean("alertMail");
+                am.sendRent("", username);
             }
         }
         catch(Exception e){

@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import takar.dataManagementServices.IClientManagement;
 import takar.dataManagementServices.IUserManagment;
 import takar.model.User;
+import takar.alert.AlertMail;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import takar.repositories.UserRepository;
 
@@ -75,6 +80,10 @@ public class UserController {
 		{
 			clientManager.registerUser(username, firstname, lastname, password, sexe,
 					mail, telephone, adresse, ville, departement, cp, pays);
+
+			ApplicationContext context = new ClassPathXmlApplicationContext( "classpath:spring/application-config.xml");
+			AlertMail am = (AlertMail) context.getBean("alertMail");
+			am.sendRegistration(mail, username);
 		}
 		return "registrationView";
 	}
