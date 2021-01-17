@@ -12,6 +12,8 @@ import takar.model.User;
 
 import takar.repositories.UserRepository;
 
+import java.util.regex.Pattern;
+
 
 @Controller
 @RequestMapping("authentication")
@@ -55,19 +57,20 @@ public class UserController {
 				ville != null &&
 				departement != null &&
 				cp != null &&
-				pays != null
-				&& !username.equals("") &&
-				!firstname.equals("") &&
-				!lastname.equals("") &&
-				!password.equals("") &&
-				!sexe.equals("") &&
-				!mail.equals("") &&
-				!telephone.equals("") &&
-				!adresse.equals("") &&
-				!ville.equals("") &&
-				!departement.equals("") &&
-				!cp.equals("") &&
-				!pays.equals("")
+				pays != null &&
+				!username.trim().isEmpty() &&
+				!firstname.trim().isEmpty() &&
+				!lastname.trim().isEmpty() &&
+				password.length() >= 4 &&
+				password.length() < 20 &&
+				!sexe.trim().isEmpty() &&
+				isValidEMail(mail) &&
+				isValidPhone(telephone) &&
+				!adresse.trim().isEmpty() &&
+				!ville.trim().isEmpty() &&
+				!departement.trim().isEmpty() &&
+				isValidCP(cp) &&
+				!pays.trim().isEmpty()
 		)
 		{
 			clientManager.registerUser(username, firstname, lastname, password, sexe,
@@ -75,5 +78,34 @@ public class UserController {
 		}
 		return "registrationView";
 	}
+	public static boolean isValidEMail(String email)
+	{
+		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+				"[a-zA-Z0-9_+&*-]+)*@" +
+				"(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+				"A-Z]{2,7}$";
 
+		Pattern pat = Pattern.compile(emailRegex);
+		if (email == null)
+			return false;
+		return pat.matcher(email).matches();
+	}
+	public static boolean isValidPhone(String phone)
+	{
+		String emailRegex = "^[0-9]{1,15}$";
+
+		Pattern pat = Pattern.compile(emailRegex);
+		if (phone == null)
+			return false;
+		return pat.matcher(phone).matches();
+	}
+	public static boolean isValidCP(String cp)
+	{
+		String emailRegex = "^[0-9]{1,10}$";
+
+		Pattern pat = Pattern.compile(emailRegex);
+		if (cp == null)
+			return false;
+		return pat.matcher(cp).matches();
+	}
 }
