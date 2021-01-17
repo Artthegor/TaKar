@@ -125,8 +125,8 @@ public class VehicleController {
         return "searchVehicle";
     }
 
-    @RequestMapping("test")
-    public String lookForCar(@RequestParam(value = "type", required = false) String type, Model modell){
+    @RequestMapping("filtre")
+    public String filtre(@RequestParam(value = "type", required = false) String type, Model modell){
         System.out.println(type);
         switch (type) {
             case "car": {
