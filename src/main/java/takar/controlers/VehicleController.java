@@ -136,7 +136,12 @@ public class VehicleController {
     public String look4vehicle(Model modell)
     {
         Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
-        modell.addAttribute("vehicle", allVehicle);
+        if(allVehicle.iterator().hasNext()) {
+            modell.addAttribute("vehicle", allVehicle);
+        }
+        else {
+            modell.addAttribute("noresult", "Pas de résultat pour votre recherche.");
+        }
         return "searchVehicle";
     }
 
@@ -153,7 +158,12 @@ public class VehicleController {
 
                 Iterable<Long> allIdsCar = carManager.getAllIds();
                 Iterable<Vehicle> allCar = vehicleManager.getVehicleFilter(allIdsCar,prixMax,minNote);
-                modell.addAttribute("vehicle", allCar);
+                if(allCar.iterator().hasNext()) {
+                    modell.addAttribute("vehicle", allCar);
+                }
+                else {
+                    modell.addAttribute("noresult", "Pas de résultat pour votre recherche.");
+                }
 
             }
             break;
@@ -161,7 +171,13 @@ public class VehicleController {
 
                 Iterable<Long> allIdsTrailer = trailerManager.getAllIds();
                 Iterable<Vehicle> allTrailer = vehicleManager.getVehicleFilter(allIdsTrailer,prixMax,minNote);
-                modell.addAttribute("vehicle", allTrailer);
+                if(allTrailer.iterator().hasNext()) {
+                    modell.addAttribute("vehicle", allTrailer);
+                }
+                else {
+                    System.out.println("VIDE");
+                    String noresult ="Pas de résultat pour votre recherche.";
+                    modell.addAttribute("noresult",noresult );                }
 
             }
             break;
@@ -169,14 +185,25 @@ public class VehicleController {
 
                 Iterable<Long> allIdsBicycle = bicycleManager.getAllIds();
                 Iterable<Vehicle> allBicycle = vehicleManager.getVehicleFilter(allIdsBicycle,prixMax,minNote);
-                modell.addAttribute("vehicle", allBicycle);
+                if(allBicycle != null) {
+                    modell.addAttribute("vehicle", allBicycle);
+                }
+                else {
+                    modell.addAttribute("noresult", "Pas de résultat pour votre recherche.");
+                }
 
             }
             break;
             case "all":{
                 Iterable<Vehicle> allVehicle;
                 allVehicle = vehicleManager.getVehicleFilter(vehicleManager.getAllIds(),prixMax,minNote);
-                modell.addAttribute("vehicle", allVehicle);
+                if(allVehicle.iterator().hasNext()) {
+                    modell.addAttribute("vehicle", allVehicle);
+                }
+                else {
+                    String noresult ="Pas de résultat pour votre recherche.";
+                    modell.addAttribute("noresult",noresult );
+                }
             }
         }
         return "searchVehicle";
