@@ -20,8 +20,8 @@ public class CarManagement implements ICarManagement {
     public CarManagement() {
     }
 
-    public Car addCar(String brand, String model, Integer placeNumber, Double price, String infoForClient, String description, String year, String motorization, String power, String licensePlate, Double trunkVolume) {
-        Vehicle vehicle = new Vehicle(brand, model, price, infoForClient, description, -1);
+    public Car addCar(String brand, String model, Integer placeNumber, Double price, String infoForClient, String description, String year, String motorization, String power, String licensePlate, Double trunkVolume, User user) {
+        Vehicle vehicle = new Vehicle(brand, model, price, infoForClient, description, -1, user);
 
         vehicle = vehicleRepo.save(vehicle);
         //    public Client(String username, String password, String name, String firstname, String sex, String description, String mail, String phoneNumber) {

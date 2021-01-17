@@ -11,6 +11,7 @@ public class Client implements Serializable {
     long userID;
 
     @OneToOne
+    @JoinColumn(name = "user_id")
     User user;
 
     String firstname;

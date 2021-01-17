@@ -3,6 +3,7 @@ package takar.controlers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import takar.dataManagementServices.ITrailerManagement;
 import takar.dataManagementServices.IVehicleManagement;
 import takar.model.User;
 import takar.model.Vehicle;
+import takar.repositories.UserRepository;
 
 @Controller
 @RequestMapping("vehicle")
@@ -25,6 +27,8 @@ public class VehicleController {
     private IBicycleManagement bicycleManager;
     @Autowired
     private IVehicleManagement vehicleManager;
+    @Autowired
+    private UserRepository userRepo;
 
     @RequestMapping("rent")
     public String addvehicle(@RequestParam(value="brand", required=false) String brand,
@@ -54,19 +58,20 @@ public class VehicleController {
                              Model modell)
     {
 
-        /*User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String username = user.getUsername();
-        System.out.println(username);*/
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = userDetails.getUsername();
+        User user = userRepo.findByUsername(username);
+        System.out.println("controleur vehicle username : " + username);
         /*TODO : Choisir si c'est une voiture une remorque ou une moto Donc ajouter les classes correspondantes et une case dans le html*/
             if (brand != null && model != null && description != null && price != null && infoForClient != null && !brand.equals("") && !model.equals("") && !description.equals("") && !price.equals("") && !infoForClient.equals("")) {
                 if (year != null && placeNumber != null && motorization != null && power != null && licensePlate != null && trunkVolume != null && !year.equals("") && !placeNumber.equals("") && !motorization.equals("") && !power.equals("") && !licensePlate.equals("") && !trunkVolume.equals("")) {
-                    carManager.addCar(brand, model, Integer.parseInt(placeNumber), Double.parseDouble(price), infoForClient, description, year, motorization, power, licensePlate, Double.parseDouble(trunkVolume));
+                    carManager.addCar(brand, model, Integer.parseInt(placeNumber), Double.parseDouble(price), infoForClient, description, year, motorization, power, licensePlate, Double.parseDouble(trunkVolume), user);
                 } else {
                     if (capacity != null && type != null && size != null && isElectrical != null && !capacity.equals("") && !type.equals("") && !size.equals("")) {
-                        bicycleManager.addBicycle(brand, model, Double.parseDouble(price), infoForClient, description, type, size, isElectrical);
+                        bicycleManager.addBicycle(brand, model, Double.parseDouble(price), infoForClient, description, type, size, isElectrical, user);
                     } else {
                         if (capacity != null && weight != null && length != null && licensePlate != null && !capacity.equals("") && !weight.equals("") && !length.equals("") && !licensePlate.equals("")) {
-                            trailerManager.addTrailer(brand, model, Double.parseDouble(price), infoForClient, description, Double.parseDouble(capacity), Double.parseDouble(weight), Double.parseDouble(length), licensePlate);
+                            trailerManager.addTrailer(brand, model, Double.parseDouble(price), infoForClient, description, Double.parseDouble(capacity), Double.parseDouble(weight), Double.parseDouble(length), licensePlate, user);
                          } else {
                             System.out.println("Selection non valide");
                         }
