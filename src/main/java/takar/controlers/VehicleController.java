@@ -168,7 +168,7 @@ public class VehicleController {
     }
 
     @RequestMapping("details")
-    public String PrintCar(@RequestParam(value = "id", required = false) Long  id, Model modell)
+    public String PrintCar(@RequestParam(value = "idVehicle", required = false) Long  id, Model modell)
     {
         Car car = carManager.getByid(id);
         if(car != null) {
