@@ -58,21 +58,60 @@ public class VehicleController {
         String username = user.getUsername();
         System.out.println(username);*/
         /*TODO : Choisir si c'est une voiture une remorque ou une moto Donc ajouter les classes correspondantes et une case dans le html*/
-            if (brand != null && model != null && description != null && price != null && infoForClient != null && !brand.equals("") && !model.equals("") && !description.equals("") && !price.equals("") && !infoForClient.equals("")) {
-                if (year != null && placeNumber != null && motorization != null && power != null && licensePlate != null && trunkVolume != null && !year.equals("") && !placeNumber.equals("") && !motorization.equals("") && !power.equals("") && !licensePlate.equals("") && !trunkVolume.equals("")) {
+        try {
+            if (brand != null &&
+                    model != null &&
+                    description != null &&
+                    price != null &&
+                    infoForClient != null &&
+                    !brand.trim().isEmpty() &&
+                    !model.trim().isEmpty() &&
+                    !description.trim().isEmpty() &&
+                    Double.parseDouble(price) > 0 &&
+                    !infoForClient.trim().isEmpty()) {
+                if (year != null &&
+                        placeNumber != null &&
+                        motorization != null &&
+                        power != null &&
+                        licensePlate != null &&
+                        trunkVolume != null &&
+                        Integer.parseInt(placeNumber) > 0 &&
+                        !motorization.trim().isEmpty() &&
+                        !power.trim().isEmpty() &&
+                        !licensePlate.trim().isEmpty() &&
+                        Double.parseDouble(trunkVolume) > 0 &&
+                        Integer.parseInt(year) > 1800 &&
+                        Integer.parseInt(year) < 2022) {
                     carManager.addCar(brand, model, Integer.parseInt(placeNumber), Double.parseDouble(price), infoForClient, description, year, motorization, power, licensePlate, Double.parseDouble(trunkVolume));
                 } else {
-                    if (capacity != null && type != null && size != null && isElectrical != null && !capacity.equals("") && !type.equals("") && !size.equals("")) {
+                    if (capacity != null &&
+                            type != null &&
+                            size != null &&
+                            isElectrical != null &&
+                            Double.parseDouble(capacity)> 0 &&
+                            !type.trim().isEmpty() &&
+                            !size.trim().isEmpty()) {
                         bicycleManager.addBicycle(brand, model, Double.parseDouble(price), infoForClient, description, type, size, isElectrical);
                     } else {
-                        if (capacity != null && weight != null && length != null && licensePlate != null && !capacity.equals("") && !weight.equals("") && !length.equals("") && !licensePlate.equals("")) {
+                        if (capacity != null &&
+                                weight != null &&
+                                length != null &&
+                                licensePlate != null &&
+                                Double.parseDouble(capacity) > 0 &&
+                                Double.parseDouble(weight) > 0 &&
+                                Double.parseDouble(length) > 0 &&
+                                !licensePlate.trim().isEmpty()) {
                             trailerManager.addTrailer(brand, model, Double.parseDouble(price), infoForClient, description, Double.parseDouble(capacity), Double.parseDouble(weight), Double.parseDouble(length), licensePlate);
-                         } else {
+                        } else {
                             System.out.println("Selection non valide");
                         }
                     }
                 }
             }
+        }
+        catch(Exception e){
+            System.out.println("Selection non valide");
+        }
         return "addVehicle";
     }
 
