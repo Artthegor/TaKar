@@ -74,13 +74,16 @@
             </thead>
 
             <tbody>
-                <tr th:each="prod: ${vehicle}" class="resultatSearchline" onclick="window.location='details'">
+            <a>
+                <tr th:each="prod: ${vehicle}" class="resultatSearchline">
                     <td th:text="${prod.model}" class="modelField"></td>
                     <td th:text="${prod.brand}" class="marqueField"></td>
                     <td th:text="${prod.description}" class="descriptionFiled"></td>
                     <td th:text="${prod.note}"></td>
                     <td th:text="${prod.price}"></td>
+                    <td><a th:href="'détails?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a> </td>
                 </tr>
+            </a>
             </tbody>
         </table>
     </div>

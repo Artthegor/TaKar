@@ -2,6 +2,7 @@ package takar.repositories;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import takar.model.Bicycle;
 
 public interface BicycleRepository  extends CrudRepository<Bicycle, Long> {
@@ -9,6 +10,6 @@ public interface BicycleRepository  extends CrudRepository<Bicycle, Long> {
     public Iterable<Long> getAllId();
 
     @Query(value ="from Car where vehicle.id = :id")
-    public Bicycle getByid(Long id);
+    public Bicycle getByid(@Param("id") Long id);
 
 }
