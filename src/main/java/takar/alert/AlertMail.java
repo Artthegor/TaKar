@@ -30,7 +30,7 @@ public class AlertMail implements IAlertMessenger {
             public void prepare(MimeMessage mimeMessage) throws MessagingException {
                 MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
                 message.setFrom("noreply@takar.com");
-                message.setTo("ncourvoisier@gmail.com");
+                message.setTo(emailTo);
                 message.setSubject("Inscription chez Takar");
                 message.setText(
                         "<html>" +
@@ -58,7 +58,7 @@ public class AlertMail implements IAlertMessenger {
             public void prepare(MimeMessage mimeMessage) throws MessagingException {
                 MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
                 message.setFrom("noreply@takar.com");
-                message.setTo("ncourvoisier@gmail.com");
+                message.setTo(emailTo);
                 message.setSubject("Ajout de votre véhicule en location sur Takar");
                 message.setText(
                         "<html>" +
