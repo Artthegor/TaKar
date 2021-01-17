@@ -17,6 +17,9 @@ import takar.model.*;
 import takar.repositories.CarRepository;
 import takar.repositories.ClientRepository;
 import takar.repositories.UserRepository;
+import takar.repositories.VehicleRepository;
+
+import java.util.Date;
 
 
 @Controller
@@ -34,6 +37,10 @@ public class VehicleController {
     private UserRepository userRepo;
     @Autowired
     private ClientManagement clientManager;
+    @Autowired
+    private LocationManagement locaManager;
+    @Autowired
+    private VehicleRepository vehicleRepo;
 
 
     @RequestMapping("rent")
@@ -198,5 +205,18 @@ public class VehicleController {
                 return "trailer";
             }
         }
+    }
+
+    @RequestMapping(value = "location", method = RequestMethod.GET)
+    public String RentVehicle(@RequestParam(value = "idVehicle", required = false) Long idVehicle, @RequestParam(value = "startDate", required = false) Date startDate, @RequestParam(value = "enDate", required = false) Date endDate, Model modell){
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = userDetails.getUsername();
+        User user = userRepo.findByUsername(username);
+
+        Vehicle vehicle = vehicleRepo.findByIdVehicle(idVehicle);
+
+        locaManager.addLocation(vehicle, startDate, endDate, user);
+
+        return "searchVehicle";
     }
 }

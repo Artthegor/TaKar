@@ -37,5 +37,7 @@ public class VehicleManagement implements IVehicleManagement{
         return vehicleRepo.findAllId();
     }
 
-
+    public Vehicle getVehicleById(Long id) {
+        return vehicleRepo.findByIdVehicle(id);
+    }
 }

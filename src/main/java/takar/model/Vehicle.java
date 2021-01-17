@@ -8,7 +8,9 @@ import javax.persistence.*;
 public class Vehicle {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "id")
     private long idVehicle;
+
     int note;
     String brand, model, description, infoForClient;
     double price;

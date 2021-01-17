@@ -16,6 +16,7 @@ public class Car implements Serializable {
     Double trunkVolume;
 
     @OneToOne
+    @JoinColumn(name = "vehicle_id")
     Vehicle vehicle;
 
     public Car(){}
