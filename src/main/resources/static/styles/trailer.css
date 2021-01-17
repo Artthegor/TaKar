@@ -1,0 +1,45 @@
+contentSearch.tableSearch.tr:first-child {
+    font-family: "Fjalla One";
+}
+
+td.marqueField.trailerFieldLabel {
+    font-size: x-large;
+}
+
+td.modelField.trailerFieldLabel {
+    font-size: xx-large;
+}
+
+td.trailerFieldLabel {
+    font-family: 'Fjalla One';
+    text-align: right;
+}
+
+table#tableSearch {
+    font-size: 20px;
+}
+
+td.modelField.trailerFieldData {
+    font-size: xx-large !important;
+    text-transform: uppercase;
+}
+
+.trailerFieldDataieldData {
+    /* margin-left: 1.5em !important; */
+    padding-left: 20px;
+}
+
+td.marqueField.trailerFieldData {
+    font-size: x-large !important;
+    text-transform: uppercase;
+}
+
+
+td.descriptionFiled.trailerFieldData {
+    font-size: 16px;
+}
+
+td.modelField.trailerFieldData {
+    font-size: xx-large;
+    text-transform: uppercase;
+}
