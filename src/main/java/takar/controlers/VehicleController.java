@@ -87,7 +87,7 @@ public class VehicleController {
                         Double.parseDouble(trunkVolume) > 0 &&
                         Integer.parseInt(year) > 1800 &&
                         Integer.parseInt(year) < 2022) {
-                    carManager.addCar(brand, model, Integer.parseInt(placeNumber), Double.parseDouble(price), infoForClient, description, year, motorization, power, licensePlate, Double.parseDouble(trunkVolume));
+                    carManager.addCar(brand, model, Integer.parseInt(placeNumber), Double.parseDouble(price), infoForClient, description, year, motorization, power, licensePlate, Double.parseDouble(trunkVolume),user);
                 } else {
                     if (capacity != null &&
                             type != null &&
@@ -96,7 +96,7 @@ public class VehicleController {
                             Double.parseDouble(capacity)> 0 &&
                             !type.trim().isEmpty() &&
                             !size.trim().isEmpty()) {
-                        bicycleManager.addBicycle(brand, model, Double.parseDouble(price), infoForClient, description, type, size, isElectrical);
+                        bicycleManager.addBicycle(brand, model, Double.parseDouble(price), infoForClient, description, type, size, isElectrical,user);
                     } else {
                         if (capacity != null &&
                                 weight != null &&
@@ -106,7 +106,7 @@ public class VehicleController {
                                 Double.parseDouble(weight) > 0 &&
                                 Double.parseDouble(length) > 0 &&
                                 !licensePlate.trim().isEmpty()) {
-                            trailerManager.addTrailer(brand, model, Double.parseDouble(price), infoForClient, description, Double.parseDouble(capacity), Double.parseDouble(weight), Double.parseDouble(length), licensePlate);
+                            trailerManager.addTrailer(brand, model, Double.parseDouble(price), infoForClient, description, Double.parseDouble(capacity), Double.parseDouble(weight), Double.parseDouble(length), licensePlate,user);
                         } else {
                             System.out.println("Selection non valide");
                         }
