@@ -47,14 +47,13 @@
                     <td id="priceSelection" class="toolResearch">
                         Prix Max: <input type="number" min="0" max="5000" name="prix" value="Prix"/>
                     </td>
+                    <td id="noteSelection" class="toolResearch">
+                        Note Min: <input type="range" min="0" max="5" step="1" oninput="this.nextElementSibling.value = this.value" name="note" value="0"/><output>0</output>
+                    </td>
                 </tr>
                 <tr>
                     <td>
-
-                        <input type='submit' class="btn btn-lg btn-default" name="filtrer" value="Filtrer"
-                               id="btnFiltre"/>
-
-
+                        <input type='submit' class="btn btn-lg btn-default" name="filtrer" id="btnFiltre"/>
                     </td>
                 </tr>
             </table>

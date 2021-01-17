@@ -29,8 +29,8 @@ public class VehicleManagement implements IVehicleManagement{
         return vehicleRepo.findAllByIdVehicleIn(ids);
     }
 
-    public Iterable<Vehicle> getVehicleFilter(Iterable<Long> ids,Double price){
-        return vehicleRepo.findAllByIdVehicleInAndPriceLessThanEqual(ids,price);
+    public Iterable<Vehicle> getVehicleFilter(Iterable<Long> ids,Double price,int note){
+        return vehicleRepo.findAllByIdVehicleInAndPriceLessThanEqualAndNoteGreaterThanEqual(ids,price,note);
     }
 
     public Iterable<Long> getAllIds(){
