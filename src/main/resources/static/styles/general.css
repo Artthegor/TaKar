@@ -103,3 +103,7 @@ h1 {
 div#header {
     background-color: #282828;
 }
+
+nav.navbar.navbar-expand-sm.bg-primary.navbar-dark.justify-content-center div {
+    display: inline;
+}
