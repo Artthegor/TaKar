@@ -124,7 +124,7 @@ public class VehicleController {
     {
         Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
         modell.addAttribute("vehicle", allVehicle);
-        return "vehicle";
+        return "searchVehicle";
     }
 
     @RequestMapping("car")
