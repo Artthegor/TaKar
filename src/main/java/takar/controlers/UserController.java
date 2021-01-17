@@ -81,11 +81,6 @@ public class UserController {
 				!pays.trim().isEmpty()
 		)
 		{
-
-			clientManager.registerUser(username, firstname, lastname, password, sexe,
-					mail, telephone, adresse, ville, departement, cp, pays);
-
-			
 			if(!clientManager.isUsernameExist(username)){
 				clientManager.registerUser(username, firstname, lastname, password, sexe,
 						mail, telephone, adresse, ville, departement, cp, pays);
