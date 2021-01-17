@@ -12,12 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import takar.alert.AlertMail;
-import takar.dataManagementServices.IBicycleManagement;
-import takar.dataManagementServices.ICarManagement;
-import takar.dataManagementServices.ITrailerManagement;
-import takar.dataManagementServices.IVehicleManagement;
+import takar.dataManagementServices.*;
 import takar.model.*;
 import takar.repositories.CarRepository;
+import takar.repositories.ClientRepository;
 import takar.repositories.UserRepository;
 
 
@@ -34,6 +32,8 @@ public class VehicleController {
     private IVehicleManagement vehicleManager;
     @Autowired
     private UserRepository userRepo;
+    @Autowired
+    private ClientManagement clientManager;
 
 
     @RequestMapping("rent")
@@ -115,7 +115,8 @@ public class VehicleController {
                 }
                 ApplicationContext context = new ClassPathXmlApplicationContext( "classpath:spring/application-config.xml");
                 AlertMail am = (AlertMail) context.getBean("alertMail");
-                am.sendRent("", username);
+                Client cli = clientManager.findByid(user.getUserID());
+                am.sendRent(cli.getMail(), username);
             }
         }
         catch(Exception e){

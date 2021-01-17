@@ -20,4 +20,5 @@ public interface IClientManagement {
     );
 
     public Boolean isUsernameExist(String username);
+    public Client findByid(long userID);
 }
