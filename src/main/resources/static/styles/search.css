@@ -14,9 +14,15 @@ table#tableSearch, #tableFilter{
     text-transform: capitalize;
     border-style: solid;
 }
-#tableSearch tbody tr:hover{
+#tableSearch tbody tr:hover td{
     cursor: pointer;
-    background: aqua;
+    background: rgba(222, 215, 215, 0.5);
+    border-style: solid;
+    border-color: black;
+    -webkit-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+
 }
 #vehicleForm .btn {
     background: black;
@@ -76,6 +82,7 @@ tr.resultatSearchline td {
     border-style: dotted;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    border-color: black;
 }
 
 .toolResearch {
