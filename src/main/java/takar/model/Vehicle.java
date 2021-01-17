@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Vehicle {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long IdVehicle;
+    private long idVehicle;
     int note;
     String brand, model, description, infoForClient;
     double price;
@@ -51,7 +51,7 @@ public class Vehicle {
     }
 
     public long getIdVehicle() {
-        return IdVehicle;
+        return idVehicle;
     }
 
     public String getBrand() {
@@ -79,7 +79,7 @@ public class Vehicle {
     }
 
     public void setIdVehicle(long idVehicle) {
-        IdVehicle = idVehicle;
+        idVehicle = idVehicle;
     }
 
     public void setInfoForClient(String infoForClient) {

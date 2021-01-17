@@ -30,4 +30,7 @@ public class BicycleManagement implements IBicycleManagement {
     {
         return bicRepo.findAll();
     }
+    public Iterable<Long> getAllIds(){
+        return bicRepo.getAllId();
+    }
 }

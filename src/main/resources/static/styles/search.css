@@ -1,10 +1,35 @@
-table#tableSearch {
+
+
+table#tableSearch, #tableFilter{
     margin: auto;
     margin-top: 2em;
 }
 
-#tableSearch th {
+#vehicleForm td{
+    text-align: center;
+}
+
+#tableSearch th, #tableFilter th{
     padding: 1.5em;
     text-transform: capitalize;
     border-style: solid;
+}
+
+#vehicleForm .btn {
+    background: black;
+    color: white;
+    -webkit-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+}
+
+#vehicleForm .btn:hover {
+    background: white;
+    color: black;
+    -webkit-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
 }

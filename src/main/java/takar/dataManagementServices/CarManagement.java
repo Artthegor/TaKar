@@ -32,5 +32,12 @@ public class CarManagement implements ICarManagement {
     public Iterable<Car> getAllCar()
     {
         return carRepo.findAll();
+
     }
+
+    public Iterable<Long> getAllIds(){
+        return carRepo.getAllId();
+    }
+
+
 }
