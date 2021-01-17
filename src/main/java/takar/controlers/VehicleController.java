@@ -12,6 +12,7 @@ import takar.dataManagementServices.ICarManagement;
 import takar.dataManagementServices.ITrailerManagement;
 import takar.dataManagementServices.IVehicleManagement;
 import takar.model.*;
+import takar.repositories.CarRepository;
 import takar.repositories.UserRepository;
 
 
@@ -28,6 +29,7 @@ public class VehicleController {
     private IVehicleManagement vehicleManager;
     @Autowired
     private UserRepository userRepo;
+
 
     @RequestMapping("rent")
     public String addvehicle(@RequestParam(value="brand", required=false) String brand,
@@ -123,13 +125,19 @@ public class VehicleController {
     }
 
     @RequestMapping("filtre")
-    public String filtre(@RequestParam(value = "type", required = false) String type, Model modell){
+    public String filtre(@RequestParam(value = "type", required = false) String type,@RequestParam(value = "prix", required = false) Double prix, Model modell){
         System.out.println(type);
+        System.out.println(prix);
+        Double prixMax = 100000.0;
+        boolean isFiltrePrix = (prix ==null);
+        if(!isFiltrePrix){
+            prixMax = prix;
+        }
         switch (type) {
             case "car": {
 
                 Iterable<Long> allIdsCar = carManager.getAllIds();
-                Iterable<Vehicle> allCar = vehicleManager.getVehicleByIds(allIdsCar);
+                Iterable<Vehicle> allCar = vehicleManager.getVehicleFilter(allIdsCar,prixMax);
                 modell.addAttribute("vehicle", allCar);
 
             }
@@ -137,7 +145,7 @@ public class VehicleController {
             case "trailer": {
 
                 Iterable<Long> allIdsTrailer = trailerManager.getAllIds();
-                Iterable<Vehicle> allTrailer = vehicleManager.getVehicleByIds(allIdsTrailer);
+                Iterable<Vehicle> allTrailer = vehicleManager.getVehicleFilter(allIdsTrailer,prixMax);
                 modell.addAttribute("vehicle", allTrailer);
 
             }
@@ -145,13 +153,14 @@ public class VehicleController {
             case "bicycle": {
 
                 Iterable<Long> allIdsBicycle = bicycleManager.getAllIds();
-                Iterable<Vehicle> allBicycle = vehicleManager.getVehicleByIds(allIdsBicycle);
+                Iterable<Vehicle> allBicycle = vehicleManager.getVehicleFilter(allIdsBicycle,prixMax);
                 modell.addAttribute("vehicle", allBicycle);
 
             }
             break;
             case "all":{
-                Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
+                Iterable<Vehicle> allVehicle;
+                allVehicle = vehicleManager.getVehicleFilter(vehicleManager.getAllIds(),prixMax);
                 modell.addAttribute("vehicle", allVehicle);
             }
         }
@@ -159,22 +168,25 @@ public class VehicleController {
     }
 
     @RequestMapping("car")
-    public String PrintCar(Car car, Model modell)
+    public String PrintCar(@RequestParam(value = "id", required = false) Long  id, Model modell)
     {
+        Car car = carManager.getByid(id);
         modell.addAttribute("car", car);
         modell.addAttribute("vehicle", car.getVehicle());
         return "car";
     }
     @RequestMapping("bicycle")
-    public String PrintBicycle(Bicycle bicycle, Model modell)
+    public String PrintBicycle(@RequestParam(value = "id", required = false) Long  id, Model modell)
     {
+        Bicycle bicycle = bicycleManager.getByid(id);
         modell.addAttribute("bicycle", bicycle);
         modell.addAttribute("vehicle", bicycle.getVehicle());
         return "bicycle";
     }
     @RequestMapping("trailer")
-    public String PrintTrailer(Trailer trailer, Model modell)
+    public String PrintTrailer(@RequestParam(value = "id", required = false) Long  id, Model modell)
     {
+        Trailer trailer = trailerManager.getByid(id);
         modell.addAttribute("trailer", trailer);
         modell.addAttribute("vehicle", trailer.getVehicle());
         return "trailer";

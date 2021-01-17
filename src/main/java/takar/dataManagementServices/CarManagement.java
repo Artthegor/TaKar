@@ -39,5 +39,8 @@ public class CarManagement implements ICarManagement {
         return carRepo.getAllId();
     }
 
+    public Car getByid(Long id){
+        return carRepo.getByid(id);
+    }
 
 }
