@@ -33,3 +33,30 @@ table#tableSearch, #tableFilter{
     border-width: 1px;
     border-color: black;
 }
+
+table#tableSearch {
+    text-align: center;
+}
+
+th.descriptionFiled {
+    width: 500px;
+    max-width: 500px;
+    /* text-align: justify; */
+}
+
+td.descriptionFiled {
+    text-align: justify;
+    padding-left: 1em;
+}
+
+#FilterTool{
+    padding:0 !important;
+    border:none !important;
+    font-family: 'Fjalla One' !important;
+    font-size: 2em;
+    padding-bottom: 0.5em !important;
+}
+
+input#btnFiltre {
+    margin-top: 1.5em;
+}
