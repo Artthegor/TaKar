@@ -60,3 +60,17 @@ td.descriptionFiled {
 input#btnFiltre {
     margin-top: 1.5em;
 }
+
+th.marqueField {
+    width: 200px;
+}
+
+th.modelField {
+    width: 200px;
+}
+
+tr.resultatSearchline td {
+    border-style: dotted;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
