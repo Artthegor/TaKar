@@ -61,7 +61,7 @@
             <tr>
                 <th th:text="Modèle"></th>
                 <th th:text="Marque"></th>
-                <th th:text="Description"></th>
+                <th th:text="Description" class="descriptionFiled"></th>
                 <th th:text="Note"></th>
                 <th th:text="Prix"></th>
             </tr>
@@ -71,7 +71,7 @@
             <tr th:each="prod: ${vehicle}">
                 <td th:text="${prod.model}"></td>
                 <td th:text="${prod.brand}"></td>
-                <td th:text="${prod.description}"></td>
+                <td th:text="${prod.description}" class="descriptionFiled"></td>
                 <td th:text="${prod.note}"></td>
                 <td th:text="${prod.price}"></td>
             </tr>
