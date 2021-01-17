@@ -1,4 +1,4 @@
-contentSearch.tableSearch.tr:first-child{
+contentSearch.tableSearch.tr:first-child {
     font-family: "Fjalla One";
 }
 
@@ -33,7 +33,6 @@ td.marqueField.bikeFieldData {
     font-size: x-large !important;
     text-transform: uppercase;
 }
-
 
 
 td.descriptionFiled.carFieldData {
