@@ -18,7 +18,7 @@ public class BicycleManagement implements IBicycleManagement {
     }
 
     public Bicycle addBicycle(String brand, String model, double price, String infoForClient, String description, String type, String size, Boolean isElectrical, User user) {
-        Vehicle vehicle = new Vehicle(brand, model, price, infoForClient, description, -1, user);
+        Vehicle vehicle = new Vehicle(brand, model, price, infoForClient, description, 6, user);
 
         vehicle = vehicleRepo.save(vehicle);
         Bicycle bicycle = new Bicycle(type, size, isElectrical, vehicle);
