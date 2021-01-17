@@ -27,31 +27,45 @@
             <div id="zoneConnect"></div>
         </div>
     </nav>
+    <div id="TitleDetails"><h1>Fiche Descriptive</h1></div>
     <div id="contentSearch">
         <table id="tableSearch">
-            <thead>
-            <tr>
-                <th th:text="Modèle" class="modelField">Modele</th>
-                <th th:text="Marque" class="marqueField">Brand</th>
-                <th th:text="Description" class="descriptionFiled">Description</th>
-                <th th:text="Note">note</th>
-                <th th:text="Prix">price</th>
-                <th th:text="Type">type</th>
-                <th th:text="Taille">size</th>
-                <th th:text="Electrique"></th>
+            <tr id="model">
+                <td class="modelField bikeFieldLabel" >Modele : </td>
+                <td th:text="${vehicle.model}" class="modelField bikeFieldData"></td>
             </tr>
-            </thead>
+            <tr id="marque">
+                <td class="marqueField bikeFieldLabel" >Marque : </td>
+                <td th:text="${vehicle.brand}" class="marqueField bikeFieldData"></td>
+            </tr>
+            <tr id="description">
+                <td  class="descriptionFiled bikeFieldLabel" >Description : </td>
+                <td th:text="${vehicle.description}" class="descriptionFiled bikeFieldData"></td>
+            </tr>
+            <tr id="note">
+                <td  class="bikeFieldLabel">Note : </td>
+                <td class="bikeFieldData" th:text="${vehicle.note}"></td>
+            </tr>
+            <tr id="price">
+                <td   class="bikeFieldLabel">Prix : </td>
+                <td class="bikeFieldData" th:text="${vehicle.price}"></td>
+            </tr>
+            <tr id="type">
+                <td class="bikeFieldLabel">Type : </td>
+                <td class="bikeFieldData" th:text="${bicycle.type}"></td>
+            </tr>
+            <tr id="power">
+                <td  class="bikeFieldLabel">Taille : </td>
+                <td class="bikeFieldData" th:text="${bicycle.size}"></td>
+            </tr>
+            <tr id="places">
+                <td  class="bikeFieldLabel">Electrique ? </td>
+                <td class="bikeFieldData" th:text="${bicycle.getElectrical()}"></td>
+            </tr>
 
             <tbody>
             <tr class="resultatSearchline">
-                <td th:text="${vehicle.model}" class="modelField"></td>
-                <td th:text="${vehicle.brand}" class="marqueField"></td>
-                <td th:text="${vehicle.description}" class="descriptionFiled"></td>
-                <td th:text="${vehicle.note}"></td>
-                <td th:text="${vehicle.price}"></td>
-                <td th:text="${bicycle.type}"></td>
-                <td th:text="${bicycle.size}"></td>
-                <td th:text="${bicycle.getElectrical()}"></td>
+
             </tr>
             </tbody>
         </table>
