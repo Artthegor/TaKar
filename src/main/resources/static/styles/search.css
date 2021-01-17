@@ -86,3 +86,7 @@ tr#toolsSelection {
 th#FilterTool {
     text-align: center;
 }
+
+div#contentSearch {
+    margin-bottom: 50px;
+}
