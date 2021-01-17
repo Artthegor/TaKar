@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import takar.dataManagementServices.IBicycleManagement;
 import takar.dataManagementServices.ICarManagement;
@@ -167,24 +168,24 @@ public class VehicleController {
         return "searchVehicle";
     }
 
-    @RequestMapping("details")
-    public String PrintCar(@RequestParam(value = "idVehicle", required = false) Long  id, Model modell)
+    @RequestMapping(value = "details", method = RequestMethod.GET)
+    public String PrintCar(@RequestParam(value = "idVehicle", required = false) String  id, Model modell)
     {
-        Car car = carManager.getByid(id);
+        Car car = carManager.getByid(Long.parseLong(id));
         if(car != null) {
             modell.addAttribute("car", car);
             modell.addAttribute("vehicle", car.getVehicle());
             return "car";
         }
         else{
-            Bicycle bicycle = bicycleManager.getByid(id);
+            Bicycle bicycle = bicycleManager.getByid(Long.parseLong(id));
             if(bicycle != null){
                 modell.addAttribute("bicycle", bicycle);
                 modell.addAttribute("vehicle", bicycle.getVehicle());
                 return "bicycle";
             }
             else{
-                Trailer trailer = trailerManager.getByid(id);
+                Trailer trailer = trailerManager.getByid(Long.parseLong(id));
                 modell.addAttribute("trailer", trailer);
                 modell.addAttribute("vehicle", trailer.getVehicle());
                 return "trailer";
