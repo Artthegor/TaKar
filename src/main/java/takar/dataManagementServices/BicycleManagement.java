@@ -33,4 +33,7 @@ public class BicycleManagement implements IBicycleManagement {
     public Iterable<Long> getAllIds(){
         return bicRepo.getAllId();
     }
+    public Bicycle getByid(Long id){
+        return bicRepo.getByid(id);
+    }
 }

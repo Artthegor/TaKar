@@ -14,7 +14,12 @@ table#tableSearch, #tableFilter{
     text-transform: capitalize;
     border-style: solid;
 }
-
+#tableSearch tbody tr:hover td{
+    cursor: pointer;
+    background: rgba(222, 215, 215, 0.5);
+    border-style: solid;
+    border-color: black;
+}
 #vehicleForm .btn {
     background: black;
     color: white;
@@ -73,4 +78,21 @@ tr.resultatSearchline td {
     border-style: dotted;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    border-color: black;
+}
+
+.toolResearch {
+    padding: 1.5em;
+}
+
+tr#toolsSelection {
+    display: inline;
+}
+
+th#FilterTool {
+    text-align: center;
+}
+
+div#contentSearch {
+    margin-bottom: 50px;
 }

@@ -33,4 +33,7 @@ public class TrailerManagement implements ITrailerManagement {
     public Iterable<Long> getAllIds(){
         return traiRepo.getAllId();
     }
+    public Trailer getByid(Long id){
+        return traiRepo.getByid(id);
+    }
 }

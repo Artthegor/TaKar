@@ -4,7 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Recherche de Vehicule</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../../styles/search.css"/>
+    <link rel="stylesheet" href="../../styles/car.css"/>
+    <link rel="stylesheet" href="../../styles/templateVehicule.css"/>
     <link rel="stylesheet" href="../../styles/general.css"/>
     <link rel="shortcut icon" type="image/png" href="../../images/t.png"/>
 </head>
@@ -30,9 +31,9 @@
         <table id="tableSearch">
             <thead>
             <tr>
-                <th th:text="Modèle">Modele</th>
-                <th th:text="Marque">Brand</th>
-                <th th:text="Description">Description</th>
+                <th th:text="Modèle" class="modelField">Modele>Modele</th>
+                <th th:text="Marque" class="marqueField">Brand</th>
+                <th th:text="Description" class="descriptionFiled">Description</th>
                 <th th:text="Note">note</th>
                 <th th:text="Prix">price</th>
                 <th th:text="Année">year</th>
@@ -45,10 +46,10 @@
             </thead>
 
             <tbody>
-            <tr>
-                <td th:text="${vehicle.model}"></td>
-                <td th:text="${vehicle.brand}"></td>
-                <td th:text="${vehicle.description}"></td>
+            <tr class="resultatSearchline">
+                <td th:text="${vehicle.model}" class="modelField"></td>
+                <td th:text="${vehicle.brand}" class="marqueField"></td>
+                <td th:text="${vehicle.description}" class="descriptionFiled"></td>
                 <td th:text="${vehicle.note}"></td>
                 <td th:text="${vehicle.price}"></td>
                 <td th:text="${car.year}"></td>
