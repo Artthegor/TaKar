@@ -16,12 +16,14 @@ public class Vehicle {
     @OneToOne
     Address address;
 
-    //@OneToMany C'est peut être celui là
     @ManyToOne
+    @JoinColumn(name = "user_id")
     User user;
+
+
     public Vehicle(){}
 
-    public Vehicle(String brand, String model, double price, String infoForClient, String description, int note){
+    public Vehicle(String brand, String model, double price, String infoForClient, String description, int note, User user){
         super();
         this.brand = brand;
         this.description = description;
@@ -29,10 +31,11 @@ public class Vehicle {
         this.model = model;
         this.note = note;
         this.price = price;
+        this.user = user;
     }
 
-    public Vehicle(String brand, String model, double price, String infoForClient){
-        this( brand,  model,  price, infoForClient, "", -1);
+    public Vehicle(String brand, String model, double price, String infoForClient, User user){
+        this( brand,  model,  price, infoForClient, "", -1, user);
     }
 
     public String getDescription() {

@@ -37,11 +37,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordParameter("password").permitAll().successHandler(authenticationSuccessHandler)
                 .and().logout().deleteCookies("JSESSIONID").logoutUrl("/logout").logoutSuccessUrl("/authentication/login");
 
-        }
+    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder authManagerBuilder) throws Exception {
         authManagerBuilder.userDetailsService(customUserDetailsService).passwordEncoder(bCryptPasswordEncoder());
+        System.out.println("LAAAAAAAAAAAAAAAAAAAAAAA" + authManagerBuilder.userDetailsService(customUserDetailsService).toString());
     }
 
     @Bean

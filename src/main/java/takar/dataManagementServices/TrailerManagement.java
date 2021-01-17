@@ -17,8 +17,8 @@ public class TrailerManagement implements ITrailerManagement {
     public TrailerManagement() {
     }
 
-    public Trailer addTrailer(String brand, String model, Double price, String infoForClient, String description, Double capacity, Double weight, Double length, String licensePlate) {
-        Vehicle vehicle = new Vehicle(brand, model, price, infoForClient, description, -1);
+    public Trailer addTrailer(String brand, String model, Double price, String infoForClient, String description, Double capacity, Double weight, Double length, String licensePlate, User user) {
+        Vehicle vehicle = new Vehicle(brand, model, price, infoForClient, description, -1, user);
 
         vehicle = vehicleRepo.save(vehicle);
         Trailer trailer = new Trailer(capacity, weight, length, licensePlate, vehicle);
