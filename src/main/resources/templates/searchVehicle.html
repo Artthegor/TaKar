@@ -80,7 +80,7 @@
                     <td th:text="${prod.description}" class="descriptionFiled"></td>
                     <td th:text="${prod.note}"></td>
                     <td th:text="${prod.price}"></td>
-                    <td><a th:href="'details?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a> </td>
+                    <td class="linkSearch"><a th:href="'details?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a> </td>
                 </tr>
             </a>
             </tbody>
