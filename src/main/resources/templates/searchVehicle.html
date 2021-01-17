@@ -37,8 +37,8 @@
                        Filtrage des résultats :
                     </th>
                 </tr>
-                <tr>
-                    <td>
+                <tr id="toolsSelection">
+                    <td id="typeSelection" class="toolResearch">
                         <select name="type" id="typeVehicle" form="vehicleForm">
                             <option value="all">Tous</option>
                             <option value="car">Voiture</option>
@@ -46,13 +46,16 @@
                             <option value="trailer">Remorque</option>
                         </select>
                     </td>
+                    <td id="priceSelection" class="toolResearch">
+                        Prix Max: <input type = "number" min="0" max="5000" name = "prix" value="Prix"/>
+                    </td>
                 </tr>
                 <tr>
                     <td>
 
                         <input type='submit' class="btn btn-lg btn-default" name="filtrer" value="Filtrer" id="btnFiltre"/>
 
-                        Prix : <input type = "number" min="0" max="5000" name = "prix" value="Prix"/>
+
                     </td>
                 </tr>
             </table>
