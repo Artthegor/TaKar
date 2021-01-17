@@ -149,6 +149,11 @@ public class VehicleController {
                 modell.addAttribute("vehicle", allBicycle);
 
             }
+            break;
+            case "all":{
+                Iterable<Vehicle> allVehicle = vehicleManager.getAllVehicle();
+                modell.addAttribute("vehicle", allVehicle);
+            }
         }
         return "searchVehicle";
     }
