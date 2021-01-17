@@ -8,7 +8,7 @@ import takar.model.Vehicle;
 public interface VehicleRepository  extends CrudRepository<Vehicle, Long> {
     public Iterable<Vehicle> findAllByIdVehicleIn(Iterable<Long> ids);
 
-    public Iterable<Vehicle> findAllByIdVehicleInAndPriceLessThanEqual(Iterable<Long> ids, Double price);
+    public Iterable<Vehicle> findAllByIdVehicleInAndPriceLessThanEqualAndNoteGreaterThanEqual(Iterable<Long> ids, Double price, int note);
     @Query(value ="select idVehicle from #{#entityName} ")
     public Iterable<Long> findAllId();
 }

@@ -18,4 +18,6 @@ public interface IClientManagement {
                                String cp,
                                String pays
     );
+
+    public Boolean isUsernameExist(String username);
 }

@@ -126,8 +126,9 @@ public class VehicleController {
     }
 
     @RequestMapping("filtre")
-    public String filtre(@RequestParam(value = "type", required = false) String type,@RequestParam(value = "prix", required = false) Double prix, Model modell){
+    public String filtre(@RequestParam(value = "type", required = false) String type,@RequestParam(value = "prix", required = false) Double prix,@RequestParam(value = "note", required = false) int note, Model modell){
         Double prixMax = Double.MAX_VALUE;
+        int minNote = note;
         boolean isFiltrePrix = (prix ==null);
         if(!isFiltrePrix){
             prixMax = prix;
@@ -136,7 +137,7 @@ public class VehicleController {
             case "car": {
 
                 Iterable<Long> allIdsCar = carManager.getAllIds();
-                Iterable<Vehicle> allCar = vehicleManager.getVehicleFilter(allIdsCar,prixMax);
+                Iterable<Vehicle> allCar = vehicleManager.getVehicleFilter(allIdsCar,prixMax,minNote);
                 modell.addAttribute("vehicle", allCar);
 
             }
@@ -144,7 +145,7 @@ public class VehicleController {
             case "trailer": {
 
                 Iterable<Long> allIdsTrailer = trailerManager.getAllIds();
-                Iterable<Vehicle> allTrailer = vehicleManager.getVehicleFilter(allIdsTrailer,prixMax);
+                Iterable<Vehicle> allTrailer = vehicleManager.getVehicleFilter(allIdsTrailer,prixMax,minNote);
                 modell.addAttribute("vehicle", allTrailer);
 
             }
@@ -152,14 +153,14 @@ public class VehicleController {
             case "bicycle": {
 
                 Iterable<Long> allIdsBicycle = bicycleManager.getAllIds();
-                Iterable<Vehicle> allBicycle = vehicleManager.getVehicleFilter(allIdsBicycle,prixMax);
+                Iterable<Vehicle> allBicycle = vehicleManager.getVehicleFilter(allIdsBicycle,prixMax,minNote);
                 modell.addAttribute("vehicle", allBicycle);
 
             }
             break;
             case "all":{
                 Iterable<Vehicle> allVehicle;
-                allVehicle = vehicleManager.getVehicleFilter(vehicleManager.getAllIds(),prixMax);
+                allVehicle = vehicleManager.getVehicleFilter(vehicleManager.getAllIds(),prixMax,minNote);
                 modell.addAttribute("vehicle", allVehicle);
             }
         }
