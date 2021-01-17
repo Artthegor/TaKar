@@ -1,7 +1,6 @@
 package takar.controlers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -92,7 +91,6 @@ public class VehicleController {
                 } else {
                     if (type != null &&
                             size != null &&
-                            isElectrical != null &&
                             !type.trim().isEmpty() &&
                             !size.trim().isEmpty()) {
                         bicycleManager.addBicycle(brand, model, Double.parseDouble(price), infoForClient, description, type, size, isElectrical,user);
