@@ -1,6 +1,8 @@
 package takar.controlers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +11,7 @@ import takar.dataManagementServices.IBicycleManagement;
 import takar.dataManagementServices.ICarManagement;
 import takar.dataManagementServices.ITrailerManagement;
 import takar.dataManagementServices.IVehicleManagement;
+import takar.model.User;
 import takar.model.Vehicle;
 
 @Controller
@@ -50,6 +53,10 @@ public class VehicleController {
 
                              Model modell)
     {
+
+        /*User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = user.getUsername();
+        System.out.println(username);*/
         /*TODO : Choisir si c'est une voiture une remorque ou une moto Donc ajouter les classes correspondantes et une case dans le html*/
             if (brand != null && model != null && description != null && price != null && infoForClient != null && !brand.equals("") && !model.equals("") && !description.equals("") && !price.equals("") && !infoForClient.equals("")) {
                 if (year != null && placeNumber != null && motorization != null && power != null && licensePlate != null && trunkVolume != null && !year.equals("") && !placeNumber.equals("") && !motorization.equals("") && !power.equals("") && !licensePlate.equals("") && !trunkVolume.equals("")) {

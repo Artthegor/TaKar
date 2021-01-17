@@ -10,7 +10,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/authentication/connexion").setViewName("formConnexion");
-        //registry.addViewController("/authentication/welcome").setViewName("welcome");
+        //registry.addViewController("/logout").setViewName("logout");
         //registry.addViewController("/authentication/connexion").setViewName("login");
     }
 }

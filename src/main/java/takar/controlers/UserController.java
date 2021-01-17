@@ -25,27 +25,6 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepo;
 
-	/*
-	@RequestMapping("connexion")
-	public String connexionUser(@RequestParam(value="username", required=false) String username, @RequestParam(value="password", required=false) String password, Model model) {
-
-		if(username != null && password != null) {
-			User user = userManager.logUser(username, password);
-
-			if(user == null || !password.equals(user.getPassword())){
-				System.out.println("Identifiant ou mot de passe incorrect.");
-				model.addAttribute("isConnected", false);
-				return "userView";
-			}
-			else{
-				model.addAttribute("user", user.getUsername());
-				model.addAttribute("isConnected", true);
-				return "connexionValid";
-			}
-		}
-		return "userView";
-
-	}*/
 
 	@RequestMapping("registration")
 	public String registerUser(

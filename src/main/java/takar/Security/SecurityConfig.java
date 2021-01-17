@@ -33,13 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/styles/*.css", "/images/*",  "/fonts/*").permitAll()
                 .anyRequest().authenticated()
                 .and().formLogin()
-                .loginPage("/authentication/connexion").defaultSuccessUrl("/").failureUrl("/authentication/connexion?error=true").permitAll().successHandler(authenticationSuccessHandler)
+                .loginPage("/authentication/connexion").defaultSuccessUrl("/").failureUrl("/authentication/connexion?error=true").usernameParameter("username")
+                .passwordParameter("password").permitAll().successHandler(authenticationSuccessHandler)
                 .and().logout().deleteCookies("JSESSIONID").logoutUrl("/logout").logoutSuccessUrl("/authentication/login");
-
-        /*http.csrf().disable().authorizeRequests().antMatchers("/", "/authentication/registration").permitAll();
-        http.csrf().disable().authorizeRequests().antMatchers("/vehicle/rent", "/vehicle/search").authenticated();
-        http.csrf().disable().formLogin().loginPage("/login").defaultSuccessUrl("/authentication/welcome").failureUrl("/authentication/connexion?error=true").permitAll()
-                .and().logout().deleteCookies("JSESSIONID").logoutUrl("/logout").logoutSuccessUrl("/authentication/connexion");*/
 
         }
 
