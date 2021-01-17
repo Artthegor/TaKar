@@ -175,7 +175,6 @@ public class VehicleController {
                     modell.addAttribute("vehicle", allTrailer);
                 }
                 else {
-                    System.out.println("VIDE");
                     String noresult ="Pas de résultat pour votre recherche.";
                     modell.addAttribute("noresult",noresult );                }
 
