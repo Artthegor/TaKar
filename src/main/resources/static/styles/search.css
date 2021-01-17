@@ -111,3 +111,14 @@ td.linkSearch a:hover {
     text-decoration: none;
     font-weight: 900;
 }
+
+div#contentSearch {
+    width: 80% !important;
+    max-width: 80% !important;
+    margin: auto;
+    margin-bottom: 45px !important;
+}
+
+td.descriptionFiled {
+    padding-right: 1em;
+}
