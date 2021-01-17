@@ -83,9 +83,6 @@ tr#toolsSelection {
     display: inline;
 }
 
-table#tableSearch{
-    -webkit-box-shadow: 2px 2px 2px -1px rgba(123, 31, 31, 1), -2px -2px 2px -1px rgba(32, 67, 98, 1);
-    -moz-box-shadow: 2px 2px 2px -1px rgba(123, 31, 31, 1), -2px -2px 2px -1px rgba(32, 67, 98, 1);
-    box-shadow: 2px 2px 2px -1px rgba(123, 31, 31, 1), -2px -2px 2px -1px rgba(32, 67, 98, 1);
-
+th#FilterTool {
+    text-align: center;
 }
