@@ -1,15 +1,15 @@
 package takar.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Address {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long idadresse;
+    @Column(name = "id")
+    private Integer id;
+
+
     String address, city, ZIPcode, department, country;
 
     public Address(String address, String city, String ZIPcode, String department, String country){
@@ -25,7 +25,7 @@ public class Address {
     }
 
     public long getIdadresse() {
-        return idadresse;
+        return id;
     }
 
     public String getAddress() {
@@ -62,10 +62,6 @@ public class Address {
 
     public void setDepartment(String department) {
         this.department = department;
-    }
-
-    public void setIdadresse(long idadresse) {
-        this.idadresse = idadresse;
     }
 
     public void setZIPcode(String ZIPcode) {

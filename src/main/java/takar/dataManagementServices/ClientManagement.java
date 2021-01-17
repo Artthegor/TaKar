@@ -3,9 +3,11 @@ package takar.dataManagementServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import takar.model.Address;
 import takar.model.Client;
 import takar.model.Role;
 import takar.model.User;
+import takar.repositories.AddressRepository;
 import takar.repositories.ClientRepository;
 import takar.repositories.RoleRepository;
 import takar.repositories.UserRepository;
@@ -21,6 +23,9 @@ public class ClientManagement implements IClientManagement {
 
     @Autowired
     RoleRepository roleRepo;
+
+    @Autowired
+    AddressRepository addressRepo;
 
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -50,9 +55,12 @@ public class ClientManagement implements IClientManagement {
 
 
         User user = new User(username, passwordEncoder.encode(password), role);
-
         user = userRepo.save(user);
-        Client cli = new Client(firstname, lastname,sexe, mail, telephone, adresse, ville, departement, cp, pays, user);
+
+        Address address = new Address(adresse, ville, pays, departement, cp);
+        address = addressRepo.save(address);
+
+        Client cli = new Client(firstname, lastname,sexe, mail, telephone, address, user);
 
         return clientRepo.save(cli);
     }
