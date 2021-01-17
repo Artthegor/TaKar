@@ -167,29 +167,28 @@ public class VehicleController {
         return "searchVehicle";
     }
 
-    @RequestMapping("car")
-    public String PrintCar(@RequestParam(value = "id", required = false) Long  id, Model modell)
+    @RequestMapping("details")
+    public String PrintCar(@RequestParam(value = "idVehicle", required = false) Long  id, Model modell)
     {
         Car car = carManager.getByid(id);
-        modell.addAttribute("car", car);
-        modell.addAttribute("vehicle", car.getVehicle());
-        return "car";
+        if(car != null) {
+            modell.addAttribute("car", car);
+            modell.addAttribute("vehicle", car.getVehicle());
+            return "car";
+        }
+        else{
+            Bicycle bicycle = bicycleManager.getByid(id);
+            if(bicycle != null){
+                modell.addAttribute("bicycle", bicycle);
+                modell.addAttribute("vehicle", bicycle.getVehicle());
+                return "bicycle";
+            }
+            else{
+                Trailer trailer = trailerManager.getByid(id);
+                modell.addAttribute("trailer", trailer);
+                modell.addAttribute("vehicle", trailer.getVehicle());
+                return "trailer";
+            }
+        }
     }
-    @RequestMapping("bicycle")
-    public String PrintBicycle(@RequestParam(value = "id", required = false) Long  id, Model modell)
-    {
-        Bicycle bicycle = bicycleManager.getByid(id);
-        modell.addAttribute("bicycle", bicycle);
-        modell.addAttribute("vehicle", bicycle.getVehicle());
-        return "bicycle";
-    }
-    @RequestMapping("trailer")
-    public String PrintTrailer(@RequestParam(value = "id", required = false) Long  id, Model modell)
-    {
-        Trailer trailer = trailerManager.getByid(id);
-        modell.addAttribute("trailer", trailer);
-        modell.addAttribute("vehicle", trailer.getVehicle());
-        return "trailer";
-    }
-
 }
