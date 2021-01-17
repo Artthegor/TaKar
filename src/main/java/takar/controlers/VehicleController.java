@@ -90,11 +90,9 @@ public class VehicleController {
                         Integer.parseInt(year) < 2022) {
                     carManager.addCar(brand, model, Integer.parseInt(placeNumber), Double.parseDouble(price), infoForClient, description, year, motorization, power, licensePlate, Double.parseDouble(trunkVolume),user);
                 } else {
-                    if (capacity != null &&
-                            type != null &&
+                    if (type != null &&
                             size != null &&
                             isElectrical != null &&
-                            Double.parseDouble(capacity)> 0 &&
                             !type.trim().isEmpty() &&
                             !size.trim().isEmpty()) {
                         bicycleManager.addBicycle(brand, model, Double.parseDouble(price), infoForClient, description, type, size, isElectrical,user);
