@@ -29,20 +29,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .authorizeRequests().antMatchers("/", "/authentication/registration", "/contact.html").permitAll()
+                .authorizeRequests().antMatchers("/", "/authentication/registration", "/contact.html", "/vehicle/search", "/vehicle/filtre").permitAll()
                 .antMatchers("/styles/*.css", "/images/*",  "/fonts/*").permitAll()
                 .anyRequest().authenticated()
                 .and().formLogin()
                 .loginPage("/authentication/connexion").defaultSuccessUrl("/").failureUrl("/authentication/connexion?error=true").usernameParameter("username")
                 .passwordParameter("password").permitAll().successHandler(authenticationSuccessHandler)
-                .and().logout().deleteCookies("JSESSIONID").logoutUrl("/logout").logoutSuccessUrl("/authentication/login");
+                .and().logout().logoutUrl("/logout").addLogoutHandler(new LogoutCleanCookies("USERCONNECT", "JSESSIONID")).logoutSuccessUrl("/authentication/connexion").invalidateHttpSession(true);
 
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder authManagerBuilder) throws Exception {
         authManagerBuilder.userDetailsService(customUserDetailsService).passwordEncoder(bCryptPasswordEncoder());
-        System.out.println("LAAAAAAAAAAAAAAAAAAAAAAA" + authManagerBuilder.userDetailsService(customUserDetailsService).toString());
     }
 
     @Bean

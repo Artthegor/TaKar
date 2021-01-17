@@ -21,7 +21,7 @@ public class CarManagement implements ICarManagement {
     }
 
     public Car addCar(String brand, String model, Integer placeNumber, Double price, String infoForClient, String description, String year, String motorization, String power, String licensePlate, Double trunkVolume, User user) {
-        Vehicle vehicle = new Vehicle(brand, model, price, infoForClient, description, -1, user);
+        Vehicle vehicle = new Vehicle(brand, model, price, infoForClient, description, 6, user);
 
         vehicle = vehicleRepo.save(vehicle);
         Car car = new Car(placeNumber, year,motorization,power,licensePlate,trunkVolume, vehicle);
@@ -39,5 +39,8 @@ public class CarManagement implements ICarManagement {
         return carRepo.getAllId();
     }
 
+    public Car getByid(Long id){
+        return carRepo.getByid(id);
+    }
 
 }

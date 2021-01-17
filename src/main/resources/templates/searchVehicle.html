@@ -24,31 +24,36 @@
             <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
             <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
 
-            <a href="../authentication/connexion" class="btn btn-dark">Connexion</a>
-            <a href="../authentication/registration" class="btn btn-dark">Inscription</a>
-            <a href="../logout" class="btn btn-dark">Déconnexion</a>
+            <div id="zoneConnect"></div>
         </div>
     </nav>
     <div id="filter">
-        <form method="get" action="test" id="vehicleForm">
+        <form method="get" action="filtre" id="vehicleForm">
             <table id="tableFilter">
                 <tr>
-                    <th>
-                        Outil de filtre
+                    <th id="FilterTool">
+                        Filtrage des résultats :
                     </th>
                 </tr>
-                <tr>
-                    <td>
+                <tr id="toolsSelection">
+                    <td id="typeSelection" class="toolResearch">
                         <select name="type" id="typeVehicle" form="vehicleForm">
+                            <option value="all">Tous</option>
                             <option value="car">Voiture</option>
                             <option value="bicycle">Vélo</option>
                             <option value="trailer">Remorque</option>
                         </select>
                     </td>
+                    <td id="priceSelection" class="toolResearch">
+                        Prix Max: <input type="number" min="0" max="5000" name="prix" value="Prix"/>
+                    </td>
+                    <td id="noteSelection" class="toolResearch">
+                        Note Min: <input type="range" min="0" max="5" step="1" oninput="this.nextElementSibling.value = this.value" name="note" value="0"/><output>0</output>
+                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type='submit' class="btn btn-lg btn-default" name="filtrer" value="Filtrer"/>
+                        <input type='submit' class="btn btn-lg btn-default" value="Filtrer" id="btnFiltre"/>
                     </td>
                 </tr>
             </table>
@@ -59,22 +64,25 @@
         <table id="tableSearch">
             <thead>
             <tr>
-                <th th:text="Modèle"></th>
-                <th th:text="Marque"></th>
-                <th th:text="Description"></th>
+                <th th:text="Modèle" class="modelField"></th>
+                <th th:text="Marque" class="marqueField"></th>
+                <th th:text="Description" class="descriptionFiled"></th>
                 <th th:text="Note"></th>
                 <th th:text="Prix"></th>
             </tr>
             </thead>
 
             <tbody>
-            <tr th:each="prod: ${vehicle}">
-                <td th:text="${prod.model}"></td>
-                <td th:text="${prod.brand}"></td>
-                <td th:text="${prod.description}"></td>
-                <td th:text="${prod.note}"></td>
-                <td th:text="${prod.price}"></td>
-            </tr>
+            <a>
+                <tr th:each="prod: ${vehicle}" class="resultatSearchline">
+                    <td th:text="${prod.model}" class="modelField"></td>
+                    <td th:text="${prod.brand}" class="marqueField"></td>
+                    <td th:text="${prod.description}" class="descriptionFiled"></td>
+                    <td th:text="${prod.note}"></td>
+                    <td th:text="${prod.price}"></td>
+                    <td class="linkSearch"><a th:href="'details?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a> </td>
+                </tr>
+            </a>
             </tbody>
         </table>
     </div>
@@ -83,4 +91,19 @@
     <p>Tous droits réservés - © Takar 2020/2021 </p>
 </div>
 </body>
+
+<script>
+
+console.log(document.cookie.indexOf("USERCONNECT"));
+
+if(document.cookie.indexOf("USERCONNECT") == -1){
+    //pas connecté
+    document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
+
+}else{
+    //connecté
+    document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
+}
+</script>
+
 </html>

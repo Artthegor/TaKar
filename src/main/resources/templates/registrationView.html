@@ -30,9 +30,14 @@
         </div>
     </nav>
 
+
+
     <div id="contentInsc">
         <form method="post" action="registration" id="registerForm">
             <h1>Ajout d'un nouvel utilisateur</h1>
+
+            <p align="center" th:text="${erreur}" style="font-size: 20; color: #FF1C19;" />
+
             <table id="tableFormRegister">
                 <tr>
                     <td>
