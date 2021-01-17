@@ -1,25 +1,26 @@
 
-
-table#tableSearch, #tableFilter{
+table#tableSearch, #tableFilter {
     margin: auto;
     margin-top: 2em;
 }
 
-#vehicleForm td{
+#vehicleForm td {
     text-align: center;
 }
 
-#tableSearch th, #tableFilter th{
+#tableSearch th, #tableFilter th {
     padding: 1.5em;
     text-transform: capitalize;
     border-style: solid;
 }
-#tableSearch tbody tr:hover td{
+
+#tableSearch tbody tr:hover td {
     cursor: pointer;
     background: rgba(222, 215, 215, 0.5);
     border-style: solid;
     border-color: black;
 }
+
 #vehicleForm .btn {
     background: black;
     color: white;
@@ -54,9 +55,9 @@ td.descriptionFiled {
     padding-left: 1em;
 }
 
-#FilterTool{
-    padding:0 !important;
-    border:none !important;
+#FilterTool {
+    padding: 0 !important;
+    border: none !important;
     font-family: 'Fjalla One' !important;
     font-size: 2em;
     padding-bottom: 0.5em !important;
@@ -109,4 +110,15 @@ td.linkSearch a:hover {
     color: rgba(123, 31, 31, 1);
     text-decoration: none;
     font-weight: 900;
+}
+
+div#contentSearch {
+    width: 80% !important;
+    max-width: 80% !important;
+    margin: auto;
+    margin-bottom: 45px !important;
+}
+
+td.descriptionFiled {
+    padding-right: 1em;
 }

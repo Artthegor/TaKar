@@ -7,3 +7,8 @@ div#contentSearch {
     width: 60%;
     margin: auto;
 }
+
+.ligneSearchRes td {
+    margin-top: 15px !important;
+    display: contents;
+}

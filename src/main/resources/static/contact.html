@@ -84,7 +84,8 @@
 
             <p class="question">Que faut-il remplir dans le champ "état du véhicule" ?</p>
             <p class="reponse">Le loueur se doit de regarder avec le locataire l'état général du véhicule (les impacts
-                dans la carroserie par exemple), ainsi que les pièces d'usures (comme les pneux, le niveau d'essence, ...).
+                dans la carroserie par exemple), ainsi que les pièces d'usures (comme les pneux, le niveau d'essence,
+                ...).
                 Il faut aussi relever le nombre de kilomètres du véhicule.</p>
         </div>
 
@@ -108,13 +109,17 @@
             <p class="question">Que dois-je faire en cas de panne, accident ou vol du véhicule ?</p>
             <div class="reponse">
                 <ul>
-                    <li>En cas de panne, une expertisation doit être faite pour déterminer si la panne est due à l'utilisation du
+                    <li>En cas de panne, une expertisation doit être faite pour déterminer si la panne est due à
+                        l'utilisation du
                         locataire
-                        actuel ou d'un précédent. Si c'est le locataire actuel qui est responsable de la panne, il se doit de payer
+                        actuel ou d'un précédent. Si c'est le locataire actuel qui est responsable de la panne, il se
+                        doit de payer
                         les
                         réparations.
                     </li>
-                    <li>En cas d'accident, le locataire doit fournir un constat à l'amiable et se charger des réparations.</li>
+                    <li>En cas d'accident, le locataire doit fournir un constat à l'amiable et se charger des
+                        réparations.
+                    </li>
                     <li>En cas de vol, le locataire doit porter plainte et fournir le dépôt de plainte au loueur.</li>
                 </ul>
             </div>
@@ -164,15 +169,15 @@
 
 <script>
 
-console.log(document.cookie.indexOf("USERCONNECT"));
+    console.log(document.cookie.indexOf("USERCONNECT"));
 
-if(document.cookie.indexOf("USERCONNECT") == -1){
-    //pas connecté
-    document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
+    if (document.cookie.indexOf("USERCONNECT") == -1) {
+        //pas connecté
+        document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
 
-}else{
-    //connecté
-    document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
-}
+    } else {
+        //connecté
+        document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
+    }
 </script>
 </html>

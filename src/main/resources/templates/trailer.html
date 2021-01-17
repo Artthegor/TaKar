@@ -27,34 +27,44 @@
             <div id="zoneConnect"></div>
         </div>
     </nav>
+
+    <div id="TitleDetails"><h1>Fiche Descriptive</h1></div>
     <div id="contentSearch">
         <table id="tableSearch">
-            <thead>
-            <tr>
-                <th th:text="Modèle" class="modelField">Modele</th>
-                <th th:text="Marque" class="marqueField">Brand</th>
-                <th th:text="Description" class="descriptionFiled">Description</th>
-                <th th:text="Note">note</th>
-                <th th:text="Prix">price</th>
-                <th th:text="Capacité">capacity</th>
-                <th th:text="Longueur">length</th>
-                <th th:text="Poids">weight</th>
+            <tr id="model" class="ligneSearchRes">
+                <td class="modelField trailerFieldLabel">Modele :</td>
+                <td th:text="${vehicle.model}" class="modelField trailerFieldData"></td>
             </tr>
-            </thead>
-
-            <tbody>
-            <tr class="resultatSearchline">
-                <td th:text="${vehicle.model}" class="modelField"></td>
-                <td th:text="${vehicle.brand}" class="marqueField"></td>
-                <td th:text="${vehicle.description}" class="descriptionFiled"></td>
-                <td th:text="${vehicle.note}"></td>
-                <td th:text="${vehicle.price}"></td>
-                <td th:text="${trailer.capacity}"></td>
-                <td th:text="${trailer.length}"></td>
-                <td th:text="${trailer.weight}"></td>
+            <tr id="marque" class="ligneSearchRes">
+                <td class="marqueField trailerFieldLabel">Marque :</td>
+                <td th:text="${vehicle.brand}" class="marqueField trailerFieldData"></td>
             </tr>
-            </tbody>
+            <tr id="note" class="ligneSearchRes">
+                <td class="trailerFieldLabel">Note :</td>
+                <td class="trailerFieldData" th:text="${vehicle.note}"></td>
+            </tr>
+            <tr id="price" class="ligneSearchRes">
+                <td class="trailerFieldLabel">Prix :</td>
+                <td class="trailerFieldData" th:text="${vehicle.price}"></td>
+            </tr>
+            <tr id="year" class="ligneSearchRes">
+                <td class="trailerFieldLabel">Capacité :</td>
+                <td class="trailerFieldData" th:text="${trailer.capacity}"></td>
+            </tr>
+            <tr id="motor" class="ligneSearchRes">
+                <td class="trailerFieldLabel">Longueur :</td>
+                <td class="trailerFieldData" th:text="${trailer.length}"></td>
+            </tr>
+            <tr id="power" class="ligneSearchRes">
+                <td class="trailerFieldLabel">Poids :</td>
+                <td class="trailerFieldData" th:text="${trailer.weight}"></td>
+            </tr>
+            <tr id="description" class="ligneSearchRes">
+                <td class="descriptionFiled trailerFieldLabel">Description :</td>
+                <td th:text="${vehicle.description}" class="descriptionFiled trailerFieldData"></td>
+            </tr>
         </table>
+
     </div>
 </div>
 <div id="footer" class="text-center" style="margin-bottom:0">
@@ -64,16 +74,16 @@
 
 <script>
 
-console.log(document.cookie.indexOf("USERCONNECT"));
+    console.log(document.cookie.indexOf("USERCONNECT"));
 
-if(document.cookie.indexOf("USERCONNECT") == -1){
-    //pas connecté
-    document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
+    if (document.cookie.indexOf("USERCONNECT") == -1) {
+        //pas connecté
+        document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
 
-}else{
-    //connecté
-    document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
-}
+    } else {
+        //connecté
+        document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
+    }
 </script>
 
 </html>

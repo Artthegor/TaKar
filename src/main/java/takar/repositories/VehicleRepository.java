@@ -11,6 +11,7 @@ public interface VehicleRepository  extends CrudRepository<Vehicle, Long> {
     public Iterable<Vehicle> findAllByIdVehicleInAndPriceLessThanEqualAndNoteGreaterThanEqual(Iterable<Long> ids, Double price, int note);
     @Query(value ="select idVehicle from #{#entityName} ")
     public Iterable<Long> findAllId();
+    public Iterable<Vehicle>findAllByUser(User user);
 
     public Vehicle findByIdVehicle(Long id);
 }

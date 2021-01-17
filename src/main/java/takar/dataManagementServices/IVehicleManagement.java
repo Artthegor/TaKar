@@ -1,5 +1,6 @@
 package takar.dataManagementServices;
 
+import takar.model.User;
 import takar.model.Vehicle;
 
 import java.util.Iterator;
@@ -11,4 +12,5 @@ public interface IVehicleManagement {
     public Iterable<Vehicle> getVehicleFilter(Iterable<Long> ids,Double price,int note);
     public Iterable<Long> getAllIds();
     public Vehicle getVehicleById(Long id);
+    public Iterable<Vehicle> getMyLocation(User user);
 }

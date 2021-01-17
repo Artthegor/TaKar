@@ -207,6 +207,17 @@ public class VehicleController {
         }
     }
 
+    @RequestMapping(value ="myOffer", method = RequestMethod.GET)
+    public String getMyOffer(Model modell){
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = userDetails.getUsername();
+        User user = userRepo.findByUsername(username);
+        Iterable<Vehicle> myVehicle = vehicleManager.getMyLocation(user);
+        modell.addAttribute("vehicle", myVehicle);
+        return "searchVehicle";
+    }
+
+
     @RequestMapping(value = "location", method = RequestMethod.GET)
     public String RentVehicle(@RequestParam(value = "idVehicle", required = false) Long idVehicle, @RequestParam(value = "startDate", required = false) Date startDate, @RequestParam(value = "enDate", required = false) Date endDate, Model modell){
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
