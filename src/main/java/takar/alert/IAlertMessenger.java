@@ -11,4 +11,5 @@ public interface IAlertMessenger {
     public void sendRent(String emailTo, String username);
     public void sendToLocataire(Vehicle vehicle, Client loueur, Client locataire, Date start, Date end);
     public void sendToLoueur(Vehicle vehicle, Client loueur, Client locataire, Date start, Date end);
+    public void sendDeleteVehicle(Vehicle vehicle, Client loueur);
 }

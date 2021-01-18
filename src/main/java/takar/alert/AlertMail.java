@@ -134,9 +134,36 @@ public class AlertMail implements IAlertMessenger {
                                 "</head>" +
                                 "<body><div style=\"text-align:center;\">" +
                                 "<div>Bonjour " + locataire.getUser().getUsername() + ",</div></br>" +
-                                "<div>Nous avons reçu une demande location pour votre véhicule ! " + vehicle.getBrand() + " " + vehicle.getModel() + "</div>" +
+                                "<div>Nous avons reçu une demande location pour votre véhicule : " + vehicle.getBrand() + " " + vehicle.getModel() + "</div>" +
                                 "<div>Monsieur " + loueur.getLastname() + " " + loueur.getFirstname() + " souhaite louer votre véhicule de " + start.toString() + " jusqu'à " + end.toString() + " </div>" +
                                 "<div>La durée de location est de " + duree + " jours. La location de votre véhicule va vous rapporter : " + price + "€.</div></br>" +
+                                "<div>A bientôt, l'équipe Takar,</div>" +
+                                "<div>Un problème avec Takar ? Contactez-nous : <a href=\"mailto:contact@takar.com\">contact@takar.com</a></div>" +
+                                "</div></body></html>"
+                        , true);
+            }
+        });
+    }
+
+    @Override
+    public void sendDeleteVehicle(Vehicle vehicle, Client loueur) {
+        emailSender.send(new MimeMessagePreparator() {
+            public void prepare(MimeMessage mimeMessage) throws MessagingException {
+                MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
+                message.setFrom("noreply@takar.com");
+                message.setTo(loueur.getMail());
+                message.setSubject("Suppression de la location d'un véhicule");
+                message.setText(
+                        "<html>" +
+                                "<head>\n" +
+                                "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\n" +
+                                "    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\"/>\n" +
+                                "</head>" +
+                                "<body><div style=\"text-align:center;\">" +
+                                "<div>Bonjour " + loueur.getUser().getUsername() + ",</div></br>" +
+                                "<div>Nous avons bien reçu votre demande de suppresion de location pour le véhicule : " + vehicle.getBrand() + " " + vehicle.getModel() + "</div></br>" +
+                                "<div>Votre véhicule a été retiré de la liste des véhicules louables de notre plateforme Takar.</div>" +
+                                "<div>N'hésitez pas à revenir sur notre application et de louer à nouveau votre véhicule.</div></br>" +
                                 "<div>A bientôt, l'équipe Takar,</div>" +
                                 "<div>Un problème avec Takar ? Contactez-nous : <a href=\"mailto:contact@takar.com\">contact@takar.com</a></div>" +
                                 "</div></body></html>"
