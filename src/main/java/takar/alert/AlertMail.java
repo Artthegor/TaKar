@@ -101,9 +101,9 @@ public class AlertMail implements IAlertMessenger {
                                 "    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\"/>\n" +
                                 "</head>" +
                                 "<body><div style=\"text-align:center;\">" +
-                                "<div>Bonjour " + locataire.getUser().getUsername() + ",</div></br>" +
+                                "<div>Bonjour " + loueur.getUser().getUsername() + ",</div></br>" +
                                 "<div>Nous avons bien enregistré votre demande de location pour le véhicule ! " + vehicle.getBrand() + " " + vehicle.getModel() + "</div>" +
-                                "<div>Vous allez être mis en relation avec Monsieur " + loueur.getLastname() + " " + loueur.getFirstname() + ". La location sera du " + start.toString() + " jusqu'à " + end.toString() + " </div>" +
+                                "<div>Vous allez être mis en relation avec Monsieur " + locataire.getLastname() + " " + locataire.getFirstname() + ". La location sera du " + start.toString() + " jusqu'à " + end.toString() + " </div>" +
                                 "<div>La durée de location est de " + duree + " jours. La location de votre véhicule va vous coûter : " + price + "€.</div></br>" +
                                 "<div>A bientôt, l'équipe Takar,</div>" +
                                 "<div>Un problème avec Takar ? Contactez-nous : <a href=\"mailto:contact@takar.com\">contact@takar.com</a></div>" +
@@ -132,9 +132,9 @@ public class AlertMail implements IAlertMessenger {
                                 "    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\"/>\n" +
                                 "</head>" +
                                 "<body><div style=\"text-align:center;\">" +
-                                "<div>Bonjour " + loueur.getUser().getUsername() + ",</div></br>" +
+                                "<div>Bonjour " + locataire.getUser().getUsername() + ",</div></br>" +
                                 "<div>Nous avons reçu une demande location pour votre véhicule ! " + vehicle.getBrand() + " " + vehicle.getModel() + "</div>" +
-                                "<div>Monsieur " + locataire.getLastname() + " " + locataire.getFirstname() + " souhaite louer votre véhicule de " + start.toString() + " jusqu'à " + end.toString() + " </div>" +
+                                "<div>Monsieur " + loueur.getLastname() + " " + loueur.getFirstname() + " souhaite louer votre véhicule de " + start.toString() + " jusqu'à " + end.toString() + " </div>" +
                                 "<div>La durée de location est de " + duree + " jours. La location de votre véhicule va vous rapporter : " + price + "€.</div></br>" +
                                 "<div>A bientôt, l'équipe Takar,</div>" +
                                 "<div>Un problème avec Takar ? Contactez-nous : <a href=\"mailto:contact@takar.com\">contact@takar.com</a></div>" +
