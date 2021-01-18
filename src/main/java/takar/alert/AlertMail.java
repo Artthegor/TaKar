@@ -92,7 +92,7 @@ public class AlertMail implements IAlertMessenger {
             public void prepare(MimeMessage mimeMessage) throws MessagingException {
                 MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
                 message.setFrom("noreply@takar.com");
-                message.setTo(locataire.getMail());
+                message.setTo(loueur.getMail());
                 message.setSubject("Demande de location pour un véhicule");
                 message.setText(
                         "<html>" +
@@ -123,7 +123,7 @@ public class AlertMail implements IAlertMessenger {
             public void prepare(MimeMessage mimeMessage) throws MessagingException {
                 MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
                 message.setFrom("noreply@takar.com");
-                message.setTo(loueur.getMail());
+                message.setTo(locataire.getMail());
                 message.setSubject("Demande de location de votre véhicule");
                 message.setText(
                         "<html>" +
