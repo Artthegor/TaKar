@@ -92,7 +92,7 @@
                     <p class="errorDateMessage" align="center" th:text="${erreur}" style="font-size: 20; color: #FF1C19;"/>
                 </td>
                 <td th:if = "${vehicle.user.getUserID() == currentUser.getUserID()}">
-                <a th:href="'supprVehicule?idVehicleSuppr='+${vehicle.idVehicle}">Supprimer</a>
+                <a th:href="'supprVehicule?idVehicleSuppr='+${vehicle.idVehicle}" class="btn btn-lg btn-default btnSupp">Supprimer</a>
                 </td>
 
             </tr>
