@@ -9,7 +9,7 @@ import java.util.Date;
 public class Location {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long idLocation;
+    long idLocation;
 
     @OneToOne
     Vehicle vehicle;

@@ -35,6 +35,7 @@
                 <th th:text="Fin" class="marqueField"></th>
                 <th th:text="Prix" class="descriptionFiled"></th>
                 <th th:text="Vehicule"></th>
+                <th th:text="Supprimer"></th>
             </tr>
             </thead>
 
@@ -44,8 +45,8 @@
                     <td th:text="${prod.beginDate}" class="modelField"></td>
                     <td th:text="${prod.endDate}" class="marqueField"></td>
                     <td th:text="${prod.totalPrice}" class="descriptionFiled"></td>
-                    <td class="linkSearch"><a th:href="'details?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a>
-                    </td>
+                    <td class="linkSearch"><a th:href="'details?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a></td>
+                    <td class="linkSearch"><a th:href="'supprRent?idLocation='+${prod.idLocation}">Supprimer</a></td>
                 </tr>
             </a>
             </tbody>

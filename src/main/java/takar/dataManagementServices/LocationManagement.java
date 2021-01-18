@@ -26,4 +26,8 @@ public class LocationManagement implements ILocationManagement{
     public Iterable<Location> getMyRent(User user){
         return locaRepo.findAllByUser(user);
     }
+
+    public void suppr(Long location){
+        locaRepo.delete(location);
+    }
 }

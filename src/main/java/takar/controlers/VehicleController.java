@@ -280,4 +280,19 @@ public class VehicleController {
 
         return "myRent";
     }
+
+    @RequestMapping(value = "supprRent", method = RequestMethod.GET)
+    public String supprRent(@RequestParam(value = "idLocation", required = false) long idLocation, Model modell){
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = userDetails.getUsername();
+        User user = userManager.findByUsername(username);
+
+        //suppression de la location
+        locaManager.suppr(idLocation);
+
+        Iterable<Location> myRent = locaManager.getMyRent(user);
+        modell.addAttribute("location", myRent);
+
+        return "myRent";
+    }
 }

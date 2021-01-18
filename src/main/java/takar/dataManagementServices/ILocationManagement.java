@@ -10,4 +10,5 @@ public interface ILocationManagement {
     public Location addLocation(Vehicle vehicle, Date start, Date end, User user);
 
     public Iterable<Location> getMyRent(User user);
+    public void suppr(Long location);
 }
