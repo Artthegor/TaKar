@@ -47,4 +47,8 @@ public class VehicleManagement implements IVehicleManagement{
     public Vehicle getVehicleById(Long id) {
         return vehicleRepo.findByIdVehicle(id);
     }
+
+    public void suppr(Long idVehicle){
+        vehicleRepo.delete(idVehicle);
+    }
 }

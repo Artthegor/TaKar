@@ -108,7 +108,9 @@
                     </form>
                     <p align="center" class="errorDateMessage" th:text="${erreur}" style="font-size: 20; color: #FF1C19;"/>
                 </td>
-
+                <td th:if = "${vehicle.user.getUserID() == currentUser.getUserID()}">
+                    <a th:href="'supprVehicule?idVehicleSuppr='+${vehicle.idVehicle}">Supprimer</a>
+                </td>
 
             </tr>
         </table>

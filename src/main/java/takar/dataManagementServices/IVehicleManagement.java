@@ -13,4 +13,5 @@ public interface IVehicleManagement {
     public Iterable<Long> getAllIds();
     public Vehicle getVehicleById(Long id);
     public Iterable<Vehicle> getMyLocation(User user);
+    public void suppr(Long idVehicle);
 }

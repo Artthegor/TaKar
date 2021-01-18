@@ -30,4 +30,8 @@ public class LocationManagement implements ILocationManagement{
     public void suppr(Long location){
         locaRepo.delete(location);
     }
+
+    public Iterable<Location> getRentByVehicle(Long idVehicle){
+        return locaRepo.findAllByVehicleIdVehicle(idVehicle);
+    }
 }

@@ -11,4 +11,5 @@ public interface ILocationManagement {
 
     public Iterable<Location> getMyRent(User user);
     public void suppr(Long location);
+    public Iterable<Location> getRentByVehicle(Long idVehicle);
 }

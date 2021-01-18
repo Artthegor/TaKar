@@ -326,4 +326,25 @@ public class VehicleController {
 
         return "myRent";
     }
+
+    @RequestMapping(value = "supprVehicule", method = RequestMethod.GET)
+    public String supprVehicle(@RequestParam(value = "idVehicleSuppr", required = false) long idVehicle, Model modell){
+        Iterable<Location> locationVehicle = locaManager.getRentByVehicle(idVehicle);
+        for (Location loc: locationVehicle) {
+            locaManager.suppr(loc.getIdLocation());
+        }
+
+        Vehicle vehicle = vehicleManager.getVehicleById(idVehicle);
+        ApplicationContext context = new ClassPathXmlApplicationContext( "classpath:spring/application-config.xml");
+        AlertMail am = (AlertMail) context.getBean("alertMail");
+        Client loueur = clientManager.findByid(vehicle.getUser().getUserID());
+        am.sendDeleteVehicle(vehicle, loueur);
+
+        //suppression de la location
+        vehicleManager.suppr(idVehicle);
+
+
+
+        return getMyOffer(modell);
+    }
 }
