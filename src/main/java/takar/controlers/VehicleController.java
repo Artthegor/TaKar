@@ -263,11 +263,11 @@ public class VehicleController {
         Date finishDate = formatter.parse(endDate);
 
         if(beginDate.compareTo(finishDate)> 0){
+
             System.out.println("Error DATE LOCATION");
         }
 
         Vehicle vehicle = vehicleManager.getVehicleById(idVehicle);
-
         System.out.println(startDate);
         System.out.println(endDate);
 
