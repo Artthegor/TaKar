@@ -255,8 +255,6 @@ public class VehicleController {
         String username = userDetails.getUsername();
         User user = userManager.findByUsername(username);
 
-
-
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 
         Date beginDate = formatter.parse(startDate);
@@ -267,14 +265,19 @@ public class VehicleController {
         }
 
         Vehicle vehicle = vehicleManager.getVehicleById(idVehicle);
-
         System.out.println(startDate);
         System.out.println(endDate);
-
         locaManager.addLocation(vehicle, beginDate, finishDate, user);
-
         Iterable<Location> myRent = locaManager.getMyRent(user);
         modell.addAttribute("location", myRent);
+
+        ApplicationContext context = new ClassPathXmlApplicationContext( "classpath:spring/application-config.xml");
+        AlertMail am = (AlertMail) context.getBean("alertMail");
+        Client locataire = clientManager.findByid(user.getUserID());
+        Client loueur = clientManager.findByid(vehicle.getUser().getUserID());
+        am.sendToLocataire(vehicle, locataire, loueur, beginDate, finishDate);
+        am.sendToLoueur(vehicle, locataire, loueur, beginDate, finishDate);
+        System.out.println("\n\n" + locataire.getMail() + "     " + loueur.getMail() + "\n\n");
 
         return "myRent";
     }
