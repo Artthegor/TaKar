@@ -212,6 +212,10 @@ public class VehicleController {
     @RequestMapping(value = "details")
     public String PrintCar(@RequestParam(value = "idVehicle", required = false) String  id, Model modell)
     {
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = userDetails.getUsername();
+        User user = userManager.findByUsername(username);
+        modell.addAttribute("currentUser", user);
         Car car = carManager.getByid(Long.parseLong(id));
         if(car != null) {
             modell.addAttribute("car", car);
@@ -263,10 +267,6 @@ public class VehicleController {
         }
 
         Vehicle vehicle = vehicleManager.getVehicleById(idVehicle);
-
-        if(vehicle.getUser().getUserID() == user.getUserID()){
-            System.out.println("Impossible de  louer son propre vehicule");
-        }
 
         System.out.println(startDate);
         System.out.println(endDate);
