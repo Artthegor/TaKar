@@ -122,3 +122,27 @@ div#contentSearch {
 td.descriptionFiled {
     padding-right: 1em;
 }
+
+#myOffers .btn {
+    background: black;
+    color: white;
+    -webkit-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+}
+
+#myOffers .btn:hover {
+    background: white;
+    color: black;
+    -webkit-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+form#myOffers {
+    text-align: center;
+    margin-top: 1.5em;
+}
