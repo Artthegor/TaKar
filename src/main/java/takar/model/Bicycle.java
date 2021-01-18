@@ -14,7 +14,6 @@ public class Bicycle implements Serializable {
 
 
     @OneToOne
-    @JoinColumn(name = "vehicle_id")
     Vehicle vehicle;
 
     public Bicycle() {}

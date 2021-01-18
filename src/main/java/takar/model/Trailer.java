@@ -12,7 +12,6 @@ public class Trailer implements Serializable {
     String licensePlate;
 
     @OneToOne
-    @JoinColumn(name = "vehicle_id")
     Vehicle vehicle;
 
     public Trailer(){}
