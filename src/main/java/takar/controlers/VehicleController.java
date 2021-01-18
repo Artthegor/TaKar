@@ -14,7 +14,10 @@ import takar.alert.AlertMail;
 import takar.dataManagementServices.*;
 import takar.model.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 
 @Controller
@@ -243,17 +246,22 @@ public class VehicleController {
 
 
     @RequestMapping(value = "location", method = RequestMethod.GET)
-    public String RentVehicle(@RequestParam(value = "idVehicle", required = false) Long idVehicle, @RequestParam(value = "startDate", required = false) Date startDate, @RequestParam(value = "enDate", required = false) Date endDate, Model modell){
+    public String RentVehicle(@RequestParam(value = "idVehicle", required = false) Long idVehicle, @RequestParam(value = "startDate", required = false) String startDate, @RequestParam(value = "endDate", required = false) String endDate, Model modell) throws ParseException {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = userDetails.getUsername();
         User user = userManager.findByUsername(username);
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+
+        Date beginDate = formatter.parse(startDate);
+        Date finishDate = formatter.parse(endDate);
 
         Vehicle vehicle = vehicleManager.getVehicleById(idVehicle);
 
         System.out.println(startDate);
         System.out.println(endDate);
 
-        locaManager.addLocation(vehicle, startDate, endDate, user);
+        locaManager.addLocation(vehicle, beginDate, finishDate, user);
 
         Iterable<Location> myRent = locaManager.getMyRent(user);
         modell.addAttribute("location", myRent);

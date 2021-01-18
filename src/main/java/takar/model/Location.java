@@ -18,9 +18,9 @@ public class Location {
     @JoinColumn(name = "user_id")
     User user;
 
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     Date beginDate;
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     Date endDate;
 
     double totalPrice;
