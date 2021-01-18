@@ -44,7 +44,7 @@ table#bigTable {
     border-color: black;
 }
 
-hr#lineSepaDetails{
+hr#lineSepaDetails {
     width: 50%;
     height: 5px !important;
     border-width: 3px;

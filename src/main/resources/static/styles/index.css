@@ -59,7 +59,7 @@ a.nav-link.lienVehicule:hover {
     -ms-transform: scale(1.2);
     transform: scale(1.2);
     font-weight: bolder;
-    padding-left:15%;
+    padding-left: 15%;
 }
 
 .titreIndex {
@@ -75,7 +75,7 @@ a.nav-link.lienVehicule:hover {
 }
 
 
- .btnIndex {
+.btnIndex {
     background: black;
     color: white;
     -webkit-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
@@ -98,7 +98,7 @@ td.cellBoutonVoiture {
     /* width: 50%; */
     width: 20%;
     text-align: right;
-    padding-top: 51px; 
+    padding-top: 51px;
 
 }
 
