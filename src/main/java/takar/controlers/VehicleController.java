@@ -92,12 +92,14 @@ public class VehicleController {
                         Integer.parseInt(year) > 1800 &&
                         Integer.parseInt(year) < 2022) {
                     carManager.addCar(brand, model, Integer.parseInt(placeNumber), Double.parseDouble(price), infoForClient, description, year, motorization, power, licensePlate, Double.parseDouble(trunkVolume),user);
+                    modell.addAttribute("envoiMail", "Votre voiture est mise en location, un email de confirmation vous a été envoyé.");
                 } else {
                     if (type != null &&
                             size != null &&
                             !type.trim().isEmpty() &&
                             !size.trim().isEmpty()) {
                         bicycleManager.addBicycle(brand, model, Double.parseDouble(price), infoForClient, description, type, size, isElectrical,user);
+                        modell.addAttribute("envoiMail", "Votre vélo est mise en location, un email de confirmation vous a été envoyé.");
                     } else {
                         if (capacity != null &&
                                 weight != null &&
@@ -108,8 +110,10 @@ public class VehicleController {
                                 Double.parseDouble(length) > 0 &&
                                 !licensePlate.trim().isEmpty()) {
                             trailerManager.addTrailer(brand, model, Double.parseDouble(price), infoForClient, description, Double.parseDouble(capacity), Double.parseDouble(weight), Double.parseDouble(length), licensePlate,user);
+                            modell.addAttribute("envoiMail", "Votre remorque est mise en location, un email de confirmation vous a été envoyé.");
                         } else {
-                            System.out.println("Selection non valide");
+                            System.out.println("1Selection non valide");
+                            modell.addAttribute("erreur", "Problème dans le formulaire");
                         }
                     }
                 }
@@ -120,7 +124,8 @@ public class VehicleController {
             }
         }
         catch(Exception e){
-            System.out.println("Selection non valide");
+            System.out.println("2Selection non valide");
+            modell.addAttribute("erreur", "Problème dans le formulaire");
         }
         return "addVehicle";
     }
