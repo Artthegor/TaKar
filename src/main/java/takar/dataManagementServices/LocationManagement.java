@@ -16,7 +16,10 @@ public class LocationManagement implements ILocationManagement{
     LocationRepository locaRepo;
 
     public Location addLocation(Vehicle vehicle, Date start, Date end, User user){
-        Location location = new Location(start, end, 42, vehicle, user);
+
+
+
+        Location location = new Location(start, end, vehicle.getPrice(), vehicle, user);
         return locaRepo.save(location);
     }
 
