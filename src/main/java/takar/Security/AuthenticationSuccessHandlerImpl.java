@@ -28,8 +28,6 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
         cookieConnected.setPath("/");
         response.addCookie(cookieConnected);
 
-        //System.out.println(request.getCookies().toString());
-        //System.out.println(request.getSession().toString());
         response.setStatus(HttpServletResponse.SC_OK);
         response.sendRedirect("../");
     }

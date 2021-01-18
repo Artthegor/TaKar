@@ -31,7 +31,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         }
 
         User user = userManager.findByUsername(username);
-        System.out.println("ICI : " +user);
 
         if (user == null) {
             throw new UsernameNotFoundException("User " + username + " not found");
@@ -44,7 +43,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
         Role role = user.getRole();
         authorities.add(new SimpleGrantedAuthority(role.getRoleName()));
-        System.out.println(authorities);
         return authorities;
     }
 
