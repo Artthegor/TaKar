@@ -24,7 +24,6 @@ public class LogoutCleanCookies implements LogoutHandler {
                        Authentication authentication) {
         for (String cookieName : cookiesToClear) {
             Cookie cookie = new Cookie(cookieName, null);
-            System.out.println("COOKIE : " + cookieName);
             String cookiePath = request.getContextPath() + "/";
             if (!StringUtils.hasLength(cookiePath)) {
                 cookiePath = "/";

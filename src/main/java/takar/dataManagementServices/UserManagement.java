@@ -30,8 +30,6 @@ public class UserManagement implements IUserManagement {
 	}
 
 	public User logUser(String username, String password ) {
-		System.out.println(username + "   " + password);
-		System.out.println(userRepo.findByUsername(username).getUsername());
 
 		User user = userRepo.findByUsername(username);
 		return user;
