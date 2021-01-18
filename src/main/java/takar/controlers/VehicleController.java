@@ -66,7 +66,6 @@ public class VehicleController {
 
                              Model modell)
     {
-
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = userDetails.getUsername();
         User user = userManager.findByUsername(username);
@@ -115,7 +114,6 @@ public class VehicleController {
                             trailerManager.addTrailer(brand, model, Double.parseDouble(price), infoForClient, description, Double.parseDouble(capacity), Double.parseDouble(weight), Double.parseDouble(length), licensePlate,user);
                             modell.addAttribute("envoiMail", "Votre remorque est mise en location, un email de confirmation vous a été envoyé.");
                         } else {
-                            System.out.println("1Selection non valide");
                             modell.addAttribute("erreur", "Problème dans le formulaire");
                         }
                     }
@@ -127,7 +125,6 @@ public class VehicleController {
             }
         }
         catch(Exception e){
-            System.out.println("2Selection non valide");
             modell.addAttribute("erreur", "Problème dans le formulaire");
         }
         return "addVehicle";
@@ -262,7 +259,6 @@ public class VehicleController {
 
         if(beginDate.compareTo(finishDate)> 0){
             modell.addAttribute("currentUser", user);
-            System.out.println("Error DATE LOCATION");
             String erreur = "La date de début de location doit être antérieur à la date de fin";
             modell.addAttribute("erreur", erreur);
 
@@ -290,8 +286,6 @@ public class VehicleController {
         }
 
         Vehicle vehicle = vehicleManager.getVehicleById(idVehicle);
-        System.out.println(startDate);
-        System.out.println(endDate);
         locaManager.addLocation(vehicle, beginDate, finishDate, user);
         Iterable<Location> myRent = locaManager.getMyRent(user);
         modell.addAttribute("location", myRent);
@@ -302,7 +296,6 @@ public class VehicleController {
         Client loueur = clientManager.findByid(vehicle.getUser().getUserID());
         am.sendToLocataire(vehicle, locataire, loueur, beginDate, finishDate);
         am.sendToLoueur(vehicle, locataire, loueur, beginDate, finishDate);
-        System.out.println("\n\n" + locataire.getMail() + "     " + loueur.getMail() + "\n\n");
 
         return "myRent";
     }

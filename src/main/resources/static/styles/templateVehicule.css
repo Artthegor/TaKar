@@ -60,3 +60,15 @@ table#tableSearch {
 td#locationColonne {
     text-align: center;
 }
+
+p.errorDateMessage {
+    width: 350px;
+}
+
+td#locationColonne {
+    text-align: center;
+}
+
+p.errorDateMessage {
+    margin: auto;
+}
