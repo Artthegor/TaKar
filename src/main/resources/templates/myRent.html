@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Mes Locations</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../../styles/search.css"/>
+    <link rel="stylesheet" href="../../styles/rent.css"/>
     <link rel="stylesheet" href="../../styles/general.css"/>
     <link rel="shortcut icon" type="image/png" href="../../images/t.png"/>
 </head>
@@ -29,13 +29,15 @@
             <div id="zoneConnect"></div>
         </div>
     </nav>
+    <div id="TitleDetails"><h1>Mes Locations</h1></div>
+    <hr id="lineSepaDetails"></hr>
     <div id="contentSearch">
         <table id="tableSearch">
             <thead>
             <tr>
-                <th th:text="Debut" class="modelField"></th>
+                <th th:text="Début" class="modelField"></th>
                 <th th:text="Fin" class="marqueField"></th>
-                <th th:text="Prix" class="descriptionFiled"></th>
+                <th th:text="Prix" class="priceFiled"></th>
                 <th th:text="Vehicule"></th>
                 <th th:text="Supprimer"></th>
             </tr>
@@ -46,9 +48,10 @@
                 <tr th:each="prod: ${location}" class="resultatSearchline">
                     <td th:text="${prod.beginDate}" class="modelField"></td>
                     <td th:text="${prod.endDate}" class="marqueField"></td>
-                    <td th:text="${prod.totalPrice}" class="descriptionFiled"></td>
-                    <td class="linkSearch"><a th:href="'details?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a></td>
-                    <td class="linkSearch"><a th:href="'supprRent?idLocation='+${prod.idLocation}">Supprimer</a></td>
+                    <td th:text="${prod.totalPrice}" class="priceFiled"></td>
+                    <td class="linkSearch "><a th:href="'details?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a>
+                    </td>
+                    <td class="linkDelete"><a th:href="'supprRent?idLocation='+${prod.idLocation}">Supprimer</a></td>
                 </tr>
             </a>
             </tbody>
@@ -69,19 +72,19 @@
         //pas connecté
         document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
 
-}else{
-    //connecté
-    document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
-}
-
-var notes = document.getElementsByClassName("noteField");
-console.log(notes);
-for(let text of notes){
-    if(text.innerHTML ==="6"){
-        text.innerHTML="";
-        text.innerHTML="X";
+    } else {
+        //connecté
+        document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
     }
-}
+
+    var notes = document.getElementsByClassName("noteField");
+    console.log(notes);
+    for (let text of notes) {
+        if (text.innerHTML === "6") {
+            text.innerHTML = "";
+            text.innerHTML = "X";
+        }
+    }
 </script>
 
 </html>

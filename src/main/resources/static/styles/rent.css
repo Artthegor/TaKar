@@ -1,0 +1,171 @@
+hr{
+    width: 50%;
+    height: 5px !important;
+    border-width: 3px;
+    size: 30px !important;
+    font-size: 5em !important;
+    border-radius: 25px;
+}
+
+table#tableSearch, #tableFilter {
+    margin: auto;
+    margin-top: 2em;
+}
+
+#vehicleForm td {
+    text-align: center;
+}
+
+#tableSearch th, #tableFilter th {
+    padding: 1.5em;
+    text-transform: capitalize;
+    border-style: solid;
+}
+
+#tableSearch tbody tr:hover td {
+    cursor: pointer;
+    background: rgba(222, 215, 215, 0.5);
+    border-style: solid;
+    border-color: black;
+}
+
+#vehicleForm .btn {
+    background: black;
+    color: white;
+    -webkit-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+}
+
+#vehicleForm .btn:hover {
+    background: white;
+    color: black;
+    -webkit-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+table#tableSearch {
+    text-align: center;
+}
+
+th.descriptionFiled {
+    width: 500px;
+    max-width: 500px;
+    /* text-align: justify; */
+}
+
+td.descriptionFiled {
+    text-align: justify;
+    padding-left: 1em;
+}
+
+#FilterTool {
+    padding: 0 !important;
+    border: none !important;
+    font-family: 'Fjalla One' !important;
+    font-size: 2em;
+    padding-bottom: 0.5em !important;
+}
+
+input#btnFiltre {
+    margin-top: 1.5em;
+}
+
+th.marqueField {
+    width: 200px;
+}
+
+th.modelField {
+    width: 200px;
+}
+
+tr.resultatSearchline td {
+    border-style: dotted;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-color: black;
+}
+
+.toolResearch {
+    padding: 1.5em;
+}
+
+tr#toolsSelection {
+    display: inline;
+}
+
+th#FilterTool {
+    text-align: center;
+}
+
+div#contentSearch {
+    margin-bottom: 50px;
+}
+
+td.linkSearch {
+    padding: 1.5em;
+}
+
+td.linkSearch a {
+    color: black;
+}
+
+td.linkSearch a:hover {
+    color: rgba(32, 67, 150, 1);
+    text-decoration: none;
+    font-weight: 900;
+}
+
+div#contentSearch {
+    width: 80% !important;
+    max-width: 80% !important;
+    margin: auto;
+    margin-bottom: 45px !important;
+}
+
+td.priceFiled {
+    padding-right: 1em;
+}
+
+#myOffers .btn {
+    background: black;
+    color: white;
+    -webkit-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+}
+
+#myOffers .btn:hover {
+    background: white;
+    color: black;
+    -webkit-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+form#myOffers {
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+div#TitleDetails {
+    text-align: center;
+}
+
+
+td.linkDelete a {
+    color: black;
+}
+
+td.linkDelete a:hover {
+    color: rgba(123, 31, 31, 1);
+    text-decoration: none;
+    font-weight: 900;
+}
