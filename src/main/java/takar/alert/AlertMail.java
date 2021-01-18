@@ -105,6 +105,7 @@ public class AlertMail implements IAlertMessenger {
                                 "<div>Nous avons bien enregistré votre demande de location pour le véhicule ! " + vehicle.getBrand() + " " + vehicle.getModel() + "</div>" +
                                 "<div>Vous allez être mis en relation avec Monsieur " + locataire.getLastname() + " " + locataire.getFirstname() + ". La location sera du " + start.toString() + " jusqu'à " + end.toString() + " </div>" +
                                 "<div>La durée de location est de " + duree + " jours. La location de votre véhicule va vous coûter : " + price + "€.</div></br>" +
+                                "<div>Le locataire vous informe avec le message suivant : " + vehicle.getInfoForClient() + ".</div></br>" +
                                 "<div>A bientôt, l'équipe Takar,</div>" +
                                 "<div>Un problème avec Takar ? Contactez-nous : <a href=\"mailto:contact@takar.com\">contact@takar.com</a></div>" +
                                 "</div></body></html>"
