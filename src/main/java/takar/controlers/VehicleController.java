@@ -251,6 +251,8 @@ public class VehicleController {
         String username = userDetails.getUsername();
         User user = userManager.findByUsername(username);
 
+
+
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 
         Date beginDate = formatter.parse(startDate);
@@ -261,6 +263,10 @@ public class VehicleController {
         }
 
         Vehicle vehicle = vehicleManager.getVehicleById(idVehicle);
+
+        if(vehicle.getUser().getUserID() == user.getUserID()){
+            System.out.println("Impossible de  louer son propre vehicule");
+        }
 
         System.out.println(startDate);
         System.out.println(endDate);
