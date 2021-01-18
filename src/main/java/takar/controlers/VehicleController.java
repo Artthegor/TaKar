@@ -263,8 +263,32 @@ public class VehicleController {
         Date finishDate = formatter.parse(endDate);
 
         if(beginDate.compareTo(finishDate)> 0){
-
+            modell.addAttribute("currentUser", user);
             System.out.println("Error DATE LOCATION");
+            String erreur = "La date de début de location doit être antérieur à la date de fin";
+            modell.addAttribute("erreur", erreur);
+
+            Car car = carManager.getByid(idVehicle);
+            if(car != null) {
+                modell.addAttribute("car", car);
+                modell.addAttribute("vehicle", car.getVehicle());
+                return "car";
+            }
+            else{
+                Bicycle bicycle = bicycleManager.getByid(idVehicle);
+                if(bicycle != null){
+                    modell.addAttribute("bicycle", bicycle);
+                    modell.addAttribute("vehicle", bicycle.getVehicle());
+                    return "bicycle";
+                }
+                else{
+                    Trailer trailer = trailerManager.getByid(idVehicle);
+                    modell.addAttribute("trailer", trailer);
+                    modell.addAttribute("vehicle", trailer.getVehicle());
+                    return "trailer";
+                }
+            }
+
         }
 
         Vehicle vehicle = vehicleManager.getVehicleById(idVehicle);
