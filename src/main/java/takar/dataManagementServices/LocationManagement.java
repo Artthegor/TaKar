@@ -19,7 +19,7 @@ public class LocationManagement implements ILocationManagement{
 
 
 
-        Location location = new Location(start, end, (Long)((1+((end.getTime()-start.getTime()) / (1000*60*60*24))))*vehicle.getPrice(), vehicle, user);
+        Location location = new Location(start, end, ((1+((end.getTime()-start.getTime()) / (1000*60*60*24))))*vehicle.getPrice() *1.05, vehicle, user);
         return locaRepo.save(location);
     }
 
