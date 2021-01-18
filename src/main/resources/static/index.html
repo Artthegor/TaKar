@@ -44,14 +44,14 @@
             <div class="col-sm-3">
                 <h2>Nos locations</h2>
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item">
-                        <a href="/vehicle/filtre?type=car&prix=&note=0" class="nav-link">Voiture</a>
+                    <li class="nav-item liLienVehicule">
+                        <a href="/vehicle/filtre?type=car&prix=&note=0" class="nav-link lienVehicule">Voiture</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/vehicle/filtre?type=bicycle&prix=&note=0" class="nav-link">Velo</a>
+                        <a href="/vehicle/filtre?type=bicycle&prix=&note=0" class="nav-link lienVehicule">Velo</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/vehicle/filtre?type=trailer&prix=&note=0" class="nav-link">Remorque</a>
+                        <a href="/vehicle/filtre?type=trailer&prix=&note=0" class="nav-link lienVehicule">Remorque</a>
                     </li>
                 </ul>
             </div>
@@ -78,17 +78,25 @@
                     non utilisés. Nos utilisateurs peuvent mettre en location leurs véhicules.</p>
                 <h2>Abonne toi</h2>
                 <p>Nous retrouver sur les réseaux !</p>
-                <ul class="nav nav-pills flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://www.facebook.com"><img class="SocialNetLogo" src="./images/facebook.png" alt="facebookLogo" width="50" height="50"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://www.twitter.com"><img class="SocialNetLogo" src="./images/twitter.png" alt="twitterLogo" width="50" height="50"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://www.instagram.com"><img class="SocialNetLogo" src="./images/instagram.png" alt="instagramLogo" width="50" height="50"> </a>
-                    </li>
-                    <li><a href="mailto:contact@takar.com">contact@takar.com</a></li>
+                <ul class="nav nav-pills flex-column " id="ulRS">
+                    <table>
+                        <tr>
+                            <td class="caseRS">
+                                <a class="nav-link" href="http://www.facebook.com"><img class="SocialNetLogo" src="./images/facebook.png" alt="facebookLogo" width="50" height="50"></img></a>
+                            </td>
+                            <td class="caseRS">
+                                <a class="nav-link" href="http://www.twitter.com"><img class="SocialNetLogo" src="./images/twitter.png" alt="twitterLogo" width="50" height="50"></img></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caseRS">
+                                <a class="nav-link" href="http://www.instagram.com"><img class="SocialNetLogo" src="./images/instagram.png" alt="instagramLogo" width="50" height="50"></img> </a>
+                            </td>
+                            <td class="caseRS">
+                                <a class="nav-link" href="mailto:contact@takar.com"><img class="SocialNetLogo" src="./images/email.png" alt="instagramLogo" width="50" height="50"></img></a>
+                            </td>
+                        </tr>
+                    </table>
                 </ul>
                 <hr class="d-sm-none">
             </div>

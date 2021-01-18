@@ -84,7 +84,10 @@
                     <td th:text="${prod.model}" class="modelField"></td>
                     <td th:text="${prod.brand}" class="marqueField"></td>
                     <td th:text="${prod.description}" class="descriptionFiled"></td>
-                    <td th:text="${prod.note}" class = "noteField"></td>
+                    <td class = "noteField">
+                        <span th:if="${prod.note == 6}">X</span>
+                        <span th:unless="${prod.note == 6}" th:text ="${prod.note}"></span>
+                    </td>
                     <td th:text="${prod.price}"></td>
                     <td class="linkSearch"><a th:href="'details?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a>
                     </td>
@@ -113,14 +116,6 @@
     document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
 }
 
-var notes = document.getElementsByClassName("noteField");
-console.log(notes);
-for(let text of notes){
-    if(text.innerHTML ==="6"){
-        text.innerHTML="";
-        text.innerHTML="X";
-    }
-}
 </script>
 
 </html>

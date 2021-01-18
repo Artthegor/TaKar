@@ -32,4 +32,32 @@ body {
     cursor: default;
 }
 
+td.caseRS {
+    width: 50px;
+    text-align: center;
+}
 
+td.caseRS a img:hover {
+    cursor: pointer;
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+a.nav-link.lienVehicule {
+    color: black;
+}
+
+a.nav-link.lienVehicule:hover {
+    color: rgba(123, 31, 31, 1);
+    cursor: pointer;
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    font-weight: bolder;
+    padding-left:15%;
+}
