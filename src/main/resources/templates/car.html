@@ -18,7 +18,9 @@
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
         <div>
             <a href="../vehicle/search" class="btn btn-dark">Rechercher</a>
-            <a href="../vehicle/rent" class="btn btn-dark">Louer</a>
+            <a href="../vehicle/printMyRent" class="btn btn-dark">Mes locations</a>
+            <a href="../vehicle/rent" class="btn btn-dark">Mise en location</a>
+            <a href="../vehicle/myOffer" class="btn btn-dark">Mes offres</a>
             <a href="../contact.html" class="btn btn-dark">Contacter</a>
 
             <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
@@ -28,70 +30,84 @@
         </div>
     </nav>
     <div id="TitleDetails"><h1>Fiche Descriptive</h1></div>
+    <hr id="lineSepaDetails"></hr>
     <div id="contentSearch">
-        <table id="tableSearch">
-            <tr id="model" class="ligneSearchRes">
-                <td class="modelField carFieldLabel">Modele :</td>
-                <td th:text="${vehicle.model}" class="modelField carFieldData"></td>
-            </tr>
-            <tr id="marque" class="ligneSearchRes">
-                <td class="marqueField carFieldLabel">Marque :</td>
-                <td th:text="${vehicle.brand}" class="marqueField carFieldData"></td>
-            </tr>
+        <table id="bigTable">
+            <tr id="LineBigTable">
+                <td id="detailsColonne">
+                    <table id="tableSearch">
+                        <tr id="model" class="ligneSearchRes">
+                            <td class="modelField carFieldLabel">Modele :</td>
+                            <td th:text="${vehicle.model}" class="modelField carFieldData"></td>
+                        </tr>
+                        <tr id="marque" class="ligneSearchRes">
+                            <td class="marqueField carFieldLabel">Marque :</td>
+                            <td th:text="${vehicle.brand}" class="marqueField carFieldData"></td>
+                        </tr>
 
-            <tr id="note" class="ligneSearchRes">
-                <td class="carFieldLabel">Note :</td>
-                <td class="carFieldData" th:text="${vehicle.note}"></td>
-            </tr>
-            <tr id="price" class="ligneSearchRes">
-                <td class="carFieldLabel">Prix :</td>
-                <td class="carFieldData" th:text="${vehicle.price}"></td>
-            </tr>
-            <tr id="year" class="ligneSearchRes">
-                <td class="carFieldLabel">Année :</td>
-                <td class="carFieldData" th:text="${car.year}"></td>
-            </tr>
-            <tr id="motor" class="ligneSearchRes">
-                <td class="carFieldLabel">Type de Moteur :</td>
-                <td class="carFieldData" th:text="${car.motorization}"></td>
-            </tr>
-            <tr id="power" class="ligneSearchRes">
-                <td class="carFieldLabel">Puissance :</td>
-                <td class="carFieldData" th:text="${car.power}"></td>
-            </tr>
-            <tr id="places" class="ligneSearchRes">
-                <td class="carFieldLabel">Nombre de places :</td>
-                <td class="carFieldData" th:text="${car.getPlaceNumber()}"></td>
-            </tr>
-            <tr id="coffre" class="ligneSearchRes">
-                <td class="carFieldLabel">Volume du coffre :</td>
-                <td class="carFieldData" th:text="${car.trunkVolume}"></td>
-            </tr>
-            <tr id="imma" class="ligneSearchRes">
-                <td class="carFieldLabel">Plaque d'immatriculation :</td>
-                <td class="carFieldData" th:text="${car.licensePlate}"></td>
-            </tr>
-            <tr id="description" class="ligneSearchRes">
-                <td class="descriptionFiled carFieldLabel">Description :</td>
-                <td th:text="${vehicle.description}" class="descriptionFiled carFieldData"></td>
-            </tr>
+                        <tr id="note" class="ligneSearchRes">
+                            <td class="carFieldLabel">Note :</td>
+                            <td class="carFieldData" th:text="${vehicle.note}"></td>
+                        </tr>
+                        <tr id="price" class="ligneSearchRes">
+                            <td class="carFieldLabel">Prix :</td>
+                            <td class="carFieldData" th:text="${vehicle.price}"></td>
+                        </tr>
+                        <tr id="year" class="ligneSearchRes">
+                            <td class="carFieldLabel">Année :</td>
+                            <td class="carFieldData" th:text="${car.year}"></td>
+                        </tr>
+                        <tr id="motor" class="ligneSearchRes">
+                            <td class="carFieldLabel">Type de Moteur :</td>
+                            <td class="carFieldData" th:text="${car.motorization}"></td>
+                        </tr>
+                        <tr id="power" class="ligneSearchRes">
+                            <td class="carFieldLabel">Puissance :</td>
+                            <td class="carFieldData" th:text="${car.power}"></td>
+                        </tr>
+                        <tr id="places" class="ligneSearchRes">
+                            <td class="carFieldLabel">Nombre de places :</td>
+                            <td class="carFieldData" th:text="${car.getPlaceNumber()}"></td>
+                        </tr>
+                        <tr id="coffre" class="ligneSearchRes">
+                            <td class="carFieldLabel">Volume du coffre :</td>
+                            <td class="carFieldData" th:text="${car.trunkVolume}"></td>
+                        </tr>
+                        <tr id="imma" class="ligneSearchRes">
+                            <td class="carFieldLabel">Plaque d'immatriculation :</td>
+                            <td class="carFieldData" th:text="${car.licensePlate}"></td>
+                        </tr>
+                        <tr id="description" class="ligneSearchRes">
+                            <td class="descriptionFiled carFieldLabel">Description :</td>
+                            <td th:text="${vehicle.description}" class="descriptionFiled carFieldData"></td>
+                        </tr>
 
-            <tbody>
-            <tr class="resultatSearchline">
+                        <tbody>
+                        <tr class="resultatSearchline">
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td id="locationColonne">
+                    <span><h2>Louer cette voiture</h2></span>
+                    <form method="get" action="location">
+                        <input id="idVehicle" name="idVehicle" type="hidden" th:field="${vehicle.idVehicle}"/>
+
+                        <input type="date" id="startDate" name="startDate" value="2020-02-01" min="2020-01-01"
+                               max="2125-12-31"/>
+
+                        <input type="date" id="endDate" name="endDate" value="2020-02-02" min="2020-01-01"
+                               max="2125-12-31"/>
+
+                        <input type='submit' name="Louer" class="btn btn-lg btn-default"/>
+                    </form>
+                </td>
 
             </tr>
-            </tbody>
         </table>
 
-        <form method="get" action="location">
-            <input id="idVehicle" name="idVehicle" type="hidden" th:field="${vehicle.idVehicle}"/>
 
-            <input type="date" id="startDate" name="startDate" value="2020-02-01" min="2020-01-01" max="2125-12-31"/>
-
-            <input type="date" id="endDate" name="endDate" value="2020-02-02" min="2020-01-01" max="2125-12-31"/>
-
-            <input type='submit' name="Louer" class="btn btn-lg btn-default"/>
-        </form>
     </div>
 </div>
 <div id="footer" class="text-center" style="margin-bottom:0">

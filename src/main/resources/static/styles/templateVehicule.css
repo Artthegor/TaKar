@@ -12,3 +12,51 @@ div#contentSearch {
     margin-top: 15px !important;
     display: contents;
 }
+
+#locationColonne form {
+    display: inline-grid;
+}
+
+#locationColonne form input {
+    margin-bottom: 15px;
+}
+
+table#bigTable {
+    width: 100%;
+}
+
+#bigTable .btn {
+    background: black;
+    color: white;
+    -webkit-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
+}
+
+#bigTable .btn:hover {
+    background: white;
+    color: black;
+    -webkit-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    -moz-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+hr#lineSepaDetails{
+    width: 50%;
+    height: 5px !important;
+    border-width: 3px;
+    size: 30px !important;
+    font-size: 5em !important;
+    border-radius: 25px;
+}
+
+table#tableSearch {
+    width: 80%;
+}
+
+td#locationColonne {
+    text-align: center;
+}
