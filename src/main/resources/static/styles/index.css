@@ -61,3 +61,17 @@ a.nav-link.lienVehicule:hover {
     font-weight: bolder;
     padding-left:15%;
 }
+
+.titreIndex {
+    display: inline;
+    padding-right: 0px;
+}
+
+.btnIndex {
+    display: inline;
+    margin-right: auto;
+    text-align: right;
+    width: 150px;
+}
+
+
