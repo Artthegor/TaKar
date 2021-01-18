@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Recherche de Vehicule</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../styles/search.css"/>
+    <link rel="stylesheet" href="../../styles/general.css"/>
+    <link rel="shortcut icon" type="image/png" href="../../images/t.png"/>
+</head>
+
+<body>
+<div id="main">
+    <div id="header" class="jumbotron text-center" style="margin-bottom:0">
+        <a href="/"> <img id="banner" class="img-fluid" src="../../images/testBanner3.png" alt="takarLogo" width="1920"
+                          height="200"/></a>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+        <div>
+            <a href="../vehicle/search" class="btn btn-dark">Rechercher</a>
+            <a href="../vehicle/rent" class="btn btn-dark">Louer</a>
+            <a href="../contact.html" class="btn btn-dark">Contacter</a>
+
+            <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
+            <button id="invisibleButton2" type="button" class="btn btn-dark"></button>
+
+            <div id="zoneConnect"></div>
+        </div>
+    </nav>
+    <div id="contentSearch">
+        <table id="tableSearch">
+            <thead>
+            <tr>
+                <th th:text="Debut" class="modelField"></th>
+                <th th:text="Fin" class="marqueField"></th>
+                <th th:text="Prix" class="descriptionFiled"></th>
+                <th th:text="Vehicule"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <a>
+                <tr th:each="prod: ${location}" class="resultatSearchline">
+                    <td th:text="${prod.beginDate}" class="modelField"></td>
+                    <td th:text="${prod.endDate}" class="marqueField"></td>
+                    <td th:text="${prod.totalPrice}" class="descriptionFiled"></td>
+                    <td class="linkSearch"><a th:href="'details?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a>
+                    </td>
+                </tr>
+            </a>
+            </tbody>
+        </table>
+        <p id="noresult" th:text="${noresult}"></p>
+    </div>
+</div>
+<div id="footer" class="text-center" style="margin-bottom:0">
+    <p>Tous droits réservés - © Takar 2020/2021 </p>
+</div>
+</body>
+
+<script>
+
+    console.log(document.cookie.indexOf("USERCONNECT"));
+
+    if (document.cookie.indexOf("USERCONNECT") == -1) {
+        //pas connecté
+        document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
+
+}else{
+    //connecté
+    document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
+}
+
+var notes = document.getElementsByClassName("noteField");
+console.log(notes);
+for(let text of notes){
+    if(text.innerHTML ==="6"){
+        text.innerHTML="";
+        text.innerHTML="X";
+    }
+}
+</script>
+
+</html>

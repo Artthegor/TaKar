@@ -1,5 +1,7 @@
 package takar.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -16,7 +18,11 @@ public class Location {
     @JoinColumn(name = "user_id")
     User user;
 
-    Date beginDate, endDate;
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    Date beginDate;
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    Date endDate;
+
     double totalPrice;
 
     public Location(Date beginDate, Date endDate, double totalPrice, Vehicle vehicle, User user){
@@ -59,5 +65,9 @@ public class Location {
     }
     public long getIdLocation() {
         return idLocation;
+    }
+
+    public long getIdVehicle(){
+        return vehicle.getIdVehicle();
     }
 }

@@ -201,7 +201,7 @@ public class VehicleController {
         return "searchVehicle";
     }
 
-    @RequestMapping(value = "details", method = RequestMethod.GET)
+    @RequestMapping(value = "details")
     public String PrintCar(@RequestParam(value = "idVehicle", required = false) String  id, Model modell)
     {
         Car car = carManager.getByid(Long.parseLong(id));
@@ -245,8 +245,26 @@ public class VehicleController {
 
         Vehicle vehicle = vehicleManager.getVehicleById(idVehicle);
 
+        System.out.println(startDate);
+        System.out.println(endDate);
+
         locaManager.addLocation(vehicle, startDate, endDate, user);
 
-        return "searchVehicle";
+        Iterable<Location> myRent = locaManager.getMyRent(user);
+        modell.addAttribute("location", myRent);
+
+        return "myRent";
+    }
+
+    @RequestMapping(value = "printMyRent", method = RequestMethod.GET)
+    public String printMyRent(Model modell){
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = userDetails.getUsername();
+        User user = userManager.findByUsername(username);
+
+        Iterable<Location> myRent = locaManager.getMyRent(user);
+        modell.addAttribute("location", myRent);
+
+        return "myRent";
     }
 }

@@ -19,4 +19,8 @@ public class LocationManagement implements ILocationManagement{
         Location location = new Location(start, end, 42, vehicle, user);
         return locaRepo.save(location);
     }
+
+    public Iterable<Location> getMyRent(User user){
+        return locaRepo.findAllByUser(user);
+    }
 }
