@@ -1,21 +1,16 @@
 package takar.controlers;
 
-import com.unboundid.ldap.sdk.LDAPConnection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import takar.dataManagementServices.IClientManagement;
-import takar.dataManagementServices.IUserManagment;
-import takar.model.User;
 import takar.alert.AlertMail;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import takar.repositories.UserRepository;
 
 import java.util.regex.Pattern;
 
@@ -23,14 +18,11 @@ import java.util.regex.Pattern;
 @Controller
 @RequestMapping("authentication")
 public class UserController {
-	@Autowired
-	private IUserManagment userManager;
+
 
 	@Autowired
 	private IClientManagement clientManager;
 
-	@Autowired
-	private UserRepository userRepo;
 
 	String erreur = "";
 

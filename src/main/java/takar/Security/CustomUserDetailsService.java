@@ -11,8 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import takar.dataManagementServices.IUserManagment;
-import takar.dataManagementServices.UserManagment;
+import takar.dataManagementServices.IUserManagement;
 import takar.model.Role;
 import takar.model.User;
 
@@ -21,7 +20,7 @@ import takar.model.User;
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private IUserManagment userManager;
+    private IUserManagement userManager;
 
     @Override
     @Transactional(readOnly = true)

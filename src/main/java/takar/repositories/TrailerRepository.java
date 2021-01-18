@@ -6,7 +6,7 @@ import org.springframework.data.repository.query.Param;
 import takar.model.Trailer;
 
 public interface TrailerRepository  extends CrudRepository<Trailer, Long> {
-    @Query(value ="select vehicle.id from #{#entityName} ")
+    @Query(value ="select vehicle.idVehicle from #{#entityName} ")
     public Iterable<Long> getAllId();
 
     @Query(value ="from Trailer where vehicle.id = :id")

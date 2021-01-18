@@ -3,7 +3,6 @@ package takar.controlers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -14,10 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import takar.alert.AlertMail;
 import takar.dataManagementServices.*;
 import takar.model.*;
-import takar.repositories.CarRepository;
-import takar.repositories.ClientRepository;
-import takar.repositories.UserRepository;
-import takar.repositories.VehicleRepository;
 
 import java.util.Date;
 
@@ -34,13 +29,11 @@ public class VehicleController {
     @Autowired
     private IVehicleManagement vehicleManager;
     @Autowired
-    private UserRepository userRepo;
+    private IClientManagement clientManager;
     @Autowired
-    private ClientManagement clientManager;
+    private IUserManagement userManager;
     @Autowired
-    private LocationManagement locaManager;
-    @Autowired
-    private VehicleRepository vehicleRepo;
+    private ILocationManagement locaManager;
 
 
     @RequestMapping("rent")
@@ -73,7 +66,7 @@ public class VehicleController {
 
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = userDetails.getUsername();
-        User user = userRepo.findByUsername(username);
+        User user = userManager.findByUsername(username);
         try {
             if (brand != null &&
                     model != null &&
@@ -158,7 +151,7 @@ public class VehicleController {
 
                 Iterable<Long> allIdsCar = carManager.getAllIds();
                 Iterable<Vehicle> allCar = vehicleManager.getVehicleFilter(allIdsCar,prixMax,minNote);
-                if(allCar.iterator().hasNext()) {
+                if(allIdsCar.iterator().hasNext()) {
                     modell.addAttribute("vehicle", allCar);
                 }
                 else {
@@ -171,7 +164,7 @@ public class VehicleController {
 
                 Iterable<Long> allIdsTrailer = trailerManager.getAllIds();
                 Iterable<Vehicle> allTrailer = vehicleManager.getVehicleFilter(allIdsTrailer,prixMax,minNote);
-                if(allTrailer.iterator().hasNext()) {
+                if(allIdsTrailer.iterator().hasNext()) {
                     modell.addAttribute("vehicle", allTrailer);
                 }
                 else {
@@ -184,7 +177,7 @@ public class VehicleController {
 
                 Iterable<Long> allIdsBicycle = bicycleManager.getAllIds();
                 Iterable<Vehicle> allBicycle = vehicleManager.getVehicleFilter(allIdsBicycle,prixMax,minNote);
-                if(allBicycle != null) {
+                if(allIdsBicycle.iterator().hasNext()) {
                     modell.addAttribute("vehicle", allBicycle);
                 }
                 else {
@@ -237,7 +230,7 @@ public class VehicleController {
     public String getMyOffer(Model modell){
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = userDetails.getUsername();
-        User user = userRepo.findByUsername(username);
+        User user = userManager.findByUsername(username);
         Iterable<Vehicle> myVehicle = vehicleManager.getMyLocation(user);
         modell.addAttribute("vehicle", myVehicle);
         return "searchVehicle";
@@ -248,9 +241,9 @@ public class VehicleController {
     public String RentVehicle(@RequestParam(value = "idVehicle", required = false) Long idVehicle, @RequestParam(value = "startDate", required = false) Date startDate, @RequestParam(value = "enDate", required = false) Date endDate, Model modell){
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username = userDetails.getUsername();
-        User user = userRepo.findByUsername(username);
+        User user = userManager.findByUsername(username);
 
-        Vehicle vehicle = vehicleRepo.findByIdVehicle(idVehicle);
+        Vehicle vehicle = vehicleManager.getVehicleById(idVehicle);
 
         locaManager.addLocation(vehicle, startDate, endDate, user);
 

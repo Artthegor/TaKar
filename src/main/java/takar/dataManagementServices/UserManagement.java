@@ -7,16 +7,13 @@ import takar.model.User;
 import takar.repositories.UserRepository;
 
 
-import java.util.List;
-
-
 @Service
-public class UserManagment implements IUserManagment {
+public class UserManagement implements IUserManagement {
 
 	@Autowired
 	UserRepository userRepo;
 	
-	public UserManagment()
+	public UserManagement()
 	{	}
 
 	@Override
