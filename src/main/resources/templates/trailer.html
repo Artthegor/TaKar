@@ -48,7 +48,10 @@
                         </tr>
                         <tr id="note" class="ligneSearchRes">
                             <td class="trailerFieldLabel">Note :</td>
-                            <td class="trailerFieldData" th:text="${vehicle.note}"></td>
+                            <td class="trailerFieldData">
+                                <span  th:if="${vehicle.note == 6}">X</span>
+                                <span  th:unless="${vehicle.note == 6}" th:text="${vehicle.note}"></span>
+                            </td>
                         </tr>
                         <tr id="price" class="ligneSearchRes">
                             <td class="trailerFieldLabel">Prix :</td>
