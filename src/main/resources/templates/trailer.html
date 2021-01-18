@@ -49,8 +49,8 @@
                         <tr id="note" class="ligneSearchRes">
                             <td class="trailerFieldLabel">Note :</td>
                             <td class="trailerFieldData">
-                                <span  th:if="${vehicle.note == 6}">X</span>
-                                <span  th:unless="${vehicle.note == 6}" th:text="${vehicle.note}"></span>
+                                <span th:if="${vehicle.note == 6}">X</span>
+                                <span th:unless="${vehicle.note == 6}" th:text="${vehicle.note}"></span>
                             </td>
                         </tr>
                         <tr id="price" class="ligneSearchRes">
@@ -75,7 +75,7 @@
                         </tr>
                     </table>
                 </td>
-                <td id="locationColonne" th:if = "${vehicle.user.getUserID() != currentUser.getUserID()}">
+                <td id="locationColonne" th:if="${vehicle.user.getUserID() != currentUser.getUserID()}">
                     <span><h2>Louer cette remorque</h2></span>
                     <form method="get" action="location">
 
@@ -89,10 +89,12 @@
 
                         <input type='submit' name="Louer" class="btn btn-lg btn-default"/>
                     </form>
-                    <p class="errorDateMessage" align="center" th:text="${erreur}" style="font-size: 20; color: #FF1C19;"/>
+                    <p class="errorDateMessage" align="center" th:text="${erreur}"
+                       style="font-size: 20; color: #FF1C19;"/>
                 </td>
-                <td th:if = "${vehicle.user.getUserID() == currentUser.getUserID()}">
-                <a th:href="'supprVehicule?idVehicleSuppr='+${vehicle.idVehicle}" class="btn btn-lg btn-default btnSupp">Supprimer</a>
+                <td th:if="${vehicle.user.getUserID() == currentUser.getUserID()}">
+                    <a th:href="'supprVehicule?idVehicleSuppr='+${vehicle.idVehicle}"
+                       class="btn btn-lg btn-default btnSupp">Supprimer</a>
                 </td>
 
             </tr>

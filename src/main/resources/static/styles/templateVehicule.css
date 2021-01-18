@@ -73,15 +73,15 @@ p.errorDateMessage {
     margin: auto;
 }
 
-.btnSupp{
+.btnSupp {
     background: black;
     color: white;
     -webkit-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
     -moz-box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
     box-shadow: 4px 4px 2px -1px rgba(123, 31, 31, 1), -4px -4px 2px -1px rgba(32, 67, 98, 1);
- }
+}
 
-.btnSupp:hover{
+.btnSupp:hover {
     background: white;
     color: black;
     -webkit-box-shadow: -4px -4px 2px -1px rgba(123, 31, 31, 1), 4px 4px 2px -1px rgba(32, 67, 98, 1);

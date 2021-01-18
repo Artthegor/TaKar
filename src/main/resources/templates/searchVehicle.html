@@ -84,9 +84,9 @@
                     <td th:text="${prod.model}" class="modelField"></td>
                     <td th:text="${prod.brand}" class="marqueField"></td>
                     <td th:text="${prod.description}" class="descriptionFiled"></td>
-                    <td class = "noteField">
+                    <td class="noteField">
                         <span th:if="${prod.note == 6}">X</span>
-                        <span th:unless="${prod.note == 6}" th:text ="${prod.note}"></span>
+                        <span th:unless="${prod.note == 6}" th:text="${prod.note}"></span>
                     </td>
                     <td th:text="${prod.price}"></td>
                     <td class="linkSearch"><a th:href="'details?idVehicle='+${prod.getIdVehicle()}">Voir les détails</a>
@@ -111,10 +111,10 @@
         //pas connecté
         document.getElementById("zoneConnect").innerHTML = '<a id="btnConnexion" href="authentication/connexion" class="btn btn-dark">Connexion</a>' + '<a id="btnInscr" href="authentication/registration" class="btn btn-dark">Inscription</a>';
 
-}else{
-    //connecté
-    document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
-}
+    } else {
+        //connecté
+        document.getElementById("zoneConnect").innerHTML = '<a id="btnDeco" href="/logout" class="btn btn-dark">Déconnexion</a>';
+    }
 
 </script>
 
