@@ -82,7 +82,7 @@
                         </tbody>
                     </table>
                 </td>
-                <td id="locationColonne">
+                <td th:if = "${vehicle.user.getUserID() != currentUser.getUserID()}" id="locationColonne">
                     <span><h2>Louer ce vélo</h2></span>
                     <form method="get" action="location">
                         <input id="idVehicle" name="idVehicle" type="hidden" th:field="${vehicle.idVehicle}"/>

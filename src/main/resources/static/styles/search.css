@@ -146,3 +146,12 @@ form#myOffers {
     text-align: center;
     margin-top: 1.5em;
 }
+
+p#noresult {
+    text-align: center;
+    font-family: 'Fjalla One';
+    text-transform: uppercase;
+    margin-top: 40px;
+    font-size: xx-large;
+    color: darkred;
+}
