@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Recherche de Vehicule</title>
+    <title>Details Vélo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../../styles/bicycle.css"/>
     <link rel="stylesheet" href="../../styles/templateVehicule.css"/>
@@ -18,7 +18,9 @@
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
         <div>
             <a href="../vehicle/search" class="btn btn-dark">Rechercher</a>
-            <a href="../vehicle/rent" class="btn btn-dark">Louer</a>
+            <a href="../vehicle/printMyRent" class="btn btn-dark">Mes locations</a>
+            <a href="../vehicle/rent" class="btn btn-dark">Mise en location</a>
+            <a href="../vehicle/myOffer" class="btn btn-dark">Mes offres</a>
             <a href="../contact.html" class="btn btn-dark">Contacter</a>
 
             <button id="invisibleButton1" type="button" class="btn btn-dark"></button>
@@ -28,57 +30,69 @@
         </div>
     </nav>
     <div id="TitleDetails"><h1>Fiche Descriptive</h1></div>
+    <hr id="lineSepaDetails"></hr>
     <div id="contentSearch">
-        <table id="tableSearch">
-            <tr id="model" class="ligneSearchRes">
-                <td class="modelField bikeFieldLabel">Modèle :</td>
-                <td th:text="${vehicle.model}" class="modelField bikeFieldData"></td>
-            </tr>
-            <tr id="marque" class="ligneSearchRes">
-                <td class="marqueField bikeFieldLabel">Marque :</td>
-                <td th:text="${vehicle.brand}" class="marqueField bikeFieldData"></td>
-            </tr>
-            <tr id="description" class="ligneSearchRes">
-                <td class="descriptionFiled bikeFieldLabel">Description :</td>
-                <td th:text="${vehicle.description}" class="descriptionFiled bikeFieldData"></td>
-            </tr>
-            <tr id="note" class="ligneSearchRes">
-                <td class="bikeFieldLabel">Note :</td>
-                <td class="bikeFieldData" th:text="${vehicle.note}"></td>
-            </tr>
-            <tr id="price" class="ligneSearchRes">
-                <td class="bikeFieldLabel">Prix :</td>
-                <td class="bikeFieldData" th:text="${vehicle.price}"></td>
-            </tr>
-            <tr id="type" class="ligneSearchRes">
-                <td class="bikeFieldLabel">Type :</td>
-                <td class="bikeFieldData" th:text="${bicycle.type}"></td>
-            </tr>
-            <tr id="power" class="ligneSearchRes">
-                <td class="bikeFieldLabel">Taille :</td>
-                <td class="bikeFieldData" th:text="${bicycle.size}"></td>
-            </tr>
-            <tr id="places" class="ligneSearchRes">
-                <td class="bikeFieldLabel">Electrique ?</td>
-                <td class="bikeFieldData" th:text="${bicycle.getElectrical()}"></td>
-            </tr>
+        <table id="bigTable">
+            <tr id="LineBigTable">
+                <td id="detailsColonne">
+                    <table id="tableSearch">
+                        <tr id="model" class="ligneSearchRes">
+                            <td class="modelField bikeFieldLabel">Modèle :</td>
+                            <td th:text="${vehicle.model}" class="modelField bikeFieldData"></td>
+                        </tr>
+                        <tr id="marque" class="ligneSearchRes">
+                            <td class="marqueField bikeFieldLabel">Marque :</td>
+                            <td th:text="${vehicle.brand}" class="marqueField bikeFieldData"></td>
+                        </tr>
+                        <tr id="note" class="ligneSearchRes">
+                            <td class="bikeFieldLabel">Note :</td>
+                            <td class="bikeFieldData" th:text="${vehicle.note}"></td>
+                        </tr>
+                        <tr id="price" class="ligneSearchRes">
+                            <td class="bikeFieldLabel">Prix :</td>
+                            <td class="bikeFieldData" th:text="${vehicle.price}"></td>
+                        </tr>
+                        <tr id="type" class="ligneSearchRes">
+                            <td class="bikeFieldLabel">Type :</td>
+                            <td class="bikeFieldData" th:text="${bicycle.type}"></td>
+                        </tr>
+                        <tr id="power" class="ligneSearchRes">
+                            <td class="bikeFieldLabel">Taille :</td>
+                            <td class="bikeFieldData" th:text="${bicycle.size}"></td>
+                        </tr>
+                        <tr id="places" class="ligneSearchRes">
+                            <td class="bikeFieldLabel">Electrique ?</td>
+                            <td class="bikeFieldData" th:text="${bicycle.getElectrical()}"></td>
+                        </tr>
+                        <tr id="description" class="ligneSearchRes">
+                            <td class="descriptionFiled bikeFieldLabel">Description :</td>
+                            <td th:text="${vehicle.description}" class="descriptionFiled bikeFieldData"></td>
+                        </tr>
 
-            <tbody>
-            <tr class="resultatSearchline">
+                        <tbody>
+                        <tr class="resultatSearchline">
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td id="locationColonne">
+                    <span><h2>Louer ce vélo</h2></span>
+                    <form method="get" action="location">
+                        <input id="idVehicle" name="idVehicle" type="hidden" th:field="${vehicle.idVehicle}"/>
+
+                        <input type="date" id="startDate" name="startDate" value="2020-02-01" min="2020-01-01"
+                               max="2125-12-31"/>
+
+                        <input type="date" id="endDate" name="endDate" value="2020-02-02" min="2020-01-01"
+                               max="2125-12-31"/>
+
+                        <input type='submit' name="Louer" class="btn btn-lg btn-default"/>
+                    </form>
+                </td>
 
             </tr>
-            </tbody>
         </table>
-
-        <form method="get" action="location">
-            <input id="idVehicle" name="idVehicle" type="hidden" th:field="${vehicle.idVehicle}"/>
-
-            <input type="date" id="startDate" name="startDate" value="2020-02-01" min="2020-01-01" max="2125-12-31"/>
-
-            <input type="date" id="endDate" name="endDate" value="2020-02-02" min="2020-01-01" max="2125-12-31"/>
-
-            <input type='submit' name="Louer" class="btn btn-lg btn-default"/>
-        </form>
 
     </div>
 </div>
